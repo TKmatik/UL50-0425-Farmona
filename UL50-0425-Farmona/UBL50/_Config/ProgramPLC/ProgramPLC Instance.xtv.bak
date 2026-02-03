@@ -1463,21 +1463,21 @@ Info:
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{7BB99BC5-EA9A-9AE9-9479-DBE8E93920B5}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..6] OF BYTE</Name>
-			<BitSize>48</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
-			<ArrayInfo>
-				<LBound>1</LBound>
-				<Elements>6</Elements>
-			</ArrayInfo>
-		</DataType>
-		<DataType>
 			<Name GUID="{9A6F2C00-9352-7195-A7D1-8A6E966FCA76}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..5] OF BYTE</Name>
 			<BitSize>40</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
 			<ArrayInfo>
 				<LBound>1</LBound>
 				<Elements>5</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{7BB99BC5-EA9A-9AE9-9479-DBE8E93920B5}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..6] OF BYTE</Name>
+			<BitSize>48</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>6</Elements>
 			</ArrayInfo>
 		</DataType>
 		<DataType>
@@ -1668,7 +1668,7 @@ Info:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Instance TmcHash="{110F35D3-3B97-8FA0-B1A9-3683AD6AB5FD}">
+	<Instance TmcHash="{312D4C72-19EE-B9D2-4B06-BA8B8DA2D836}">
 		<Vars VarGrpType="1">
 			<Name>WeightTask Inputs</Name>
 			<Var>
@@ -2089,6 +2089,10 @@ Info:
 				<Type>BYTE</Type>
 			</Var>
 			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic642_N11DigitalInput</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
 				<Name>P00_PneumaticValves.IABPneumatic641PressureRegulator</Name>
 				<Type GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}">ARRAY [1..2] OF BYTE</Type>
 			</Var>
@@ -2131,10 +2135,6 @@ Info:
 			<Var>
 				<Name>P00_PneumaticValves.IABPneumatic645_N11AnalogInput4</Name>
 				<Type GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}">ARRAY [1..2] OF BYTE</Type>
-			</Var>
-			<Var>
-				<Name>P00_PneumaticValves.IABPneumatic642_N11DigitalInput</Name>
-				<Type>BYTE</Type>
 			</Var>
 			<Var>
 				<Name>P00_PneumaticValves.IABPneumatic642_N12DigitalInput</Name>
@@ -2205,16 +2205,16 @@ Info:
 				<Type>BYTE</Type>
 			</Var>
 			<Var>
-				<Name>P00_ReadRFIDCard.AusiDispencerReaderInputData</Name>
-				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
-			</Var>
-			<Var>
 				<Name>P00_ReadRFIDCard.IbDispencerReaderTagPresent</Name>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
 				<Name>P00_ReadRFIDCard.IBDispencerReaderErrorValue</Name>
 				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiDispencerReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
 			</Var>
 			<Var>
 				<Name>P00_ReadRFIDCard.IbDispencerReaderCmdEnd</Name>
@@ -2229,16 +2229,16 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P00_ReadRFIDCard.AusiAfterDispencersReaderInputData</Name>
-				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
-			</Var>
-			<Var>
 				<Name>P00_ReadRFIDCard.IbAfterDispencersReaderTagPresent</Name>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
 				<Name>P00_ReadRFIDCard.IBAfterDispencersReaderErrorValue</Name>
 				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiAfterDispencersReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
 			</Var>
 			<Var>
 				<Name>P00_ReadRFIDCard.IbAfterDispencersReaderCmdEnd</Name>
@@ -2253,16 +2253,16 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P00_ReadRFIDCard.AusiLidFeederReaderInputData</Name>
-				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
-			</Var>
-			<Var>
 				<Name>P00_ReadRFIDCard.IbLidFeederReaderTagPresent</Name>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
 				<Name>P00_ReadRFIDCard.IBLidFeederReaderErrorValue</Name>
 				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiLidFeederReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
 			</Var>
 			<Var>
 				<Name>P00_ReadRFIDCard.IbLidFeederReaderCmdEnd</Name>
@@ -2277,16 +2277,16 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P00_ReadRFIDCard.AusiBeforeScrewerReaderInputData</Name>
-				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
-			</Var>
-			<Var>
 				<Name>P00_ReadRFIDCard.IbBeforeScrewerReaderTagPresent</Name>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
 				<Name>P00_ReadRFIDCard.IBBeforeScrewerReaderErrorValue</Name>
 				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiBeforeScrewerReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
 			</Var>
 			<Var>
 				<Name>P00_ReadRFIDCard.IbBeforeScrewerReaderCmdEnd</Name>
@@ -2301,16 +2301,16 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P00_ReadRFIDCard.AusiAfterScrewerReaderInputData</Name>
-				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
-			</Var>
-			<Var>
 				<Name>P00_ReadRFIDCard.IbAfterScrewerReaderTagPresent</Name>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
 				<Name>P00_ReadRFIDCard.IBAfterScrewerReaderErrorValue</Name>
 				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiAfterScrewerReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
 			</Var>
 			<Var>
 				<Name>P00_ReadRFIDCard.IbAfterScrewerReaderCmdEnd</Name>
@@ -2325,16 +2325,16 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P00_ReadRFIDCard.AusiBottleTransferReaderInputData</Name>
-				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
-			</Var>
-			<Var>
 				<Name>P00_ReadRFIDCard.IbBottleTransferReaderTagPresent</Name>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
 				<Name>P00_ReadRFIDCard.IBBottleTransferReaderErrorValue</Name>
 				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiBottleTransferReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
 			</Var>
 			<Var>
 				<Name>P00_ReadRFIDCard.IbBottleTransferReaderCmdEnd</Name>
@@ -2349,16 +2349,16 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P00_ReadRFIDCard.AusiCapSorterReaderInputData</Name>
-				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
-			</Var>
-			<Var>
 				<Name>P00_ReadRFIDCard.IbCapSorterReaderTagPresent</Name>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
 				<Name>P00_ReadRFIDCard.IBCapSorterReaderErrorValue</Name>
 				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiCapSorterReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
 			</Var>
 			<Var>
 				<Name>P00_ReadRFIDCard.IbCapSorterReaderCmdEnd</Name>
@@ -2373,16 +2373,16 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P00_ReadRFIDCard.AusiAfterDispencers2PhaseReaderInputData</Name>
-				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
-			</Var>
-			<Var>
 				<Name>P00_ReadRFIDCard.IbAfterDispencers2PhaseReaderTagPresent</Name>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
 				<Name>P00_ReadRFIDCard.IBAfterDispencers2PhaseReaderErrorValue</Name>
 				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiAfterDispencers2PhaseReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
 			</Var>
 			<Var>
 				<Name>P00_ReadRFIDCard.IbAfterDispencers2PhaseReaderCmdEnd</Name>
@@ -2397,16 +2397,16 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P00_ReadRFIDCard.AusiLidSealerReaderInputData</Name>
-				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
-			</Var>
-			<Var>
 				<Name>P00_ReadRFIDCard.IbLidSealerReaderTagPresent</Name>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
 				<Name>P00_ReadRFIDCard.IBLidSealerReaderErrorValue</Name>
 				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiLidSealerReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
 			</Var>
 			<Var>
 				<Name>P00_ReadRFIDCard.IbLidSealerReaderCmdEnd</Name>
@@ -2475,14 +2475,14 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P01_PucksInserter.IbPucksInserterHammerHeightEncoderSetCDone</Name>
-				<Comment><![CDATA[ Enkoder - Set Counter done]]></Comment>
-				<Type>BOOL</Type>
-			</Var>
-			<Var>
 				<Name>P01_PucksInserter.IudiPucksInserterHammerHeightEncoderCV</Name>
 				<Comment><![CDATA[ Enkoder - Counter value]]></Comment>
 				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.IbPucksInserterHammerHeightEncoderSetCDone</Name>
+				<Comment><![CDATA[ Enkoder - Set Counter done]]></Comment>
+				<Type>BOOL</Type>
 			</Var>
 			<Var>
 				<Name>P01_PucksInserter.IbPucksInserterConveyorWcState</Name>
@@ -2512,15 +2512,19 @@ Info:
 				<Type>DINT</Type>
 			</Var>
 			<Var>
-				<Name>P01_PucksInserter.InPucksInserterPushTable_m1_STW</Name>
-				<Type>UINT</Type>
-			</Var>
-			<Var>
 				<Name>P01_PucksInserter.InPucksInserterPushTable_m1_VelocityCV</Name>
 				<Type>UDINT</Type>
 			</Var>
 			<Var>
+				<Name>P01_PucksInserter.InPucksInserterPushTable_m1_STW</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
 				<Name>P01_PucksInserter.InPucksInserterPushTable_m1_ErrorCode</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.InPucksInserterPushTable_m2_STW</Name>
 				<Type>UINT</Type>
 			</Var>
 			<Var>
@@ -2528,20 +2532,16 @@ Info:
 				<Type>UDINT</Type>
 			</Var>
 			<Var>
-				<Name>P01_PucksInserter.InPucksInserterPushTable_m2_STW</Name>
-				<Type>UINT</Type>
-			</Var>
-			<Var>
 				<Name>P01_PucksInserter.InPucksInserterPushTable_m2_ErrorCode</Name>
-				<Type>UINT</Type>
-			</Var>
-			<Var>
-				<Name>P01_PucksInserter.InPucksInserterPushTable_m3_STW</Name>
 				<Type>UINT</Type>
 			</Var>
 			<Var>
 				<Name>P01_PucksInserter.InPucksInserterPushTable_m3_VelocityCV</Name>
 				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.InPucksInserterPushTable_m3_STW</Name>
+				<Type>UINT</Type>
 			</Var>
 			<Var>
 				<Name>P01_PucksInserter.InPucksInserterPushTable_m3_ErrorCode</Name>
@@ -2601,6 +2601,16 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
+				<Name>P02_Dispencers.IbDispencersDragLeftLeadAfter1UpSensor</Name>
+				<Comment><![CDATA[	Czujnik]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencersDragRightLeadBefore1UpSensor</Name>
+				<Comment><![CDATA[	Czujnik]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
 				<Name>P02_Dispencers.IbDispencersCatch1SensorValue</Name>
 				<Comment><![CDATA[	Wejscie czujnika otwarcia siłownika chwytania]]></Comment>
 				<Type>DINT</Type>
@@ -2619,16 +2629,6 @@ Info:
 				<Name>P02_Dispencers.IbDispencersCatch4SensorValue</Name>
 				<Comment><![CDATA[	Wejscie czujnika otwarcia siłownika chwytania]]></Comment>
 				<Type>DINT</Type>
-			</Var>
-			<Var>
-				<Name>P02_Dispencers.IbDispencersDragLeftLeadAfter1UpSensor</Name>
-				<Comment><![CDATA[	Czujnik]]></Comment>
-				<Type>BOOL</Type>
-			</Var>
-			<Var>
-				<Name>P02_Dispencers.IbDispencersDragRightLeadBefore1UpSensor</Name>
-				<Comment><![CDATA[	Czujnik]]></Comment>
-				<Type>BOOL</Type>
 			</Var>
 			<Var>
 				<Name>P02_Dispencers.IbDispencersDragRightLeadAfter1UpSensor</Name>
@@ -2830,13 +2830,13 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P06_WickFeeder.InWickFeederSorterVelocityCV</Name>
-				<Type>UDINT</Type>
-			</Var>
-			<Var>
 				<Name>P06_WickFeeder.InWickFeederSorterSTW</Name>
 				<Comment><![CDATA[ Statusword transportera wejściowo wyjściowego]]></Comment>
 				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P06_WickFeeder.InWickFeederSorterVelocityCV</Name>
+				<Type>UDINT</Type>
 			</Var>
 			<Var>
 				<Name>P06_WickFeeder.IbWickFeeder2DownSensor1</Name>
@@ -2968,13 +2968,13 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
+				<Name>P07_ROPP.InROPPSlowerVelocityCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
 				<Name>P07_ROPP.InROPPSlowerSTW</Name>
 				<Comment><![CDATA[ Statusword transportera wyjściowego]]></Comment>
 				<Type>UINT</Type>
-			</Var>
-			<Var>
-				<Name>P07_ROPP.InROPPSlowerVelocityCV</Name>
-				<Type>UDINT</Type>
 			</Var>
 			<Var>
 				<Name>P07_ROPP.InROPPSlowerErrorCode</Name>
@@ -2996,13 +2996,13 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
+				<Name>P07_ROPP.InROPPFeederSorterVelocityCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
 				<Name>P07_ROPP.InROPPFeederSorterSTW</Name>
 				<Comment><![CDATA[ Statusword transportera wejściowo wyjściowego]]></Comment>
 				<Type>UINT</Type>
-			</Var>
-			<Var>
-				<Name>P07_ROPP.InROPPFeederSorterVelocityCV</Name>
-				<Type>UDINT</Type>
 			</Var>
 			<Var>
 				<Name>P07_ROPP.IbROPPCappingHeightEncoderSetCDone</Name>
@@ -3020,22 +3020,22 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P07_ROPP.InROPPCapping1VelocityCV</Name>
-				<Type>UDINT</Type>
-			</Var>
-			<Var>
 				<Name>P07_ROPP.InROPPCapping1STW</Name>
 				<Comment><![CDATA[ Statusword transportera wejściowo wyjściowego]]></Comment>
 				<Type>UINT</Type>
 			</Var>
 			<Var>
-				<Name>P07_ROPP.InROPPCapping2VelocityCV</Name>
+				<Name>P07_ROPP.InROPPCapping1VelocityCV</Name>
 				<Type>UDINT</Type>
 			</Var>
 			<Var>
 				<Name>P07_ROPP.InROPPCapping2STW</Name>
 				<Comment><![CDATA[ Statusword transportera wejściowo wyjściowego]]></Comment>
 				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.InROPPCapping2VelocityCV</Name>
+				<Type>UDINT</Type>
 			</Var>
 			<Var>
 				<Name>P07_ROPP.IbROPPCapping2WcState</Name>
@@ -3047,16 +3047,16 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P07_ROPP.AusiBeforeROPPReaderInputData</Name>
-				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
-			</Var>
-			<Var>
 				<Name>P07_ROPP.IBBeforeROPPReaderErrorValue</Name>
 				<Type>BYTE</Type>
 			</Var>
 			<Var>
 				<Name>P07_ROPP.IbBeforeROPPReaderCmdEnd</Name>
 				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.AusiBeforeROPPReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
 			</Var>
 			<Var>
 				<Name>P07_ROPP.IBBeforeROPPReaderDataCounterIn</Name>
@@ -3067,16 +3067,16 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P07_ROPP.AusiAfterROPPReaderInputData</Name>
-				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
-			</Var>
-			<Var>
 				<Name>P07_ROPP.IbAfterROPPReaderTagPresent</Name>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
 				<Name>P07_ROPP.IBAfterROPPReaderErrorValue</Name>
 				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.AusiAfterROPPReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
 			</Var>
 			<Var>
 				<Name>P07_ROPP.IbAfterROPPReaderCmdEnd</Name>
@@ -3214,13 +3214,13 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P08_CapFeeder.InCapFeederSorterVelocityCV</Name>
-				<Type>UDINT</Type>
-			</Var>
-			<Var>
 				<Name>P08_CapFeeder.InCapFeederSorterSTW</Name>
 				<Comment><![CDATA[ Statusword transportera wejściowo wyjściowego]]></Comment>
 				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.InCapFeederSorterVelocityCV</Name>
+				<Type>UDINT</Type>
 			</Var>
 			<Var>
 				<Name>P08_CapFeeder.IbCapFeederPipeSensor</Name>
@@ -3251,12 +3251,16 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
+				<Name>P09_CapPuttedCheck.IbCapPuttedCheckSensorScale_Wenglor</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
 				<Name>P09_CapPuttedCheck.IudiCapPuttedCheckHeightEncoderCV</Name>
 				<Type>UDINT</Type>
 			</Var>
 			<Var>
-				<Name>P09_CapPuttedCheck.IbCapPuttedCheckSensorScale_Wenglor</Name>
-				<Type>BYTE</Type>
+				<Name>P09_CapPuttedCheck.IdiCapPuttedCheckSensorCV_Wenglor</Name>
+				<Type>DINT</Type>
 			</Var>
 			<Var>
 				<Name>P09_CapPuttedCheck.IbCapPuttedCheckSensorWarning_1_Wenglor</Name>
@@ -3265,10 +3269,6 @@ Info:
 			<Var>
 				<Name>P09_CapPuttedCheck.IbCapPuttedCheckSensorWarning_2_Wenglor</Name>
 				<Type>BOOL</Type>
-			</Var>
-			<Var>
-				<Name>P09_CapPuttedCheck.IdiCapPuttedCheckSensorCV_Wenglor</Name>
-				<Type>DINT</Type>
 			</Var>
 			<Var>
 				<Name>P09_CapPuttedCheck.IbCapPuttedCheckSensorWarning_3_Wenglor</Name>
@@ -3350,6 +3350,10 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
+				<Name>P10_GripperScrewer.IbGripperScrewersHeightEncoderSetCDone</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
 				<Name>P10_GripperScrewer.IrGripperScrewer2ActualMotorTemperature</Name>
 				<Comment><![CDATA[ Aktualna temperatura silnika zakręcarki]]></Comment>
 				<Type>REAL</Type>
@@ -3358,10 +3362,6 @@ Info:
 				<Name>P10_GripperScrewer.IdiGripperScrewer2HeightCV</Name>
 				<Comment><![CDATA[ Wejscie czujnika dociśnięcia]]></Comment>
 				<Type>DINT</Type>
-			</Var>
-			<Var>
-				<Name>P10_GripperScrewer.IbGripperScrewersHeightEncoderSetCDone</Name>
-				<Type>BOOL</Type>
 			</Var>
 			<Var>
 				<Name>P10_GripperScrewer.IudiGripperScrewersHeightEncoderCV</Name>
@@ -3420,12 +3420,12 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P11_CapCorrectCheck.IbCapCorrectCheckCameraError</Name>
-				<Type>BOOL</Type>
-			</Var>
-			<Var>
 				<Name>P11_CapCorrectCheck.IudiCapCorrectCheckHeightEncoderCV</Name>
 				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckCameraError</Name>
+				<Type>BOOL</Type>
 			</Var>
 			<Var>
 				<Name>P11_CapCorrectCheck.IbCapCorrectCheckCameraGood</Name>
@@ -3444,16 +3444,16 @@ Info:
 				<Type>UINT</Type>
 			</Var>
 			<Var>
+				<Name>P11_CapCorrectCheck.IdiCapCorrectCheckSensorCV_Wenglor</Name>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
 				<Name>P11_CapCorrectCheck.IbCapCorrectCheckSensorScale_Wenglor</Name>
 				<Type>BYTE</Type>
 			</Var>
 			<Var>
 				<Name>P11_CapCorrectCheck.IbCapCorrectCheckSensorWarning_1_Wenglor</Name>
 				<Type>BOOL</Type>
-			</Var>
-			<Var>
-				<Name>P11_CapCorrectCheck.IdiCapCorrectCheckSensorCV_Wenglor</Name>
-				<Type>DINT</Type>
 			</Var>
 			<Var>
 				<Name>P11_CapCorrectCheck.IbCapCorrectCheckSensorWarning_2_Wenglor</Name>
@@ -3497,16 +3497,16 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
+				<Name>P11_RollerScrewer.IuiPneumaticRollerScrewerState</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
 				<Name>P11_RollerScrewer.IudiRollerScrewerCatchHeightEncoderCV</Name>
 				<Type>UDINT</Type>
 			</Var>
 			<Var>
 				<Name>P11_RollerScrewer.IbRollerScrewerFuseFB1OK</Name>
 				<Type>BOOL</Type>
-			</Var>
-			<Var>
-				<Name>P11_RollerScrewer.IuiPneumaticRollerScrewerState</Name>
-				<Type>UINT</Type>
 			</Var>
 			<Var>
 				<Name>P11_RollerScrewer.IbRollerScrewerFuseRollerScrewerOK</Name>
@@ -3554,20 +3554,24 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P11_RollerScrewer.IbReaderTagPresent</Name>
-				<Type>BOOL</Type>
-			</Var>
-			<Var>
-				<Name>P11_RollerScrewer.IBReaderErrorValue</Name>
-				<Type>BYTE</Type>
-			</Var>
-			<Var>
 				<Name>P11_RollerScrewer.IrRollerScrewerRearActualMotorTemperature</Name>
 				<Type>REAL</Type>
 			</Var>
 			<Var>
 				<Name>P11_RollerScrewer.IrRollerScrewerFrontActualMotorTemperature</Name>
 				<Type>REAL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.AusiReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IbReaderTagPresent</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IBReaderErrorValue</Name>
+				<Type>BYTE</Type>
 			</Var>
 			<Var>
 				<Name>P11_RollerScrewer.IbReaderCmdEnd</Name>
@@ -3580,10 +3584,6 @@ Info:
 			<Var>
 				<Name>P11_RollerScrewer.IbReaderCmdStartAck</Name>
 				<Type>BOOL</Type>
-			</Var>
-			<Var>
-				<Name>P11_RollerScrewer.AusiReaderInputData</Name>
-				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
 			</Var>
 			<Var>
 				<Name>P13_BottleTransfer.IbFirstFormCheckFormSensor</Name>
@@ -3619,12 +3619,12 @@ Info:
 				<Type GUID="{06996938-A0CC-D594-2D93-F13C682B876A}">ARRAY [1..32] OF UINT</Type>
 			</Var>
 			<Var>
-				<Name>P13_BottleTransferAfterDrag.IABPneumatic648DigitalInput</Name>
-				<Type GUID="{B47A481E-EB9F-357C-E102-48878B97DB7B}">ARRAY [1..4] OF BYTE</Type>
-			</Var>
-			<Var>
 				<Name>P13_BottleTransferAfterDrag.IuiPneumatic648State</Name>
 				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P13_BottleTransferAfterDrag.IABPneumatic648DigitalInput</Name>
+				<Type GUID="{B47A481E-EB9F-357C-E102-48878B97DB7B}">ARRAY [1..4] OF BYTE</Type>
 			</Var>
 			<Var>
 				<Name>P14_BadBottleConyevor.IbBadBottleConveyorFullSensor</Name>
@@ -3632,23 +3632,18 @@ Info:
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P14_BadBottleConyevor.InBadBottleConveyorVelocityCV</Name>
-				<Comment><![CDATA[po kom]]></Comment>
-				<Type>UDINT</Type>
-			</Var>
-			<Var>
 				<Name>P14_BadBottleConyevor.InBadBottleConveyorSTW</Name>
 				<Comment><![CDATA[ Statusword transportera wejściowo wyjściowego]]></Comment>
 				<Type>UINT</Type>
 			</Var>
 			<Var>
-				<Name>P14_BadBottleConyevor.InBadBottleConveyorErrorCode</Name>
+				<Name>P14_BadBottleConyevor.InBadBottleConveyorVelocityCV</Name>
 				<Comment><![CDATA[po kom]]></Comment>
-				<Type>UINT</Type>
+				<Type>UDINT</Type>
 			</Var>
 			<Var>
-				<Name>P15_FormTransporters.InFormTransporterDispencerSTW</Name>
-				<Comment><![CDATA[ Statusword transportera wejściowego]]></Comment>
+				<Name>P14_BadBottleConyevor.InBadBottleConveyorErrorCode</Name>
+				<Comment><![CDATA[po kom]]></Comment>
 				<Type>UINT</Type>
 			</Var>
 			<Var>
@@ -3657,8 +3652,18 @@ Info:
 				<Type>UDINT</Type>
 			</Var>
 			<Var>
+				<Name>P15_FormTransporters.InFormTransporterDispencerSTW</Name>
+				<Comment><![CDATA[ Statusword transportera wejściowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
 				<Name>P15_FormTransporters.InFormTransporterDispencerErrorCode</Name>
 				<Comment><![CDATA[po kom]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.InFormTransporterScrewerSTW</Name>
+				<Comment><![CDATA[ Statusword transportera wyjściowego]]></Comment>
 				<Type>UINT</Type>
 			</Var>
 			<Var>
@@ -3667,18 +3672,8 @@ Info:
 				<Type>UDINT</Type>
 			</Var>
 			<Var>
-				<Name>P15_FormTransporters.InFormTransporterScrewerSTW</Name>
-				<Comment><![CDATA[ Statusword transportera wyjściowego]]></Comment>
-				<Type>UINT</Type>
-			</Var>
-			<Var>
 				<Name>P15_FormTransporters.InFormTransporterScrewerErrorCode</Name>
 				<Comment><![CDATA[po kom]]></Comment>
-				<Type>UINT</Type>
-			</Var>
-			<Var>
-				<Name>P15_FormTransporters.InFormTransporterROPPSTW</Name>
-				<Comment><![CDATA[ Statusword transportera wyjściowego]]></Comment>
 				<Type>UINT</Type>
 			</Var>
 			<Var>
@@ -3687,13 +3682,14 @@ Info:
 				<Type>UDINT</Type>
 			</Var>
 			<Var>
-				<Name>P15_FormTransporters.InFormTransporterROPPErrorCode</Name>
-				<Comment><![CDATA[po kom]]></Comment>
+				<Name>P15_FormTransporters.InFormTransporterROPPSTW</Name>
+				<Comment><![CDATA[ Statusword transportera wyjściowego]]></Comment>
 				<Type>UINT</Type>
 			</Var>
 			<Var>
-				<Name>P15_FormTransporters.InFormTransporterAfterCapSorterVelocityCV</Name>
-				<Type>UDINT</Type>
+				<Name>P15_FormTransporters.InFormTransporterROPPErrorCode</Name>
+				<Comment><![CDATA[po kom]]></Comment>
+				<Type>UINT</Type>
 			</Var>
 			<Var>
 				<Name>P15_FormTransporters.InFormTransporterAfterCapSorterSTW</Name>
@@ -3701,12 +3697,11 @@ Info:
 				<Type>UINT</Type>
 			</Var>
 			<Var>
-				<Name>P15_FormTransporters.InFormTransporterAfterCapSorterErrorCode</Name>
-				<Type>UINT</Type>
+				<Name>P15_FormTransporters.InFormTransporterAfterCapSorterVelocityCV</Name>
+				<Type>UDINT</Type>
 			</Var>
 			<Var>
-				<Name>P15_FormTransporters.InFormTransporterBeforeScrewerSTW</Name>
-				<Comment><![CDATA[ Statusword transportera wyjściowego]]></Comment>
+				<Name>P15_FormTransporters.InFormTransporterAfterCapSorterErrorCode</Name>
 				<Type>UINT</Type>
 			</Var>
 			<Var>
@@ -3715,19 +3710,24 @@ Info:
 				<Type>UDINT</Type>
 			</Var>
 			<Var>
+				<Name>P15_FormTransporters.InFormTransporterBeforeScrewerSTW</Name>
+				<Comment><![CDATA[ Statusword transportera wyjściowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
 				<Name>P15_FormTransporters.InFormTransporterBeforeScrewerErrorCode</Name>
 				<Comment><![CDATA[po kom]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.InFormTransporterAfterScrewerSTW</Name>
+				<Comment><![CDATA[ Statusword transportera wyjściowego]]></Comment>
 				<Type>UINT</Type>
 			</Var>
 			<Var>
 				<Name>P15_FormTransporters.InFormTransporterAfterScrewerVelocityCV</Name>
 				<Comment><![CDATA[po kom]]></Comment>
 				<Type>UDINT</Type>
-			</Var>
-			<Var>
-				<Name>P15_FormTransporters.InFormTransporterAfterScrewerSTW</Name>
-				<Comment><![CDATA[ Statusword transportera wyjściowego]]></Comment>
-				<Type>UINT</Type>
 			</Var>
 			<Var>
 				<Name>P15_FormTransporters.InFormTransporterAfterScrewerErrorCode</Name>
@@ -3762,12 +3762,12 @@ Info:
 				<Type>UDINT</Type>
 			</Var>
 			<Var>
-				<Name>P17_TurnTables.InExitConveyorSTW</Name>
-				<Type>UINT</Type>
-			</Var>
-			<Var>
 				<Name>P17_TurnTables.InExitConveyorVelocityCV</Name>
 				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P17_TurnTables.InExitConveyorSTW</Name>
+				<Type>UINT</Type>
 			</Var>
 			<Var>
 				<Name>P17_TurnTables.InExitConveyorErrorCode</Name>
@@ -3944,6 +3944,72 @@ Vasyl 24.10.25 Aktualizacja enkodera]]></Comment>
 				<Name>P_GroupsWcStates.arrWcStateSyncUnitGroup</Name>
 				<Comment><![CDATA[Link to SyncUnit WcStates]]></Comment>
 				<Type GUID="{8C94E62D-EB52-5447-A247-1DED664397EE}">ARRAY [1..9] OF BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.IbCapPusherFeederWcState</Name>
+				<Comment><![CDATA[ Statusword transportera wejściowo wyjściowego]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.InCapPusherFeederSTW</Name>
+				<Comment><![CDATA[ Statusword transportera wejściowo wyjściowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.InCapPusherFeederVelocityCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.IbReaderTagPresent</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.IBReaderErrorValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.AusiReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.IbReaderCmdEnd</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.IBReaderDataCounterIn</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.IbReaderCmdStartAck</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.IbCapPusherCompressedAirOK</Name>
+				<Comment><![CDATA[Zasilanie powietrzem sprężonym OK	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.IbCapPusherFuseFB1OK</Name>
+				<Comment><![CDATA[		]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.IbCapPusherFuseFB2OK</Name>
+				<Comment><![CDATA[	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.IbCapPusherFuseFB3OK</Name>
+				<Comment><![CDATA[	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.IABPneumaticCapPusherEB1DigitalInput</Name>
+				<Type GUID="{B47A481E-EB9F-357C-E102-48878B97DB7B}">ARRAY [1..4] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.IuiPneumaticCapPusherEB1State</Name>
+				<Type>UINT</Type>
 			</Var>
 			<Var>
 				<Name>GVL.aPucksInserterWheelAxisRef.NcToPlc</Name>
@@ -4410,25 +4476,22 @@ Vasyl 24.10.25 Aktualizacja enkodera]]></Comment>
 				<Name>VIS.DCcurrertStepeerDosers</Name>
 				<Type>UINT</Type>
 			</Var>
+			<Var>
+				<Name>VIS_CP.IbCapPusher0DoorsOpen</Name>
+				<Comment><![CDATA[****P07_CapPusher*******]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
 		</Vars>
 		<Vars VarGrpType="2" ContextId="1" AreaNo="17">
 			<Name>PlcTask Outputs</Name>
 			<Var>
-				<Name>P00_PneumaticValves.QABPneumatic645ValveCoils</Name>
-				<Type GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}">ARRAY [1..2] OF BYTE</Type>
-			</Var>
-			<Var>
-				<Name>P00_PneumaticValves.QABPneumatic641PressureRegulator</Name>
-				<Type GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}">ARRAY [1..2] OF BYTE</Type>
+				<Name>P00_PneumaticValves.QABPneumatic642ValveCoils</Name>
+				<Type GUID="{9A6F2C00-9352-7195-A7D1-8A6E966FCA76}">ARRAY [1..5] OF BYTE</Type>
 			</Var>
 			<Var>
 				<Name>P00_PneumaticValves.QABPneumatic641ValveCoils</Name>
 				<Comment><![CDATA[ZMIENNE STERUJĄCE WYSPY ZAWOROWEJ]]></Comment>
 				<Type GUID="{7BB99BC5-EA9A-9AE9-9479-DBE8E93920B5}">ARRAY [1..6] OF BYTE</Type>
-			</Var>
-			<Var>
-				<Name>P00_PneumaticValves.QABPneumatic642ValveCoils</Name>
-				<Type GUID="{9A6F2C00-9352-7195-A7D1-8A6E966FCA76}">ARRAY [1..5] OF BYTE</Type>
 			</Var>
 			<Var>
 				<Name>P00_PneumaticValves.QABPneumatic643ValveCoils</Name>
@@ -4437,6 +4500,10 @@ Vasyl 24.10.25 Aktualizacja enkodera]]></Comment>
 			<Var>
 				<Name>P00_PneumaticValves.QABPneumatic644ValveCoils</Name>
 				<Type GUID="{9A6F2C00-9352-7195-A7D1-8A6E966FCA76}">ARRAY [1..5] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.QABPneumatic645ValveCoils</Name>
+				<Type GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}">ARRAY [1..2] OF BYTE</Type>
 			</Var>
 			<Var>
 				<Name>P00_PneumaticValves.QABPneumatic646ValveCoils</Name>
@@ -4449,6 +4516,10 @@ Vasyl 24.10.25 Aktualizacja enkodera]]></Comment>
 			<Var>
 				<Name>P00_PneumaticValves.QABPneumaticPI641ValveCoils</Name>
 				<Type GUID="{7BB99BC5-EA9A-9AE9-9479-DBE8E93920B5}">ARRAY [1..6] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.QABPneumatic641PressureRegulator</Name>
+				<Type GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}">ARRAY [1..2] OF BYTE</Type>
 			</Var>
 			<Var>
 				<Name>P00_PneumaticValves.QABPneumatic645_1PressureRegulator</Name>
@@ -4905,22 +4976,22 @@ Vasyl 24.10.25 Aktualizacja enkodera]]></Comment>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P06_LidSealer.QbLidSealer2HeightDownCmd</Name>
-				<Comment><![CDATA[ Wyjście sterujące podnośnikiem siłownika grzałki zadaniczej, Silnik w dół]]></Comment>
-				<Type>BOOL</Type>
-			</Var>
-			<Var>
-				<Name>P06_LidSealer.QbLidSealer2CoolingFan</Name>
-				<Type>BOOL</Type>
-			</Var>
-			<Var>
 				<Name>P06_LidSealer.QbLidSealer2HeightUpCmd</Name>
 				<Comment><![CDATA[ Wyjście sterujące podnośnikiem siłownika grzałki zadaniczej, Silnik w górę]]></Comment>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
+				<Name>P06_LidSealer.QbLidSealer2HeightDownCmd</Name>
+				<Comment><![CDATA[ Wyjście sterujące podnośnikiem siłownika grzałki zadaniczej, Silnik w dół]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
 				<Name>P06_LidSealer.QbLidSealer2HeaterPWMOut</Name>
 				<Comment><![CDATA[ Wyjście sterujące temperaturą grzałki zadaniczej]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.QbLidSealer2CoolingFan</Name>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
@@ -4949,14 +5020,14 @@ Vasyl 24.10.25 Aktualizacja enkodera]]></Comment>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P07_ROPP.QudiROPPFeederHeightEncoderSetCV</Name>
-				<Comment><![CDATA[ Enkoder - Set Counter value]]></Comment>
-				<Type>UDINT</Type>
-			</Var>
-			<Var>
 				<Name>P07_ROPP.QbROPPFeederSorterVibrator</Name>
 				<Comment><![CDATA[ Wyjście sterujące ]]></Comment>
 				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QudiROPPFeederHeightEncoderSetCV</Name>
+				<Comment><![CDATA[ Enkoder - Set Counter value]]></Comment>
+				<Type>UDINT</Type>
 			</Var>
 			<Var>
 				<Name>P07_ROPP.QbROPPFeederSorterAir</Name>
@@ -4992,14 +5063,14 @@ Vasyl 24.10.25 Aktualizacja enkodera]]></Comment>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P07_ROPP.QudiROPPCappingHeightEncoderSetCV</Name>
-				<Comment><![CDATA[ Enkoder - Set Counter value]]></Comment>
-				<Type>UDINT</Type>
-			</Var>
-			<Var>
 				<Name>P07_ROPP.QbROPPCappingHeightEncoderSetC</Name>
 				<Comment><![CDATA[ Enkoder - Set Counter ]]></Comment>
 				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QudiROPPCappingHeightEncoderSetCV</Name>
+				<Comment><![CDATA[ Enkoder - Set Counter value]]></Comment>
+				<Type>UDINT</Type>
 			</Var>
 			<Var>
 				<Name>P07_ROPP.QbROPPCapping1Tool1Actuator</Name>
@@ -5128,6 +5199,10 @@ Vasyl 24.10.25 Aktualizacja enkodera]]></Comment>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
+				<Name>P08_CapFeeder.QudiCapFeederHeightEncoderSetCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
 				<Name>P08_CapFeeder.QbCapFeederHeightDownCmd</Name>
 				<Comment><![CDATA[ Wyjście sterujące podnośnikiem podajnika nakrętek, Silnik w dół]]></Comment>
 				<Type>BOOL</Type>
@@ -5136,10 +5211,6 @@ Vasyl 24.10.25 Aktualizacja enkodera]]></Comment>
 				<Name>P08_CapFeeder.QbCapFeederSorterEngine</Name>
 				<Comment><![CDATA[ Wyjście silnikiem sortera]]></Comment>
 				<Type>BOOL</Type>
-			</Var>
-			<Var>
-				<Name>P08_CapFeeder.QudiCapFeederHeightEncoderSetCV</Name>
-				<Type>UDINT</Type>
 			</Var>
 			<Var>
 				<Name>P08_CapFeeder.QbCapFeederSorterAir</Name>
@@ -5271,6 +5342,11 @@ Vasyl 24.10.25 Aktualizacja enkodera]]></Comment>
 				<Type>UINT</Type>
 			</Var>
 			<Var>
+				<Name>P10_GripperScrewer.QnGripperScrewer1ProportionalGain</Name>
+				<Comment><![CDATA[ Kp ]]></Comment>
+				<Type>REAL</Type>
+			</Var>
+			<Var>
 				<Name>P10_GripperScrewer.QbGripperScrewer1CatchHeightUpCmd</Name>
 				<Comment><![CDATA[ Wyjście sterujące podnośnikiem siłownika stabilizującego pod zakręcarką szczękową, Silnik w górę]]></Comment>
 				<Type>BOOL</Type>
@@ -5281,14 +5357,13 @@ Vasyl 24.10.25 Aktualizacja enkodera]]></Comment>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P10_GripperScrewer.QnGripperScrewer1ProportionalGain</Name>
-				<Comment><![CDATA[ Kp ]]></Comment>
-				<Type>REAL</Type>
-			</Var>
-			<Var>
 				<Name>P10_GripperScrewer.QnGripperScrewer2TorqueLimit</Name>
 				<Comment><![CDATA[ Ograniczenie momentu napędu zakręcarki szczękowej ]]></Comment>
 				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.QbGripperScrewersHeightEncoderSetC</Name>
+				<Type>BOOL</Type>
 			</Var>
 			<Var>
 				<Name>P10_GripperScrewer.QnGripperScrewer2ProportionalGain</Name>
@@ -5296,8 +5371,8 @@ Vasyl 24.10.25 Aktualizacja enkodera]]></Comment>
 				<Type>REAL</Type>
 			</Var>
 			<Var>
-				<Name>P10_GripperScrewer.QbGripperScrewersHeightEncoderSetC</Name>
-				<Type>BOOL</Type>
+				<Name>P10_GripperScrewer.QudiGripperScrewersHeightEncoderSetCV</Name>
+				<Type>UDINT</Type>
 			</Var>
 			<Var>
 				<Name>P10_GripperScrewer.QbGripperScrewer2CatchHeightUpCmd</Name>
@@ -5308,10 +5383,6 @@ Vasyl 24.10.25 Aktualizacja enkodera]]></Comment>
 				<Name>P10_GripperScrewer.QbGripperScrewer2CatchHeightDownCmd</Name>
 				<Comment><![CDATA[ Wyjście sterujące podnośnikiem siłownika stabilizującego pod zakręcarką szczękową, Silnik w dół]]></Comment>
 				<Type>BOOL</Type>
-			</Var>
-			<Var>
-				<Name>P10_GripperScrewer.QudiGripperScrewersHeightEncoderSetCV</Name>
-				<Type>UDINT</Type>
 			</Var>
 			<Var>
 				<Name>P10_GripperScrewer.atemp1.PlcToNc</Name>
@@ -5372,16 +5443,16 @@ Vasyl 24.10.25 Aktualizacja enkodera]]></Comment>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
-				<Name>P11_RollerScrewer.QudiRollerScrewerHeightEncoderSetCV</Name>
-				<Type>UDINT</Type>
-			</Var>
-			<Var>
 				<Name>P11_RollerScrewer.QbRollerScrewerCatchHeightUpCmd</Name>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>
 				<Name>P11_RollerScrewer.QbRollerScrewerCatchHeightDownCmd</Name>
 				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.QudiRollerScrewerHeightEncoderSetCV</Name>
+				<Type>UDINT</Type>
 			</Var>
 			<Var>
 				<Name>P11_RollerScrewer.QbRollerScrewerCatchHeightEncoderSetC</Name>
@@ -5613,6 +5684,92 @@ Vasyl 24.10.25 Aktualizacja enkodera]]></Comment>
 			<Var>
 				<Name>P06_LidFeeder.QudiLidFeederHeightEncoderSetCV</Name>
 				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.QbCapPusherGate</Name>
+				<Comment><![CDATA[ Wyjście sterujące ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.QbCapPusherFeederSorterVibrator</Name>
+				<Comment><![CDATA[ Wyjście sterujące ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.QbCapPusherFeederSorterVibrator2</Name>
+				<Comment><![CDATA[ Wyjście sterujące 	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.QbCapPusherFeederSorterAir</Name>
+				<Comment><![CDATA[ Wyjście sterujące ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.QnCapPusherFeederVelocitySV</Name>
+				<Comment><![CDATA[ Nastawa prędkości]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.QnCapPusherFeederCTW</Name>
+				<Comment><![CDATA[ Controlword transportera we/wy]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.QbCapPusher</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.QbCapPusherBlockActuator</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.QbCapPusherFormPositioning</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.IbReaderCmdStart</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.IBReaderCmmandValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.IBReaderDataCounterOut</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.AusiReaderOutputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.QbCapPusherRedSignalizationLamp</Name>
+				<Comment><![CDATA[Lampy]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.QbCapPusherGreenSignalizationLamp</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.QbCapPusherYellowSignalizationLamp</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.QbCapPusherDoors0Close</Name>
+				<Comment><![CDATA[ Rozkaz zamkniecia ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.QbCapPusherCompressedAir</Name>
+				<Comment><![CDATA[Zawór główny]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_CapPusher.QABPneumaticCapPusherEB1ValveCoils</Name>
+				<Comment><![CDATA[DI wyspy pneumatycznej]]></Comment>
+				<Type GUID="{9A6F2C00-9352-7195-A7D1-8A6E966FCA76}">ARRAY [1..5] OF BYTE</Type>
 			</Var>
 			<Var>
 				<Name>GVL.aPucksInserterWheelAxisRef.PlcToNc</Name>

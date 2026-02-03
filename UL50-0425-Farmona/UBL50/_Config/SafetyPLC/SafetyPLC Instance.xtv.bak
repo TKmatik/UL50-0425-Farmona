@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.19" ClassName="CTComPlcObjDef" FileIdentifier="385e89d63ed484a3c82b625e276295c27f7ed1a5">
-	<Instance TmcHash="{834D9919-4DC8-615E-C38A-3ECB3FAE430D}">
+	<Instance TmcHash="{61E1D6E3-C4A7-42E4-9706-B4E264A6C447}">
 		<Vars VarGrpType="1">
 			<Name>PlcTask Inputs</Name>
 			<Var>
@@ -72,6 +72,10 @@
 			</Var>
 			<Var>
 				<Name>GVL_IO_SAFETY.IbSafetyRelayMotorsRobotB</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.IbSafetyRelayRC40</Name>
 				<Type>BOOL</Type>
 			</Var>
 			<Var>

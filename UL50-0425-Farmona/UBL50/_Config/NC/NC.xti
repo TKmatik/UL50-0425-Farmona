@@ -1889,6 +1889,10 @@ External Setpoint Generation:
 				</Var>
 			</Vars>
 		</Axis>
+		<Axis File="UVFF_Zak.xti" Id="24"/>
+		<Axis File="UVFF_Os_Y.xti" Id="25"/>
+		<Axis File="UVFF_Os_Z.xti" Id="26"/>
+		<Axis File="UVFF_VirtualAxis.xti" Id="27"/>
 	</NC>
 	<Mappings>
 		<OwnerA Name="Axes^PI_Karusela">

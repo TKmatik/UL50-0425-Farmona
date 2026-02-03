@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.19" ClassName="CTComPlcObjDef" FileIdentifier="ef1f21cdfc96b37e3860babfc13222faf44d6892">
-	<Instance TmcHash="{40F338E7-F528-8FE6-C487-376247D8EB61}">
+	<Instance TmcHash="{6485E7D4-67EF-9A03-EADB-F3623551D099}">
 		<Vars VarGrpType="1">
 			<Name>PlcTask Inputs</Name>
 			<Var>

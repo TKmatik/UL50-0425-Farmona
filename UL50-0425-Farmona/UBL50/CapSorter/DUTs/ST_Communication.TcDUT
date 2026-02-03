@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_Communication" Id="{b8a8b084-8a3b-41cb-9202-1e887fc02c1d}">
+    <Declaration><![CDATA[TYPE ST_Communication :
+STRUCT
+	
+
+	
+	bEnable							: BOOL;	
+	bCycleStart						: BOOL;
+	bCycleStop						: BOOL;
+	bCycleReset						: BOOL;
+	bManualMode						: BOOL;
+	bHoming							: BOOL;
+	bHomingDone						: BOOL;	
+	bConfectionEnding				: BOOL;
+	tCycleTime						: TIME;
+	iWatchdog						: INT;
+	
+	sRecipeName						: STRING(255);							
+	sRecipeIndex					: STRING(255);
+
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

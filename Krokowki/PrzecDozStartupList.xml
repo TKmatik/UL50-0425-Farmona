@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EtherCATMailbox>
+	<CoE>
+		<InitCmds>
+			<InitCmd>
+				<Transition>IP</Transition>
+				<Timeout>0</Timeout>
+				<Ccs>1</Ccs>
+				<Index>61569</Index>
+				<SubIndex>1</SubIndex>
+				<Data>00001500</Data>
+			</InitCmd>
+			<InitCmd>
+				<Transition>IP</Transition>
+				<Timeout>0</Timeout>
+				<Ccs>1</Ccs>
+				<Index>4339</Index>
+				<SubIndex>5</SubIndex>
+				<Data>0000</Data>
+			</InitCmd>
+			<InitCmd>
+				<Transition>PS</Transition>
+				<Comment><![CDATA[STM Motor Settings Ch.1 / Maximal current]]></Comment>
+				<Timeout>0</Timeout>
+				<Ccs>1</Ccs>
+				<Index>32784</Index>
+				<SubIndex>1</SubIndex>
+				<Data>e015</Data>
+			</InitCmd>
+			<InitCmd>
+				<Transition>PS</Transition>
+				<Comment><![CDATA[STM Motor Settings Ch.1 / Reduced current]]></Comment>
+				<Timeout>0</Timeout>
+				<Ccs>1</Ccs>
+				<Index>32784</Index>
+				<SubIndex>2</SubIndex>
+				<Data>f00a</Data>
+			</InitCmd>
+			<InitCmd>
+				<Transition>PS</Transition>
+				<Comment><![CDATA[STM Motor Settings Ch.1 / Nominal voltage]]></Comment>
+				<Timeout>0</Timeout>
+				<Ccs>1</Ccs>
+				<Index>32784</Index>
+				<SubIndex>3</SubIndex>
+				<Data>6009</Data>
+			</InitCmd>
+			<InitCmd>
+				<Transition>PS</Transition>
+				<Comment><![CDATA[STM Motor Settings Ch.1 / Motor coil resistance]]></Comment>
+				<Timeout>0</Timeout>
+				<Ccs>1</Ccs>
+				<Index>32784</Index>
+				<SubIndex>4</SubIndex>
+				<Data>2000</Data>
+			</InitCmd>
+			<InitCmd>
+				<Transition>PS</Transition>
+				<Comment><![CDATA[STM Motor Settings Ch.1 / Motor EMF]]></Comment>
+				<Timeout>0</Timeout>
+				<Ccs>1</Ccs>
+				<Index>32784</Index>
+				<SubIndex>5</SubIndex>
+				<Data>b900</Data>
+			</InitCmd>
+			<InitCmd>
+				<Transition>PS</Transition>
+				<Comment><![CDATA[STM Motor Settings Ch.1 / Motor fullsteps]]></Comment>
+				<Timeout>0</Timeout>
+				<Ccs>1</Ccs>
+				<Index>32784</Index>
+				<SubIndex>6</SubIndex>
+				<Data>c800</Data>
+			</InitCmd>
+			<InitCmd>
+				<Transition>PS</Transition>
+				<Comment><![CDATA[STM Motor Settings Ch.1 / Motor coil inductance]]></Comment>
+				<Timeout>0</Timeout>
+				<Ccs>1</Ccs>
+				<Index>32784</Index>
+				<SubIndex>10</SubIndex>
+				<Data>6100</Data>
+			</InitCmd>
+			<InitCmd>
+				<Transition>PS</Transition>
+				<Comment><![CDATA[STM Motor Settings Ch.1 / Encoder increments (4-fold)]]></Comment>
+				<Timeout>0</Timeout>
+				<Ccs>1</Ccs>
+				<Index>32784</Index>
+				<SubIndex>7</SubIndex>
+				<Data>0010</Data>
+			</InitCmd>
+			<InitCmd>
+				<Transition>PS</Transition>
+				<Comment><![CDATA[STM Features Ch.1 / Feedback type]]></Comment>
+				<Timeout>0</Timeout>
+				<Ccs>1</Ccs>
+				<Index>32786</Index>
+				<SubIndex>8</SubIndex>
+				<Data>00</Data>
+			</InitCmd>
+			<InitCmd>
+				<Transition>PS</Transition>
+				<Comment><![CDATA[STM Features Ch.1 / Speed range]]></Comment>
+				<Timeout>0</Timeout>
+				<Ccs>1</Ccs>
+				<Index>32786</Index>
+				<SubIndex>5</SubIndex>
+				<Data>03</Data>
+			</InitCmd>
+			<InitCmd>
+				<Transition>PS</Transition>
+				<Comment><![CDATA[STM Controller Settings Ch.1 / Kp factor (curr.)]]></Comment>
+				<Timeout>0</Timeout>
+				<Ccs>1</Ccs>
+				<Index>32785</Index>
+				<SubIndex>1</SubIndex>
+				<Data>7a00</Data>
+			</InitCmd>
+			<InitCmd>
+				<Transition>PS</Transition>
+				<Comment><![CDATA[STM Controller Settings Ch.1 / Ki factor (curr.)]]></Comment>
+				<Timeout>0</Timeout>
+				<Ccs>1</Ccs>
+				<Index>32785</Index>
+				<SubIndex>2</SubIndex>
+				<Data>2900</Data>
+			</InitCmd>
+			<InitCmd>
+				<Transition>PS</Transition>
+				<Comment><![CDATA[STM Controller Settings 3 Ch.1 / Kp factor (velo.)]]></Comment>
+				<Timeout>0</Timeout>
+				<Ccs>1</Ccs>
+				<Index>32788</Index>
+				<SubIndex>3</SubIndex>
+				<Data>b80b0000</Data>
+			</InitCmd>
+			<InitCmd>
+				<Transition>PS</Transition>
+				<Comment><![CDATA[STM Controller Settings 3 Ch.1 / Tn (velo.)]]></Comment>
+				<Timeout>0</Timeout>
+				<Ccs>1</Ccs>
+				<Index>32788</Index>
+				<SubIndex>4</SubIndex>
+				<Data>8813</Data>
+			</InitCmd>
+			<InitCmd>
+				<Transition>PS</Transition>
+				<Comment><![CDATA[STM Features Ch.1 / Operation mode]]></Comment>
+				<Timeout>0</Timeout>
+				<Ccs>1</Ccs>
+				<Index>32786</Index>
+				<SubIndex>1</SubIndex>
+				<Data>05</Data>
+			</InitCmd>
+			<InitCmd>
+				<Transition>PS</Transition>
+				<Comment><![CDATA[Error on step lost]]></Comment>
+				<Timeout>0</Timeout>
+				<Ccs>1</Ccs>
+				<Index>32786</Index>
+				<SubIndex>10</SubIndex>
+				<Data>01</Data>
+			</InitCmd>
+		</InitCmds>
+	</CoE>
+</EtherCATMailbox>

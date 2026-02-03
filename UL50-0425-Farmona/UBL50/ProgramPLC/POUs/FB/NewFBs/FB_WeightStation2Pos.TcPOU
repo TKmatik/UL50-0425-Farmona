@@ -1,0 +1,1830 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_WeightStation2Pos" Id="{45fbf556-b1e5-4a85-9ad1-e5b53a978a48}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_WeightStation2Pos
+VAR_INPUT
+	bEnable											: BOOL;
+	bEStop											: BOOL;
+	bRun											: BOOL;
+	
+	bWeight1ActuatorSensorUp						: BOOL;									//Pierwsza waga podniesiona
+	bWeight1FormSensor								: BOOL;									//Obecność formatki na pierwszej wadze     
+
+	bWeight2ActuatorSensorUp						: BOOL;									//Druga waga podniesiona
+	bWeight2FormSensor								: BOOL;									//Obecność formatki na drugiek wadze	
+	
+	bCanReleaseForms								: BOOL;									//Można wypuścić formatki
+	bWeighingCycle									: BOOL;									//Trwa ważenie
+                                    	
+	arrWeightPackageState							: ARRAY [1..17] OF S_PackageState;		//Rejestr nad wagami
+	arrAfterDispencersPackageState					: ARRAY [1..17] OF S_PackageState;		//Rejestr przed wagami
+	
+	bResetCycle										: BOOL;									//Reset cyklu
+	
+	bHoming											: BOOL;
+	bIgnoreError									: BOOL;
+	bReset											: BOOL;
+	bManualMovement									: BOOL;
+	                                    			
+	_TIMERS_										: BOOL;
+	tWeight1ActuatorUpDelay							: TIME;									//Opóźnienie podnoszenia wagi 1
+	tWeight2ActuatorUpDelay							: TIME;									//Opóźnienie podnoszenia wagi 2	
+	
+	_ALARMINFO_										: BOOL;
+	udiStationIndex									: UDINT;								//Numer stacji
+	sStationName									: STRING;								//Nazwa stacji
+	
+	eFormsTransporterState							: E_Station;
+END_VAR   
+                              			
+VAR_OUTPUT                              			
+	eState											: E_Station;							//Stan ogólny bloku
+	eRunningState									: E_WeightLiftStationState;				//Stan stacji
+	
+	bWeight1ActuatorUp								: BOOL;									//Podnoszenie 1 wagi
+	bWeight1ActuatorDown							: BOOL;									//Opuszczenie 1 wagi
+
+	bWeight2ActuatorUp								: BOOL;									//Podnoszenie 2 wagi
+	bWeight2ActuatorDown							: BOOL;									//Opuszczenie 2 wagi
+
+	bError											: BOOL;									//Błąd stacji
+	udiErrorNr										: UDINT;								//Numer błędu
+	sErrorDescription								: STRING(255);							//Opis błędu
+	sErrorDescription2								: STRING(200);							//Opis błędu
+	sErrorStationName								: STRING(200);							//Nazwa stacji
+	                                    			
+	tCycleTime										: TIME;									//Czas cyklu
+	bHomingDone										: BOOL;									//Stacja zbazowana 
+	bCycleDone										: BOOL;									//Cykl skończony 			
+END_VAR
+
+VAR_IN_OUT
+	bWeight1ActuatorManualUp						: BOOL;									//Tryb manualny, Waga 1 UP	
+	bWeight1ActuatorManualDown						: BOOL;									//Tryb manualny, Waga 1 Down	
+	
+	bWeight2ActuatorManualUp						: BOOL;									//Tryb manualny, Waga 2 UP
+	bWeight2ActuatorManualDown						: BOOL;									//Tryb manualny, Waga 2 Down
+	
+END_VAR
+
+VAR
+	eLastStateTemp									: E_Station;							//Ostatni stan CONTROL
+	eLastState										: E_Station;							//Ostatni stan CONTROL
+	eLastRunningStateTemp							: E_WeightLiftStationState;				//Ostatni stan Running
+	eLastRunningState								: E_WeightLiftStationState;				//Ostatni stan Running
+	                                    		
+	fbWeight1Actuator								: FB_Valve_O;							//Podnoszenie wagi 1
+	fbWeight2Actuator								: FB_Valve_O;							//Podnoszenie wagi 2
+	                                    		
+	tonWeight1ActuatorDelay							: TON;									//TON, opóźnienie podnoszenia wagi 1
+	tonWeight2ActuatorDelay							: TON;									//TON, opóźnienie podnoszenia wagi 2
+	tonResetDelay									: TON;									//TON, czas na resetowanie błędów
+	tonPreparingToReadyDelay						: TON;
+	tonAbortedDelay									: TON;
+	tonStoppingTime									: TON;									//TON, czas zatrzymywania stacji
+	tonWeight1FormSensorDelay						: TON;									//TON, filtr czujnika formatki przy waga 1
+	tonWeight2FormSensorDelay						: TON;									//TON, filtr czujnika formatki przy waga 2
+	tonRepairDelay									: TON;									//TON, czas po którym przechodzimy do naprawy
+	tonRepairOnDelay								: TON;									//TON, czas na wyjazd wszystkich formatek
+	tonFormsWaitingTime								: TON;									//Ton, czekam na formatki
+	
+	rtResetCycle									: R_TRIG;									//R_Trig, zbocze nar (Reset Cycle)
+	rtWeight1FormSensor								: R_TRIG;								//R_Trig, zbocze nar (przy wadze 1)
+	ftWeight1FormSensor								: F_TRIG;								//F_Trig, zbocze opad(przy wadze 1)
+	rtWeight2FormSensor								: R_TRIG;								//R_Trig, zbocze nar (przy wadze 2)
+	ftWeight2FormSensor								: F_TRIG;								//F_Trig, zbocze opad(przy wadze 2)	
+	rtWeight2FormSensorWithDelay					: R_TRIG;								//R_Trig z opóźnieniem, zbocze nar (przy wadze 3)
+	
+	rtManualWeight1Up								: R_TRIG;
+	rtManualWeight1Down								: R_TRIG;
+	rtManualWeight2Up								: R_TRIG;
+	rtManualWeight2Down								: R_TRIG;
+	
+	iFormsCounter									: INT;									//Licznik formatek
+	iFormsCounterWeight2							: INT;									//Licznik formatek na wadze 2
+	
+	bLastStatePositionWeight1ActuatorUp				: BOOL;									//Ostatni stan waga 1 UP
+	bLastStatePositionWeight1ActuatorDown			: BOOL;									//Ostatni stan waga 1 Down
+	bLastStatePositionWeight2ActuatorUp				: BOOL;									//Ostatni stan waga 2 UP
+	bLastStatePositionWeight2ActuatorDown			: BOOL;									//Ostatni stan waga 2 Down
+	
+	bWeight1ActuatorDelayON							: BOOL;									//Uruchamiam TON Waga 1
+	bWeight2ActuatorDelayON							: BOOL;									//Uruchamiam TON Waga 2
+	bWeight2CheckingDelay							: BOOL;									//Filtr dodawania formatek do Wagi 3
+	
+	bStateError										: BOOL;
+	
+	bRepair											: BOOL;	
+	bRepairAllRegistersAreEmpty						: BOOL;								
+	
+	//Śmiecie
+	tonRepairWeightCycleStart						: TON;
+	rtrigCycleTimerRead								: R_TRIG;
+	tonCycleTimer									: TON;
+	tt												: INT;
+	tonRepairWeightTime								: TON;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[ACT_ErrorHandling();
+ACT_Signals();
+ACT_Control();
+ACT_AdditionalBlocks();
+ACT_Statistics();
+
+
+IF eLastStateTemp <> eState THEN
+	eLastState							:= eLastStateTemp;
+END_IF
+eLastStateTemp							:= eState;
+
+IF eLastRunningStateTemp <> eRunningState THEN
+	eLastRunningState					:= eLastRunningStateTemp;
+END_IF
+eLastRunningStateTemp					:= eRunningState;]]></ST>
+    </Implementation>
+    <Action Name="ACT_AdditionalBlocks" Id="{748b9f07-1868-4324-87f7-c7e70d1f1137}">
+      <Implementation>
+        <NWL>
+          <XmlArchive>
+            <Data>
+              <o xml:space="preserve" t="NWLImplementationObject">
+                <v n="NetworkListComment">""</v>
+                <v n="DefaultViewMode">"Fbd"</v>
+                <l2 n="NetworkList" cet="Network">
+                  <o>
+                    <v n="ILActive">false</v>
+                    <v n="FBDValid">false</v>
+                    <v n="ILValid">false</v>
+                    <l2 n="ILLines" />
+                    <v n="Comment">""</v>
+                    <v n="Title">""</v>
+                    <v n="Label">""</v>
+                    <v n="OutCommented">false</v>
+                    <l2 n="NetworkItems" cet="BoxTreeBox">
+                      <o>
+                        <v n="BoxType">"FB_Valve_O"</v>
+                        <o n="Instance" t="Operand">
+                          <v n="Operand">"fbWeight1Actuator"</v>
+                          <v n="Type">"FB_Valve_O"</v>
+                          <v n="Comment">""</v>
+                          <v n="SymbolComment">""</v>
+                          <v n="Address">""</v>
+                          <o n="Flags" t="Flags">
+                            <v n="Flags">0</v>
+                            <v n="Fixed">false</v>
+                            <v n="Extensible">false</v>
+                          </o>
+                          <v n="LValue">false</v>
+                          <v n="Boolean">false</v>
+                          <v n="IsInstance">true</v>
+                          <v n="Id">218L</v>
+                        </o>
+                        <o n="OutputItems" t="OutputItemList">
+                          <l2 n="OutputItems" cet="Operand">
+                            <n />
+                            <o>
+                              <v n="Operand">""</v>
+                              <n n="Type" />
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">220L</v>
+                            </o>
+                            <o>
+                              <v n="Operand">""</v>
+                              <n n="Type" />
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">221L</v>
+                            </o>
+                            <o>
+                              <v n="Operand">"bWeight1ActuatorDown"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">222L</v>
+                            </o>
+                            <o>
+                              <v n="Operand">"bWeight1ActuatorUp"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">223L</v>
+                            </o>
+                            <o>
+                              <v n="Operand">""</v>
+                              <n n="Type" />
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">224L</v>
+                            </o>
+                          </l2>
+                        </o>
+                        <o n="Flags" t="Flags">
+                          <v n="Flags">0</v>
+                          <v n="Fixed">true</v>
+                          <v n="Extensible">false</v>
+                        </o>
+                        <n n="InputFlags" />
+                        <l2 n="InputItems" cet="BoxTreeOperand">
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">"bEStop"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">196L</v>
+                            </o>
+                            <v n="Id">195L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">"bEnable OR eState=E_Station.ePreparingToDisable"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">198L</v>
+                            </o>
+                            <v n="Id">197L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">""</v>
+                              <n n="Type" />
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">226L</v>
+                            </o>
+                            <v n="Id">225L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">""</v>
+                              <n n="Type" />
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">228L</v>
+                            </o>
+                            <v n="Id">227L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">""</v>
+                              <n n="Type" />
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">230L</v>
+                            </o>
+                            <v n="Id">229L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">""</v>
+                              <n n="Type" />
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">232L</v>
+                            </o>
+                            <v n="Id">231L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">"bWeight1ActuatorSensorUp"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">234L</v>
+                            </o>
+                            <v n="Id">233L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">"T#1s"</v>
+                              <v n="Type">"TIME"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">236L</v>
+                            </o>
+                            <v n="Id">235L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">"T#1s"</v>
+                              <v n="Type">"TIME"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">238L</v>
+                            </o>
+                            <v n="Id">237L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">""</v>
+                              <n n="Type" />
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">240L</v>
+                            </o>
+                            <v n="Id">239L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">"'Siłownik Waga 1'"</v>
+                              <v n="Type">"STRING(INT#15)"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">242L</v>
+                            </o>
+                            <v n="Id">241L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">"2"</v>
+                              <v n="Type">"INT"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">244L</v>
+                            </o>
+                            <v n="Id">243L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">""</v>
+                              <n n="Type" />
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">246L</v>
+                            </o>
+                            <v n="Id">245L</v>
+                          </o>
+                        </l2>
+                        <o n="InputParam" t="ParamList">
+                          <l2 n="Names" cet="String">
+                            <v>bEStop</v>
+                            <v>bEnable</v>
+                            <v>bRunToPosition1</v>
+                            <v>bRunToPosition2</v>
+                            <v>bReset</v>
+                            <v>bPosition1Sensor</v>
+                            <v>bPosition2Sensor</v>
+                            <v>tCheckPosition1</v>
+                            <v>tCheckPosition2</v>
+                            <v>rStationIndex</v>
+                            <v>sStationName</v>
+                            <v>iMode</v>
+                            <v>bIgnoreErrors</v>
+                          </l2>
+                          <l2 n="Types" cet="String">
+                            <v>BOOL</v>
+                            <v>BOOL</v>
+                            <v>BOOL</v>
+                            <v>BOOL</v>
+                            <v>BOOL</v>
+                            <v>BOOL</v>
+                            <v>BOOL</v>
+                            <v>TIME</v>
+                            <v>TIME</v>
+                            <v>REAL</v>
+                            <v>WSTRING</v>
+                            <v>INT</v>
+                            <v>BOOL</v>
+                          </l2>
+                        </o>
+                        <o n="OutputParam" t="ParamList">
+                          <l2 n="Names" cet="String">
+                            <v>bError</v>
+                            <v>udiErrorID</v>
+                            <v>sErrorDescription</v>
+                            <v>bValveCoil1</v>
+                            <v>bValveCoil2</v>
+                            <v>eState</v>
+                          </l2>
+                          <l2 n="Types" cet="String">
+                            <v>BOOL</v>
+                            <v>UDINT</v>
+                            <v>STRING(200)</v>
+                            <v>BOOL</v>
+                            <v>BOOL</v>
+                            <v>E_Actuator</v>
+                          </l2>
+                        </o>
+                        <v n="CallType" t="Operator">FunctionBlock</v>
+                        <v n="EN">false</v>
+                        <v n="ENO">false</v>
+                        <n n="STSnippet" />
+                        <v n="ContainsExtensibleInputs">false</v>
+                        <v n="ProvidesSTSnippet">false</v>
+                        <v n="Id">219L</v>
+                      </o>
+                    </l2>
+                    <l2 n="Connectors" />
+                    <v n="Id">1L</v>
+                  </o>
+                  <o>
+                    <v n="ILActive">false</v>
+                    <v n="FBDValid">false</v>
+                    <v n="ILValid">false</v>
+                    <l2 n="ILLines" />
+                    <v n="Comment">""</v>
+                    <v n="Title">""</v>
+                    <v n="Label">""</v>
+                    <v n="OutCommented">false</v>
+                    <l2 n="NetworkItems" cet="BoxTreeBox">
+                      <o>
+                        <v n="BoxType">"FB_Valve_O"</v>
+                        <o n="Instance" t="Operand">
+                          <v n="Operand">"fbWeight2Actuator"</v>
+                          <v n="Type">"FB_Valve_O"</v>
+                          <v n="Comment">""</v>
+                          <v n="SymbolComment">""</v>
+                          <v n="Address">""</v>
+                          <o n="Flags" t="Flags">
+                            <v n="Flags">0</v>
+                            <v n="Fixed">false</v>
+                            <v n="Extensible">false</v>
+                          </o>
+                          <v n="LValue">false</v>
+                          <v n="Boolean">false</v>
+                          <v n="IsInstance">true</v>
+                          <v n="Id">247L</v>
+                        </o>
+                        <o n="OutputItems" t="OutputItemList">
+                          <l2 n="OutputItems" cet="Operand">
+                            <n />
+                            <o>
+                              <v n="Operand">""</v>
+                              <n n="Type" />
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">249L</v>
+                            </o>
+                            <o>
+                              <v n="Operand">""</v>
+                              <n n="Type" />
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">250L</v>
+                            </o>
+                            <o>
+                              <v n="Operand">"bWeight2ActuatorDown"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">251L</v>
+                            </o>
+                            <o>
+                              <v n="Operand">"bWeight2ActuatorUp"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">252L</v>
+                            </o>
+                            <o>
+                              <v n="Operand">""</v>
+                              <n n="Type" />
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">253L</v>
+                            </o>
+                          </l2>
+                        </o>
+                        <o n="Flags" t="Flags">
+                          <v n="Flags">0</v>
+                          <v n="Fixed">true</v>
+                          <v n="Extensible">false</v>
+                        </o>
+                        <n n="InputFlags" />
+                        <l2 n="InputItems" cet="BoxTreeOperand">
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">"bEStop"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">202L</v>
+                            </o>
+                            <v n="Id">201L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">"bEnable OR eState=E_Station.ePreparingToDisable"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">204L</v>
+                            </o>
+                            <v n="Id">203L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">""</v>
+                              <n n="Type" />
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">255L</v>
+                            </o>
+                            <v n="Id">254L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">""</v>
+                              <n n="Type" />
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">257L</v>
+                            </o>
+                            <v n="Id">256L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">""</v>
+                              <n n="Type" />
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">259L</v>
+                            </o>
+                            <v n="Id">258L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">""</v>
+                              <n n="Type" />
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">261L</v>
+                            </o>
+                            <v n="Id">260L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">"bWeight2ActuatorSensorUp"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">263L</v>
+                            </o>
+                            <v n="Id">262L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">"T#1s"</v>
+                              <v n="Type">"TIME"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">265L</v>
+                            </o>
+                            <v n="Id">264L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">"T#1s"</v>
+                              <v n="Type">"TIME"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">267L</v>
+                            </o>
+                            <v n="Id">266L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">""</v>
+                              <n n="Type" />
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">269L</v>
+                            </o>
+                            <v n="Id">268L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">"'Siłownik Waga 2'"</v>
+                              <v n="Type">"STRING(INT#15)"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">271L</v>
+                            </o>
+                            <v n="Id">270L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">"2"</v>
+                              <v n="Type">"INT"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">273L</v>
+                            </o>
+                            <v n="Id">272L</v>
+                          </o>
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">""</v>
+                              <n n="Type" />
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">275L</v>
+                            </o>
+                            <v n="Id">274L</v>
+                          </o>
+                        </l2>
+                        <o n="InputParam" t="ParamList">
+                          <l2 n="Names" cet="String">
+                            <v>bEStop</v>
+                            <v>bEnable</v>
+                            <v>bRunToPosition1</v>
+                            <v>bRunToPosition2</v>
+                            <v>bReset</v>
+                            <v>bPosition1Sensor</v>
+                            <v>bPosition2Sensor</v>
+                            <v>tCheckPosition1</v>
+                            <v>tCheckPosition2</v>
+                            <v>rStationIndex</v>
+                            <v>sStationName</v>
+                            <v>iMode</v>
+                            <v>bIgnoreErrors</v>
+                          </l2>
+                          <l2 n="Types" cet="String">
+                            <v>BOOL</v>
+                            <v>BOOL</v>
+                            <v>BOOL</v>
+                            <v>BOOL</v>
+                            <v>BOOL</v>
+                            <v>BOOL</v>
+                            <v>BOOL</v>
+                            <v>TIME</v>
+                            <v>TIME</v>
+                            <v>REAL</v>
+                            <v>WSTRING</v>
+                            <v>INT</v>
+                            <v>BOOL</v>
+                          </l2>
+                        </o>
+                        <o n="OutputParam" t="ParamList">
+                          <l2 n="Names" cet="String">
+                            <v>bError</v>
+                            <v>udiErrorID</v>
+                            <v>sErrorDescription</v>
+                            <v>bValveCoil1</v>
+                            <v>bValveCoil2</v>
+                            <v>eState</v>
+                          </l2>
+                          <l2 n="Types" cet="String">
+                            <v>BOOL</v>
+                            <v>UDINT</v>
+                            <v>STRING(200)</v>
+                            <v>BOOL</v>
+                            <v>BOOL</v>
+                            <v>E_Actuator</v>
+                          </l2>
+                        </o>
+                        <v n="CallType" t="Operator">FunctionBlock</v>
+                        <v n="EN">false</v>
+                        <v n="ENO">false</v>
+                        <n n="STSnippet" />
+                        <v n="ContainsExtensibleInputs">false</v>
+                        <v n="ProvidesSTSnippet">false</v>
+                        <v n="Id">248L</v>
+                      </o>
+                    </l2>
+                    <l2 n="Connectors" />
+                    <v n="Id">36L</v>
+                  </o>
+                  <o>
+                    <v n="ILActive">false</v>
+                    <v n="FBDValid">false</v>
+                    <v n="ILValid">false</v>
+                    <l2 n="ILLines" />
+                    <v n="Comment">""</v>
+                    <v n="Title">""</v>
+                    <v n="Label">""</v>
+                    <v n="OutCommented">false</v>
+                    <l2 n="NetworkItems" />
+                    <l2 n="Connectors" />
+                    <v n="Id">71L</v>
+                  </o>
+                  <o>
+                    <v n="ILActive">false</v>
+                    <v n="FBDValid">false</v>
+                    <v n="ILValid">false</v>
+                    <l2 n="ILLines" />
+                    <v n="Comment">""</v>
+                    <v n="Title">""</v>
+                    <v n="Label">""</v>
+                    <v n="OutCommented">false</v>
+                    <l2 n="NetworkItems" />
+                    <l2 n="Connectors" />
+                    <v n="Id">211L</v>
+                  </o>
+                </l2>
+                <v n="BranchCounter">0</v>
+                <v n="ValidIds">true</v>
+              </o>
+            </Data>
+            <TypeList>
+              <Type n="Boolean">System.Boolean</Type>
+              <Type n="BoxTreeBox">{acfc6f68-8e3a-4af5-bf81-3dd512095a46}</Type>
+              <Type n="BoxTreeOperand">{9de7f100-1b87-424c-a62e-45b0cfc85ed2}</Type>
+              <Type n="Flags">{668066f2-6069-46b3-8962-8db8d13d7db2}</Type>
+              <Type n="Int32">System.Int32</Type>
+              <Type n="Int64">System.Int64</Type>
+              <Type n="Network">{d9a99d73-b633-47db-b876-a752acb25871}</Type>
+              <Type n="NWLImplementationObject">{25e509de-33d4-4447-93f8-c9e4ea381c8b}</Type>
+              <Type n="Operand">{c9b2f165-48a2-4a45-8326-3952d8a3d708}</Type>
+              <Type n="Operator">{bffb3c53-f105-4e85-aba2-e30df579d75f}</Type>
+              <Type n="OutputItemList">{f40d3e09-c02c-4522-a88c-dac23558cfc4}</Type>
+              <Type n="ParamList">{71496971-9e0c-4677-a832-b9583b571130}</Type>
+              <Type n="String">System.String</Type>
+            </TypeList>
+          </XmlArchive>
+        </NWL>
+      </Implementation>
+    </Action>
+    <Action Name="ACT_Control" Id="{6f72f9f5-d04d-4158-bbef-e34d8e1e4bfc}">
+      <Implementation>
+        <ST><![CDATA[
+
+CASE eState OF
+	
+	
+	E_Station.eDisabled: 					// Stan nieaktywnosci (Stacja wyłączona)
+	
+		IF bEnable THEN
+			eState											:= E_Station.ePreparingToReady;
+		END_IF	
+	//------------------------------------------------------------------------------
+	
+	
+	E_Station.eAborted: 					// Stan bezpiecznego zatrzymania (po Abortingu)
+	
+		fbWeight1Actuator.bRunToPosition1					:= NOT bWeight1ActuatorSensorUp;
+		fbWeight1Actuator.bRunToPosition2					:= bWeight1ActuatorSensorUp;
+		
+		fbWeight2Actuator.bRunToPosition1					:= NOT bWeight2ActuatorSensorUp;
+		fbWeight2Actuator.bRunToPosition2					:= bWeight2ActuatorSensorUp;		
+	
+		IF bEStop AND tonAbortedDelay.Q THEN
+			eState											:= E_Station.ePreparingToReady;
+		END_IF	
+	//------------------------------------------------------------------------------
+
+	
+	E_Station.eAborting:                 	// Stan bezpiecznego zatrzymywania (po EStopie)
+		
+		eState												:= E_Station.eAborted;	
+		eRunningState										:= E_WeightLiftStationState.eDisabled;
+	//------------------------------------------------------------------------------
+	
+	
+	E_Station.eError:                 	 	// Stan błędu 	
+	
+		IF fbWeight1Actuator.bError THEN
+			fbWeight1Actuator.bRunToPosition1				:= FALSE;		//Zdejmuje bity sterujące
+			fbWeight1Actuator.bRunToPosition2				:= FALSE;
+		END_IF
+		
+		IF fbWeight2Actuator.bError THEN
+			fbWeight2Actuator.bRunToPosition1				:= FALSE;		
+			fbWeight2Actuator.bRunToPosition2				:= FALSE;
+		END_IF		
+		
+		IF bReset THEN
+			eState											:= E_Station.eResetting;
+		END_IF
+	//------------------------------------------------------------------------------
+
+	
+	E_Station.eResetting:					// Stan resetowania bledu (po Errorze)
+		
+		fbWeight1Actuator.bReset							:= fbWeight1Actuator.bError;		//Resetuje jeżeli jest błąd
+		fbWeight2Actuator.bReset							:= fbWeight2Actuator.bError;		//Resetuje jeżeli jest błąd
+	
+		IF NOT bError THEN
+			udiErrorNr										:= 0;
+			sErrorDescription								:= '';
+			sErrorDescription2								:= '';
+			eState											:= E_Station.ePreparingToReady;
+		END_IF
+		
+		IF tonResetDelay.Q AND bError THEN
+			eState											:= E_Station.eError;
+		END_IF
+	//------------------------------------------------------------------------------
+
+	
+	E_Station.eManualMovement:     			// Stan ruchów manualnych  
+	
+		ACT_ManualMovements();
+		
+		IF NOT bManualMovement THEN
+			
+			fbWeight1Actuator.bRunToPosition1				:= bLastStatePositionWeight1ActuatorDown;// OR NOT bWeight1ActuatorSensorUp;		//Waga 1
+			fbWeight1Actuator.bRunToPosition2				:= bLastStatePositionWeight1ActuatorUp;// OR bWeight1ActuatorSensorUp;
+			bWeight1ActuatorManualDown						:= FALSE;
+			bWeight1ActuatorManualUp						:= FALSE;
+			
+			fbWeight2Actuator.bRunToPosition1				:= bLastStatePositionWeight2ActuatorDown;// OR NOT bWeight2ActuatorSensorUp;		//Waga 2
+			fbWeight2Actuator.bRunToPosition2				:= bLastStatePositionWeight2ActuatorUp;// OR bWeight2ActuatorSensorUp;
+			bWeight2ActuatorManualDown						:= FALSE;
+			bWeight2ActuatorManualUp						:= FALSE;
+			
+			eState											:= E_Station.eReady;
+		END_IF
+	//------------------------------------------------------------------------------
+	
+	
+	E_Station.eHoming:						// Stan bazowania
+	
+		bHomingDone											:= FALSE;
+		ACT_Homing();
+		
+		IF NOT bHoming THEN
+			eState											:= E_Station.ePreparingToReady;
+		END_IF
+	//------------------------------------------------------------------------------
+	
+	
+	E_Station.eHomingDone:                  // Stan wykonania bazowania
+	
+		bHomingDone											:= TRUE;
+		
+		IF NOT bHoming THEN
+			eState											:= E_Station.eReady;
+		END_IF
+	//------------------------------------------------------------------------------
+	
+	
+	E_Station.ePreparingToReady:            // Stan przygotowywania do gotowosci (zawsze przed Ready)
+	
+		fbWeight1Actuator.bRunToPosition1					:= NOT bWeight1ActuatorSensorUp;
+		fbWeight1Actuator.bRunToPosition2					:= bWeight1ActuatorSensorUp;
+		
+		fbWeight2Actuator.bRunToPosition1					:= NOT bWeight2ActuatorSensorUp;
+		fbWeight2Actuator.bRunToPosition2					:= bWeight2ActuatorSensorUp;
+		
+		IF tonPreparingToReadyDelay.Q THEN
+			eState											:= E_Station.eReady;
+		END_IF	
+		
+	//------------------------------------------------------------------------------
+	
+	
+	E_Station.ePreparingToDisable:          // Stan przygotowywania do nieaktywnosci (po wyłączeniu Enable)	
+		
+		fbWeight1Actuator.bRunToPosition2					:= FALSE;				
+		fbWeight2Actuator.bRunToPosition2					:= FALSE;				
+		
+		fbWeight1Actuator.bRunToPosition1					:= TRUE;				//Opuszczamy wagę 1
+		fbWeight2Actuator.bRunToPosition1					:= TRUE;				//Opuszczamy wagę 2
+		
+		bWeight2CheckingDelay								:= FALSE;
+		
+		bHomingDone											:= FALSE;
+		
+		iFormsCounterWeight2								:= 0;
+		iFormsCounter										:= 0;
+			
+		IF fbWeight1Actuator.eState = E_Actuator.eDoneToPosition1 AND fbWeight2Actuator.eState = E_Actuator.eDoneToPosition1 THEN
+			
+		   fbWeight1Actuator.bRunToPosition1				:= FALSE;
+		   fbWeight2Actuator.bRunToPosition1				:= FALSE;
+		   
+		   eState											:= E_Station.eDisabled;
+		   eRunningState									:= E_WeightLiftStationState.eDisabled;
+		END_IF
+		
+	//------------------------------------------------------------------------------
+	
+	
+	E_Station.eReady:						// Stan gotowosci
+	
+		IF bRun AND bHomingDone AND NOT bCycleDone THEN
+			
+			bWeight2CheckingDelay							:= FALSE;	
+		
+			eRunningState									:= E_WeightLiftStationState.eReady;
+			eState											:= E_Station.eStarting;
+		END_IF
+		
+		IF bHoming THEN
+			eState											:= E_Station.eHoming;
+		END_IF
+		
+		IF bManualMovement THEN
+			
+			bLastStatePositionWeight1ActuatorDown			:= fbWeight1Actuator.bRunToPosition1 OR NOT bWeight1ActuatorSensorUp;			//Stan wagi 1
+			bLastStatePositionWeight1ActuatorUp				:= fbWeight1Actuator.bRunToPosition2 OR bWeight1ActuatorSensorUp;
+			bWeight1ActuatorManualDown						:= fbWeight1Actuator.bRunToPosition1 OR NOT bWeight1ActuatorSensorUp;
+			bWeight1ActuatorManualUp						:= fbWeight1Actuator.bRunToPosition2 OR bWeight1ActuatorSensorUp;	
+			
+			bLastStatePositionWeight2ActuatorDown			:= fbWeight2Actuator.bRunToPosition1 OR NOT bWeight2ActuatorSensorUp;			//Stan wagi 2
+			bLastStatePositionWeight2ActuatorUp				:= fbWeight2Actuator.bRunToPosition2 OR bWeight2ActuatorSensorUp;
+			bWeight2ActuatorManualDown						:= fbWeight2Actuator.bRunToPosition1 OR NOT bWeight2ActuatorSensorUp;
+			bWeight2ActuatorManualUp						:= fbWeight2Actuator.bRunToPosition2 OR bWeight2ActuatorSensorUp;		
+			
+			eState											:= E_Station.eManualMovement;
+		END_IF
+		
+		IF NOT bRun THEN
+			bCycleDone										:= FALSE;
+		END_IF
+	//------------------------------------------------------------------------------
+	
+	
+	E_Station.eStopping:					// Stan zatrzymywania 
+		
+		IF bCycleDone THEN
+			bCycleDone										:= FALSE;
+			eRunningState									:= E_WeightLiftStationState.eReady;
+		END_IF	
+	
+		ACT_Running();
+		
+		//Jeśli są podniesione
+		IF (eRunningState = E_WeightLiftStationState.eWeighingCycleON OR eRunningState =  E_WeightLiftStationState.eWeighingCycleStart) THEN
+			
+			eRunningState									:= E_WeightLiftStationState.eReady;			//Dodałem 28.03.2022
+			eState											:= E_Station.eReady;
+			
+		END_IF
+		
+		//Jeśli ni mamy żadnych formatek
+		IF NOT arrWeightPackageState[1].bFormPresent AND NOT arrWeightPackageState[2].bFormPresent AND NOT (eRunningState = E_WeightLiftStationState.eDepartureOfForms) THEN
+			
+			eRunningState									:= E_WeightLiftStationState.eReady;			//Dodałem 28.03.2022
+			eState											:= E_Station.eReady;
+			
+		END_IF
+		
+		//Tyle wag ile formatek
+		IF (bWeight1ActuatorSensorUp = arrWeightPackageState[1].bFormPresent) AND (bWeight2ActuatorSensorUp = arrWeightPackageState[2].bFormPresent) AND NOT (eRunningState = E_WeightLiftStationState.eDepartureOfForms) THEN
+		   
+		   	eRunningState									:= E_WeightLiftStationState.eReady;			//Dodałem 28.03.2022
+		    eState											:= E_Station.eReady;
+		   
+		END_IF
+		
+		//Czas zatrzymywania 
+		IF tonStoppingTime.Q THEN
+			
+			eRunningState									:= E_WeightLiftStationState.eReady;			//Dodałem 28.03.2022
+			eState											:= E_Station.eReady;
+			
+		END_IF
+		
+		
+	//------------------------------------------------------------------------------
+	
+	
+	E_Station.eStarting:                  	// Stan uruchamiania (po Ready)
+	
+		eState												:= E_Station.eRunning;
+	//------------------------------------------------------------------------------
+	
+	
+	E_Station.eRunning:               		// Stan wykonywania cyklu (po Startingu), w tym stanie osobny
+		
+		ACT_Running();
+		
+		IF NOT bRun THEN
+			eState											:= E_Station.eStopping;
+		END_IF
+		
+		IF bCycleDone THEN
+			eState											:= E_Station.eReady;
+		END_IF
+	//------------------------------------------------------------------------------
+	
+	
+END_CASE]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="ACT_ErrorHandling" Id="{c605b89d-aeef-462f-b420-04140d7ef55e}">
+      <Implementation>
+        <ST><![CDATA[
+bStateError								:= (eState = E_Station.eError) OR (eState = E_Station.eResetting);
+
+//Błąd Waga 1 
+IF fbWeight1Actuator.bError THEN
+	udiErrorNr							:= udiStationIndex * 100 + fbWeight1Actuator.udiErrorID + 10;
+	sErrorDescription					:= (CONCAT(CONCAT(fbWeight1Actuator.sStationName,': '),fbWeight1Actuator.sErrorDescription));
+	//sErrorDescription2					:= 'Siłownik Waga 1';
+END_IF
+
+//Błąd Waga 2
+IF fbWeight2Actuator.bError THEN
+	udiErrorNr							:= udiStationIndex * 100 + fbWeight2Actuator.udiErrorID + 20;
+	sErrorDescription					:= (CONCAT(CONCAT(fbWeight2Actuator.sStationName,': '),fbWeight2Actuator.sErrorDescription));//WSTRING_TO_STRING(WCONCAT(WCONCAT(fbWeight2Actuator.sStationName,": "),fbWeight2Actuator.sErrorDescription));
+	//sErrorDescription2					:= 'Siłownik Waga 2';
+END_IF
+
+bError									:= fbWeight1Actuator.bError OR fbWeight2Actuator.bError;
+
+IF NOT bEnable OR NOT bEStop THEN
+	bError								:= FALSE;
+END_IF
+
+IF bError AND NOT bStateError THEN
+	eState								:= E_Station.eError;
+END_IF
+
+sErrorStationName						:= sStationName;]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="ACT_Homing" Id="{65f19f8e-e0b3-4090-a023-cd4df58506f6}">
+      <Implementation>
+        <ST><![CDATA[fbWeight1Actuator.bRunToPosition2						:= FALSE;
+fbWeight2Actuator.bRunToPosition2						:= FALSE;
+
+fbWeight1Actuator.bRunToPosition1						:= TRUE;
+fbWeight2Actuator.bRunToPosition1						:= TRUE;
+
+bWeight2CheckingDelay									:= FALSE;
+
+iFormsCounterWeight2									:= 0;
+
+
+IF fbWeight1Actuator.eState = E_Actuator.eDoneToPosition1 AND fbWeight2Actuator.eState = E_Actuator.eDoneToPosition1 THEN
+   
+	eState												:= E_Station.eHomingDone;
+END_IF]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="ACT_ManualMovements" Id="{86287eb2-34ea-4897-a6ae-d188d1f1e4b8}">
+      <Implementation>
+        <ST><![CDATA[
+
+IF NOT bRun THEN
+	
+	IF rtManualWeight1Up.Q THEN
+		bWeight1ActuatorManualDown					:= FALSE;
+	END_IF
+	IF rtManualWeight2Up.Q THEN
+		bWeight2ActuatorManualDown					:= FALSE;
+	END_IF
+		
+	IF rtManualWeight1Down.Q THEN
+		bWeight1ActuatorManualUp					:= FALSE;
+	END_IF
+	IF rtManualWeight2Down.Q THEN
+		bWeight2ActuatorManualUp					:= FALSE;
+	END_IF
+	
+
+	fbWeight1Actuator.bRunToPosition1				:= bWeight1ActuatorManualDown;			
+	fbWeight1Actuator.bRunToPosition2				:= bWeight1ActuatorManualUp;
+	
+	fbWeight2Actuator.bRunToPosition1				:= bWeight2ActuatorManualDown;			
+	fbWeight2Actuator.bRunToPosition2				:= bWeight2ActuatorManualUp;	
+
+END_IF
+
+
+IF bHoming THEN
+	eState											:= E_Station.eHoming;
+END_IF
+
+
+IF NOT bEnable THEN
+	eState											:= E_Station.eReady;
+END_IF
+
+
+IF bRun OR bHoming OR NOT bEnable THEN
+	
+	bWeight1ActuatorManualDown						:= FALSE;
+	bWeight1ActuatorManualUp						:= FALSE;
+	
+	bWeight2ActuatorManualDown						:= FALSE;
+	bWeight2ActuatorManualUp						:= FALSE;
+	
+END_IF]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="ACT_Running" Id="{470662ab-5a93-4552-b87a-f9e30bb6f936}">
+      <Implementation>
+        <ST><![CDATA[
+//Przechodzimy do naprawy
+IF tonRepairDelay.Q THEN
+	eRunningState										:= E_WeightLiftStationState.eReprair;
+END_IF
+
+CASE eRunningState OF
+	
+	E_WeightLiftStationState.eReprair:		//Naprawa
+		
+		fbWeight1Actuator.bRunToPosition2				:= FALSE;
+		fbWeight2Actuator.bRunToPosition2				:= FALSE;
+		
+		fbWeight1Actuator.bRunToPosition1				:= TRUE;
+		fbWeight2Actuator.bRunToPosition1				:= TRUE;
+		
+		bWeight1ActuatorDelayON							:= FALSE;
+		bWeight2ActuatorDelayON							:= FALSE;
+		
+		bWeight2CheckingDelay							:= FALSE;	//Dodałem do testów
+		
+		iFormsCounterWeight2							:= 0;
+		
+		IF NOT arrWeightPackageState[1].bFormPresent AND NOT arrWeightPackageState[2].bFormPresent THEN
+			
+			IF NOT arrAfterDispencersPackageState[1].bFormPresent AND NOT arrAfterDispencersPackageState[2].bFormPresent THEN
+				IF tonRepairOnDelay.Q THEN
+					eRunningState							:= E_WeightLiftStationState.ePrepareToStorageOfForms;	
+				END_IF
+			END_IF
+		
+		END_IF
+		
+	
+
+	
+	E_WeightLiftStationState.eDisabled :	//Stan wyłączony
+	
+		eRunningState									:= E_WeightLiftStationState.eReady;
+		
+	//----------------------------------------------------------------------------------------
+		
+	E_WeightLiftStationState.eReady :		//Sprawdzam co się dzieje ze stacją
+	
+		//Przechodzę do magazynowania formatek
+		IF NOT (bWeight1FormSensor AND bWeight2FormSensor) THEN //Nie ma wszystkich formatek
+		
+			IF NOT (arrWeightPackageState[1].bWeighed OR arrWeightPackageState[1].bWeightAborted) AND NOT (arrWeightPackageState[2].bWeighed OR arrWeightPackageState[2].bWeightAborted) THEN	//Wszystkie formatkie nie są zważone lub przerwane ważenie 	
+					
+				eRunningState							:= E_WeightLiftStationState.ePrepareToStorageOfForms;
+					
+			END_IF
+			
+			IF NOT arrWeightPackageState[1].bFormPresent AND NOT arrWeightPackageState[2].bFormPresent THEN
+				eRunningState							:= E_WeightLiftStationState.ePrepareToStorageOfForms;
+			END_IF
+			
+		END_IF
+		
+
+		//Przechodzę do magazynowania formatek
+		IF bWeight1ActuatorSensorUp OR bWeight2ActuatorSensorUp THEN
+		
+			IF (NOT arrWeightPackageState[1].bFormPresent AND NOT arrWeightPackageState[2].bFormPresent) OR
+			   (NOT bWeight1FormSensor AND NOT bWeight2FormSensor) THEN
+			   
+				eRunningState							:= E_WeightLiftStationState.ePrepareToStorageOfForms;
+				
+			END_IF
+		
+		END_IF
+(*
+		
+		IF 	(bWeight1ActuatorSensorUp AND bWeight1FormSensor) OR (bWeight2ActuatorSensorUp AND bWeight2ActuatorSensorUp) OR 
+			(bWeight3ActuatorSensorUp AND bWeight3ActuatorSensorUp) OR (bWeight4ActuatorSensorUp AND bWeight4ActuatorSensorUp) THEN
+		
+				eRunningState							:= E_WeightLiftStationState.eStorageOfForms;
+				
+		END_IF
+*)		
+			
+		
+	
+		
+	
+		//Przechodzę do ważenia formatek
+		IF bWeight1FormSensor AND bWeight2FormSensor THEN //Mamy wszystkie formateki
+		
+			IF bWeight1ActuatorSensorUp AND bWeight2ActuatorSensorUp THEN		//Wszystkie wagi są podniesione
+			
+				IF NOT (arrWeightPackageState[1].bWeighed OR arrWeightPackageState[1].bWeightAborted) OR NOT (arrWeightPackageState[2].bWeighed OR arrWeightPackageState[2].bWeightAborted) THEN 	//Jeżeli chociaż jedna formatka nie została zważona 
+				   
+					eRunningState						:= E_WeightLiftStationState.eWeighingCycleStart;
+				   
+				END_IF
+			
+			END_IF	
+		
+		END_IF
+		
+		
+		//Przechodzę do opuszczanie formatek
+		IF bWeight1FormSensor AND bWeight2FormSensor THEN //Mamy wszystkie formateki
+		
+			IF bWeight1ActuatorSensorUp AND bWeight2ActuatorSensorUp THEN		//Wszystkie wagi są podniesione
+				
+				IF (arrWeightPackageState[1].bWeighed OR arrWeightPackageState[1].bWeightAborted) AND (arrWeightPackageState[2].bWeighed OR arrWeightPackageState[2].bWeightAborted) THEN		//Wsystkie formatki są zważone lub przerwane waż	
+					
+				   IF bCanReleaseForms THEN
+				   		eRunningState						:= E_WeightLiftStationState.eWeightLiftDown;
+				   ELSE
+						eRunningState						:= E_WeightLiftStationState.eWeighingCycleON;
+				   END_IF
+				END_IF
+			END_IF	
+		
+		END_IF
+		
+		//Przechodzę do wypuszczania formatek
+		IF bWeight1FormSensor OR bWeight2FormSensor THEN	//Mamy formatkę
+				
+			IF NOT bWeight1ActuatorSensorUp AND NOT bWeight2ActuatorSensorUp THEN		//Wagi są opuszczone 
+				
+				IF (arrWeightPackageState[1].bWeighed OR arrWeightPackageState[1].bWeightAborted) OR (arrWeightPackageState[2].bWeighed OR arrWeightPackageState[2].bWeightAborted) THEN	//Mamy zważoną formatkę
+				   
+					eRunningState						:= E_WeightLiftStationState.eWeightLiftDown;
+				   
+				END_IF
+				
+			END_IF
+		
+		END_IF
+	//----------------------------------------------------------------------------------------	
+
+	E_WeightLiftStationState.ePrepareToStorageOfForms: //Przygotowywanie do magazynowania formatek
+		
+		fbWeight1Actuator.bRunToPosition1				:= NOT bWeight1FormSensor;
+		fbWeight2Actuator.bRunToPosition1				:= NOT bWeight2FormSensor OR (bWeight2FormSensor AND fbWeight1Actuator.bRunToPosition1);
+		
+		fbWeight1Actuator.bRunToPosition2				:= NOT fbWeight1Actuator.bRunToPosition1;
+		fbWeight2Actuator.bRunToPosition2				:= NOT fbWeight2Actuator.bRunToPosition1;
+		
+		eRunningState									:=  E_WeightLiftStationState.eStorageOfForms;	
+	//----------------------------------------------------------------------------------------		
+	
+	E_WeightLiftStationState.eStorageOfForms:	//Magazynuje formatki
+		
+		
+		//Waga 1=====================================================================================================================
+		IF NOT bWeight1ActuatorSensorUp THEN	//Brak formatki na Waga 1
+			
+			IF rtWeight1FormSensor.Q THEN		//Zbocze nar (Pojawiła się formatka)
+				bWeight1ActuatorDelayON					:= TRUE;
+			END_IF 	
+			
+			IF tonWeight1ActuatorDelay.Q THEN	//Podnoszenie Waga 1
+				fbWeight1Actuator.bRunToPosition1		:= FALSE;
+				fbWeight1Actuator.bRunToPosition2		:= TRUE;
+			END_IF
+			
+		END_IF
+		
+		IF bWeight1ActuatorSensorUp THEN //Przygotowuję podkład, jeśli będę potrzebował zmian 
+			bWeight1ActuatorDelayON					:= FALSE;
+		END_IF
+		
+		
+		//Waga 2=====================================================================================================================
+		IF NOT bWeight2ActuatorSensorUp THEN	//Brak formatki na Waga 2
+		
+			IF (rtWeight2FormSensor.Q AND iFormsCounterWeight2 = 1) OR                  //iFormsCounter = 4) OR
+			   (rtWeight2FormSensor.Q AND fbWeight1Actuator.bRunToPosition2) THEN 		//Zbocze nar (Pojawiła się formatka)
+				bWeight2ActuatorDelayON					:= TRUE;
+			END_IF 
+			
+			IF tonWeight2ActuatorDelay.Q THEN	//Podnoszenie Waga 2
+				fbWeight2Actuator.bRunToPosition1		:= FALSE;
+				fbWeight2Actuator.bRunToPosition2		:= TRUE;//fbWeight1Actuator.bRunToPosition2;//
+			END_IF
+			
+		END_IF
+		
+		IF bWeight2ActuatorSensorUp THEN //Przygotowuję podkład, jeśli będę potrzebował zmian
+			bWeight2ActuatorDelayON						:= FALSE;
+		END_IF		
+		
+		IF ((bWeight1ActuatorSensorUp) AND (bWeight2ActuatorSensorUp)) OR tonFormsWaitingTime.Q THEN
+		   
+			bWeight1ActuatorDelayON						:= FALSE;
+			bWeight2ActuatorDelayON						:= FALSE;
+			
+			eRunningState								:= E_WeightLiftStationState.eWeighingCycleStart;
+		   
+		END_IF
+		
+		(*IF tonFormsWaitingTime.Q THEN
+			eRunningState								:= E_WeightLiftStationState.eWeighingCycleStart;
+		END_IF*)
+	//----------------------------------------------------------------------------------------
+	
+	
+	E_WeightLiftStationState.eWeighingCycleStart:	//Rozpoczęcie Ważenia
+	
+		IF bWeighingCycle THEN
+			eRunningState								:= E_WeightLiftStationState.eWeighingCycleON;
+		END_IF
+
+	//----------------------------------------------------------------------------------------
+
+	
+	E_WeightLiftStationState.eWeighingCycleON:	//Trwa ważenie
+	
+		IF (arrWeightPackageState[1].bWeighed OR arrWeightPackageState[1].bWeightAborted) AND (arrWeightPackageState[2].bWeighed OR arrWeightPackageState[2].bWeightAborted) THEN  //Czekam na przepisanie statusów z wag
+		   
+			IF bCanReleaseForms THEN			//Mogę wypuścić formatki
+				eRunningState							:= E_WeightLiftStationState.eWeightLiftDown;
+				
+				//DODAŁEM 29.03.2022
+				//IF arrAfterDispencersPackageState[1].bFormPresent OR arrAfterDispencersPackageState[2].bFormPresent THEN
+				//	eRunningState						:= E_WeightLiftStationState.eReprair;
+				//END_IF
+			
+
+			END_IF
+			
+		END_IF
+		IF NOT arrWeightPackageState[1].bFormPresent OR NOT arrWeightPackageState[2].bFormPresent THEN
+			eRunningState						:= E_WeightLiftStationState.eReprair;
+		END_IF
+		
+	//----------------------------------------------------------------------------------------
+	
+	
+	E_WeightLiftStationState.eWeightLiftDown:	//Opuszczanie formatek
+		
+		fbWeight1Actuator.bRunToPosition2				:= FALSE;	//Opuszczam Waga 1
+		fbWeight1Actuator.bRunToPosition1				:= TRUE;
+		
+		fbWeight2Actuator.bRunToPosition2				:= FALSE;	//Opuszczam Waga 2
+		fbWeight2Actuator.bRunToPosition1				:= TRUE;
+		
+		
+		IF fbWeight1Actuator.eState = E_Actuator.eDoneToPosition1 AND fbWeight2Actuator.eState = E_Actuator.eDoneToPosition1 THEN
+		   
+			eRunningState								:= E_WeightLiftStationState.eDepartureOfForms;
+			
+		END_IF	
+	//----------------------------------------------------------------------------------------
+
+	
+	E_WeightLiftStationState.eDepartureOfForms:	//Wypuszczamy formatki
+
+		IF ( NOT (arrWeightPackageState[1].bWeighed OR arrWeightPackageState[1].bWeightAborted) OR NOT arrWeightPackageState[1].bFormPresent) AND ( NOT (arrWeightPackageState[2].bWeighed OR arrWeightPackageState[2].bWeightAborted) OR NOT arrWeightPackageState[2].bFormPresent) THEN	
+		   
+			eRunningState								:= E_WeightLiftStationState.eDone;
+				
+		END_IF	
+	//----------------------------------------------------------------------------------------
+	
+	
+	E_WeightLiftStationState.eDone:				//Cykl skończony
+		
+		bCycleDone										:= TRUE;		//Wystawiam koniec cyklu
+		
+			
+END_CASE]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="ACT_Signals" Id="{c25860b1-b1aa-405c-9635-7c9b9b34f9d0}">
+      <Implementation>
+        <ST><![CDATA[//TONs
+tonWeight1ActuatorDelay		(IN:= eRunningState = E_WeightLiftStationState.eStorageOfForms AND bWeight1ActuatorDelayON, PT:= tWeight1ActuatorUpDelay);
+tonWeight2ActuatorDelay		(IN:= eRunningState = E_WeightLiftStationState.eStorageOfForms AND bWeight2ActuatorDelayON, PT:= tWeight2ActuatorUpDelay);
+
+tonWeight2FormSensorDelay	(IN:= eRunningState = E_WeightLiftStationState.eStorageOfForms AND bWeight2CheckingDelay,	PT:= T#40MS);
+
+tonPreparingToReadyDelay	(IN:= eState = E_Station.ePreparingToReady, 	PT:= T#300MS);
+tonAbortedDelay				(IN:= eState = E_Station.eAborted AND bEStop,	PT:= T#100MS);
+
+tonStoppingTime   			(IN:= eState = E_Station.eStopping,		PT:= T#5S);
+tonResetDelay		   		(IN:= eState = E_Station.eResetting, 	PT:= T#200MS);
+
+tonFormsWaitingTime			(IN:= eRunningState = E_WeightLiftStationState.eStorageOfForms AND (arrAfterDispencersPackageState[1].bFormPresent OR arrAfterDispencersPackageState[2].bFormPresent), PT:= T#10S);
+tonRepairWeightTime			(IN:= eRunningState = E_WeightLiftStationState.eStorageOfForms AND (arrWeightPackageState[1].bFormPresent), PT:=T#15S);
+
+	
+
+//=========================================================================================================================================================
+
+
+//Naprawa TON
+// dodane bo się mogło zawiesic 
+tonRepairWeightCycleStart(IN:=(eRunningState = E_WeightLiftStationState.eWeighingCycleStart OR eRunningState = E_WeightLiftStationState.eReady) 
+									AND eState=E_Station.eRunning, PT:=T#6S);
+
+tonRepairDelay				(IN:= (eState = E_Station.eRunning AND bRepair AND bCanReleaseForms) OR tonRepairWeightCycleStart.Q OR tonRepairWeightTime.Q , PT:= T#5S);
+
+tonRepairOnDelay			(IN:= eState = E_Station.eRunning AND eRunningState = E_WeightLiftStationState.eReprair AND bRepairAllRegistersAreEmpty, PT:= T#2S);
+
+bRepair	:= ((bWeight2ActuatorSensorUp AND NOT bWeight1ActuatorSensorUp)) OR
+		   ((NOT bWeight2ActuatorSensorUp AND bWeight2FormSensor) OR (NOT bWeight1ActuatorSensorUp AND bWeight1FormSensor)) OR
+		   ((bWeight2ActuatorSensorUp AND NOT bWeight2FormSensor) OR (bWeight1ActuatorSensorUp AND NOT bWeight1FormSensor));
+
+bRepairAllRegistersAreEmpty	:= (NOT arrWeightPackageState[1].bFormPresent AND NOT arrWeightPackageState[2].bFormPresent) AND
+							   (NOT arrAfterDispencersPackageState[1].bFormPresent AND NOT arrAfterDispencersPackageState[2].bFormPresent);
+
+
+
+//=========================================================================================================================================================
+
+//Triggers
+rtWeight1FormSensor(CLK:= bWeight1FormSensor);
+rtWeight2FormSensor(CLK:= bWeight2FormSensor);
+
+rtWeight2FormSensorWithDelay(CLK:= tonWeight2FormSensorDelay.Q);
+
+ftWeight1FormSensor(CLK:= bWeight1FormSensor);
+ftWeight2FormSensor(CLK:= bWeight2FormSensor);
+
+rtManualWeight1Up(CLK:= bWeight1ActuatorManualUp);
+rtManualWeight2Up(CLK:= bWeight2ActuatorManualUp);
+
+rtManualWeight1Down(CLK:= bWeight1ActuatorManualDown);
+rtManualWeight2Down(CLK:= bWeight2ActuatorManualDown);
+
+rtResetCycle(CLK:= bResetCycle);
+
+//Licznik formatek w górę
+IF ((eState = E_Station.eRunning OR eState = E_Station.eStopping) AND eRunningState = E_WeightLiftStationState.eStorageOfForms) OR 
+   (eState = E_Station.eReady AND (eFormsTransporterState = E_Station.eRunning OR eFormsTransporterState = E_Station.eStopping)) THEN //TU DODAŁEM!!!
+
+	//Opóźnienie 2 Waga	
+	IF ftWeight2FormSensor.Q THEN
+		bWeight2CheckingDelay								:= TRUE;
+	END_IF
+	IF rtWeight2FormSensor.Q THEN
+		bWeight2CheckingDelay								:= FALSE;
+	END_IF
+	//============================================================================================================================
+	
+	(*LICZENIE!!*)
+	
+	//Liczymy Formatki na Wadze 2 (Zbocze op
+	IF rtWeight2FormSensorWithDelay.Q THEN
+		iFormsCounterWeight2								:= iFormsCounterWeight2 + 1;
+	END_IF
+		
+END_IF
+
+
+//Musimy zresetować liczniki formatek
+IF (eState = E_Station.eRunning OR eState = E_Station.eStopping) AND (eRunningState = E_WeightLiftStationState.eWeighingCycleStart OR
+	eRunningState = E_WeightLiftStationState.eWeighingCycleON OR eRunningState = E_WeightLiftStationState.eWeightLiftDown)  THEN 
+	
+	iFormsCounterWeight2									:= 0;
+	
+END_IF
+
+//=========================================================================================================================================================
+
+IF bEnable THEN
+
+	IF eState <> E_Station.eDisabled AND eState <> E_Station.ePreparingToDisable THEN
+		IF rtResetCycle.Q THEN
+			ACT_Homing();																//Dodałem 25.03.2022
+			eState												:= E_Station.eReady;	//E_Station.ePreparingToDisable;
+		END_IF	
+	END_IF
+	
+END_IF
+
+//Wyłączenie stacji
+IF NOT bEnable THEN
+	IF eState <> E_Station.eDisabled AND eState <> E_Station.ePreparingToDisable THEN
+		eState												:= E_Station.ePreparingToDisable;
+	END_IF
+END_IF
+
+//Brak Safety
+IF NOT bEStop THEN
+	IF eState <> E_Station.eAborted AND eState <> E_Station.eAborting AND eState <> E_Station.eDisabled THEN
+		eState												:= E_Station.eAborting;
+	END_IF
+END_IF
+]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="ACT_Statistics" Id="{a32cc3e8-3e8d-4675-ae99-1931eb09b5f4}">
+      <Implementation>
+        <ST><![CDATA[
+//Statystyka do zliczania czasu cyklu 
+rtrigCycleTimerRead(CLK:=bCycleDone);
+
+	IF rtrigCycleTimerRead.Q THEN
+		tCycleTime:=tonCycleTimer.ET;
+		tt:=tt+1;
+	END_IF
+	
+tonCycleTimer(IN:= eRunningState>E_WeightLiftStationState.eReady , PT:=T#1D);]]></ST>
+      </Implementation>
+    </Action>
+  </POU>
+</TcPlcObject>

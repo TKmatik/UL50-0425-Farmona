@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Crc="3877272095" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{a8d93a58-f771-4a4e-b778-417d72bd3d3b}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TwinCAT3SafePlcProject</RootNamespace>
+    <AssemblyName>TwinCAT3SafePlcProject</AssemblyName>
+    <FileUpgradeFlags />
+    <UpgradeBackupLocation />
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetSystem>EL6900</TargetSystem>
+    <ProgrammingLanguage>Graphical Editor</ProgrammingLanguage>
+    <Worker>TKmatik</Worker>
+    <IntProjName>SafetyLogic</IntProjName>
+    <IsNewCreated>false</IsNewCreated>
+    <SPlcProjVersion>1.8.0.0</SPlcProjVersion>
+    <NextSdsId>182</NextSdsId>
+    <Name>SafetyLogic</Name>
+    <DocuEditor>DELL</DocuEditor>
+    <PlotDate>2024-04-15</PlotDate>
+    <CompanyName>Beckhoff Automation GmbH &amp; Co. KG</CompanyName>
+    <CompanyLogo>Beckhoff Automation GmbH &amp; Co. KG</CompanyLogo>
+    <FbPerPage>0</FbPerPage>
+    <AddUserAdministrationPages>False</AddUserAdministrationPages>
+    <AddProjectVersionHistoryPages>False</AddProjectVersionHistoryPages>
+    <AddCustomPages>False</AddCustomPages>
+    <TextBox />
+    <AddMultiSettingDocuments>False</AddMultiSettingDocuments>
+    <AddHashValueTablePages>False</AddHashValueTablePages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="TargetSystemConfig.xml">
+      <Visible>false</Visible>
+    </None>
+    <None Include="TwinSafeGroup1\Alias Devices\601U1_Doz1Doz2 %28AX8206-0100-0106%29 - Device %28Safety%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\602U1_Doz3Doz4%28AX8206-0100-0106%29 - Device %28Safety%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\603U1_PodDoz12PodDoz34 %28AX8206-0100-0106%29 - Device %28Safety%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\604U1_Zak1Pod1 %28AX8206-0100-0106%29 - Device %28Safety%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\605U1_Zak2Pod2 %28AX8206-0100-0106%29 - Device %28Safety%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\PI_BC4 %28EK1914%29 - Module 1 %28FSOE%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\PI_SI3 %28EL1904%29 - Module 1 %28FSOES%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\RC40_SI1 %28EL1904%29 - Module 1 %28FSOES%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\RC40_SO1 %28EL2904%29 - Module 1 %28FSOES%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\Reset3.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\Reset1.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\ErrAck.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\EStopButton.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\EStopStatus.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\Reset2.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\Run_Stop.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\SI1 %28EL1918%29 - Module 1 %28FSOE%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\SI2 %28EL1918%29 - Module 1 %28FSOE%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\SO1 %28EL2904%29 - Module 1 %28FSOES%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\UF50_Deactivation.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\UP50B_Deactivation.sds" />
+    <None Include="TwinSafeGroup1\TwinSafeGroup1.sal" />
+    <None Include="TwinSafeGroup1\TwinSafeGroup1.sal.diagram">
+      <Visible>false</Visible>
+      <DependentUpon>TwinSafeGroup1\TwinSafeGroup1.sal</DependentUpon>
+    </None>
+    <None Include="TwinSafeGroup2\Alias Devices\ComErr.sds" />
+    <None Include="TwinSafeGroup2\Alias Devices\EL6910_CommModule.sds" />
+    <None Include="TwinSafeGroup2\Alias Devices\ErrAck.sds" />
+    <None Include="TwinSafeGroup2\Alias Devices\FBErr.sds" />
+    <None Include="TwinSafeGroup2\Alias Devices\OtherErr.sds" />
+    <None Include="TwinSafeGroup2\Alias Devices\OutErr.sds" />
+    <None Include="TwinSafeGroup2\Alias Devices\Run.sds" />
+    <None Include="TwinSafeGroup2\TwinSafeGroup2.sal" />
+    <None Include="TwinSafeGroup2\TwinSafeGroup2.sal.diagram">
+      <Visible>false</Visible>
+      <DependentUpon>TwinSafeGroup2\TwinSafeGroup2.sal</DependentUpon>
+    </None>
+    <None Include="TwinSafeGroup3\Alias Devices\ComErr.sds" />
+    <None Include="TwinSafeGroup3\Alias Devices\EL6910_CommModule.sds" />
+    <None Include="TwinSafeGroup3\Alias Devices\ErrAck.sds" />
+    <None Include="TwinSafeGroup3\Alias Devices\FBErr.sds" />
+    <None Include="TwinSafeGroup3\Alias Devices\OtherErr.sds" />
+    <None Include="TwinSafeGroup3\Alias Devices\OutErr.sds" />
+    <None Include="TwinSafeGroup3\Alias Devices\Run.sds" />
+    <None Include="TwinSafeGroup3\TwinSafeGroup3.sal" />
+    <None Include="TwinSafeGroup3\TwinSafeGroup3.sal.diagram">
+      <Visible>false</Visible>
+      <DependentUpon>TwinSafeGroup3\TwinSafeGroup3.sal</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TwinSafeGroup1" />
+    <Folder Include="TwinSafeGroup1\Alias Devices" />
+    <Folder Include="TwinSafeGroup2" />
+    <Folder Include="TwinSafeGroup2\Alias Devices" />
+    <Folder Include="TwinSafeGroup3" />
+    <Folder Include="TwinSafeGroup3\Alias Devices" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <DocumentationProperty>
+      <ProjectVersionHistories />
+    </DocumentationProperty>
+  </ProjectExtensions>
+</Project>

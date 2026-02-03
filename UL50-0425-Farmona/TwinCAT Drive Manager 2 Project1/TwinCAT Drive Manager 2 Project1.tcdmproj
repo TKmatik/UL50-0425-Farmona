@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Name>Drive Manager 2</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{364ff139-cba6-41aa-85e2-31e31ac02e39}</ProjectGuid>
+    <TcPath>
+    </TcPath>
+    <AssemblyName>TwinCAT Drive Manager 2 Project1</AssemblyName>
+    <RootNamespace>TwinCAT Drive Manager 2 Project1</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="600U1 %28AX8620-0000-0105%29.tcdmdrv">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="600U1 %28AX8620-0000-0105%29\601U1_Doz1Doz2 %28AX8206-0100-0106%29.tcdmdrv">
+      <SubType>Content</SubType>
+      <DependentUpon>600U1 (AX8620-0000-0105).tcdmdrv</DependentUpon>
+    </Content>
+    <Content Include="600U1 %28AX8620-0000-0105%29\602U1_Doz3Doz4%28AX8206-0100-0106%29.tcdmdrv">
+      <SubType>Content</SubType>
+      <DependentUpon>600U1 (AX8620-0000-0105).tcdmdrv</DependentUpon>
+    </Content>
+    <Content Include="600U1 %28AX8620-0000-0105%29\603U1_PodDoz12PodDoz34 %28AX8206-0100-0106%29.tcdmdrv">
+      <SubType>Content</SubType>
+      <DependentUpon>600U1 (AX8620-0000-0105).tcdmdrv</DependentUpon>
+    </Content>
+    <Content Include="600U1 %28AX8620-0000-0105%29\604U1_Zak1Pod1 %28AX8206-0100-0106%29.tcdmdrv">
+      <SubType>Content</SubType>
+      <DependentUpon>600U1 (AX8620-0000-0105).tcdmdrv</DependentUpon>
+    </Content>
+    <Content Include="600U1 %28AX8620-0000-0105%29\605U1_Zak2Pod2 %28AX8206-0100-0106%29.tcdmdrv">
+      <SubType>Content</SubType>
+      <DependentUpon>600U1 (AX8620-0000-0105).tcdmdrv</DependentUpon>
+    </Content>
+    <Content Include="PM1PrzecDoz %28EL7047%29.tcdmdrv">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="PM2PrzecDoz2 %28EL7047%29.tcdmdrv">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="PM3PrzecZak %28EL7047%29.tcdmdrv">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="PM4PrzecPlat %28EL7047%29.tcdmdrv">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="PM5PrzecGrz %28EL7047%29.tcdmdrv">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="PM6PrzecSorNak %28EL7047%29.tcdmdrv">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RC40_ZAK_1_2 %28AX5203-0000-0213%29.tcdmdrv">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+</Project>

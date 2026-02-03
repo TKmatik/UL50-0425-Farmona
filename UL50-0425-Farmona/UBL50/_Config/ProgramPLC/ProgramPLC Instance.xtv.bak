@@ -1,0 +1,5772 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.19" ClassName="CTComPlcObjDef" FileIdentifier="ee95002dd392b79dd4648bf9a99ceeaf0ea10573">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..2] OF BYTE</Name>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>2</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}" IecBaseType="true" AutoDeleteType="true">ARRAY [0..27] OF USINT</Name>
+			<BitSize>224</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000002}">USINT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>28</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{CBC83B73-B816-4597-A9E5-2B03263CA131}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">NCTOPLC_AXIS_REF_STATE</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>Operational</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Homed</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>NotMoving</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>InPositionArea</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>InTargetPosition</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Protected</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ErrorPropagationDelayed</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>HasBeenStopped</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>HasJob</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>PositiveDirection</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>9</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>NegativeDirection</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>10</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>HomingBusy</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>11</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ConstantVelocity</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>12</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Compensating</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>13</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ExtSetPointGenEnabled</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>14</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>PhasingActive</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>15</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ExternalLatchValid</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>NewTargetPos</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>17</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>IsDriveLimitActive</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>18</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ContinuousMotion</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>19</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ControlLoopClosed</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>20</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CamTableQueued</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>21</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CamDataQueued</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>22</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CamScalingPending</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>23</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CmdBuffered</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>24</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>PTPmode</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>25</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SoftLimitMinExceeded</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>26</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SoftLimitMaxExceeded</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>27</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>DriveDeviceError</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>28</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>MotionCommandsLocked</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>29</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>IoDataInvalid</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>30</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Error</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>31</BitOffs>
+			</SubItem>
+			<Format Name="Short">
+				<Printf>%08x</Printf>
+			</Format>
+			<Format Name="Cpp">
+				<Printf>0x%08x</Printf>
+			</Format>
+			<Format Name="IEC">
+				<Printf>16#%08X</Printf>
+			</Format>
+			<Relations>
+				<Relation Priority="100">
+					<Type>{4C3FC5AC-D5AA-44C6-AC5A-159774BA0F6D}</Type>
+				</Relation>
+			</Relations>
+		</DataType>
+		<DataType>
+			<Name GUID="{6BDEED54-7268-405F-A18B-665A0AE0FEE9}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">NCTOPLC_AXIS_REF_OPMODE</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>OpModePosAreaMonitoring</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeTargetPosMonitoring</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeLoop</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeMotionMonitoring</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModePEHTimeMonitoring</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeBacklashCompensation</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeDelayedErrorReaction</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeModulo</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeSimulationAxis</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeStopMonitoring</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>12</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeOutputSmoothingFilter</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>13</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModePosLagMonitoring</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeVeloLagMonitoring</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>17</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeSoftLimitMinMonitoring</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>18</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeSoftLimitMaxMonitoring</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>19</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModePosCorrection</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>20</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeAllowSlaveCommands</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>21</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeAllowExtSetAxisCommands</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>22</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ApplicationRequest</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>23</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{303D9411-849C-467F-8A4C-5C8CD0F3DD46}" Namespace="MC" TcBaseType="true" HideType="true">NCTOPLC_AXIS_REF_STATE2_FLAGS</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>AvoidingCollision</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<Format Name="Short">
+				<Printf>%08x</Printf>
+			</Format>
+			<Format Name="Cpp">
+				<Printf>0x%08x</Printf>
+			</Format>
+			<Format Name="IEC">
+				<Printf>16#%08X</Printf>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{669F3788-48FD-42CF-8A59-2DA946853FB6}" Namespace="MC" TcBaseType="true" HideType="true">NCTOPLC_AXIS_REF_STATE2</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>Value</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Flags</Name>
+				<Type GUID="{303D9411-849C-467F-8A4C-5C8CD0F3DD46}" Namespace="MC">NCTOPLC_AXIS_REF_STATE2_FLAGS</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<Format Name="Short">
+				<Printf>%08x</Printf>
+			</Format>
+			<Format Name="Cpp">
+				<Printf>0x%08x</Printf>
+			</Format>
+			<Format Name="IEC">
+				<Printf>16#%08X</Printf>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{F7B9FC50-054E-4547-B468-83A9E72D8064}" Namespace="MC" TcBaseType="true" HideType="true">NCTOPLC_AXIS_REF_STATE3_FLAGS</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>TouchProbe1InputState</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>TouchProbe2InputState</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<Format Name="Short">
+				<Printf>%08x</Printf>
+			</Format>
+			<Format Name="Cpp">
+				<Printf>0x%08x</Printf>
+			</Format>
+			<Format Name="IEC">
+				<Printf>16#%08X</Printf>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{60E203BA-3CEE-4BB0-8728-643B1F529592}" Namespace="MC" TcBaseType="true" HideType="true">NCTOPLC_AXIS_REF_STATE3</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>Value</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Flags</Name>
+				<Type GUID="{F7B9FC50-054E-4547-B468-83A9E72D8064}" Namespace="MC">NCTOPLC_AXIS_REF_STATE3_FLAGS</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<Format Name="Short">
+				<Printf>%08x</Printf>
+			</Format>
+			<Format Name="Cpp">
+				<Printf>0x%08x</Printf>
+			</Format>
+			<Format Name="IEC">
+				<Printf>16#%08X</Printf>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{BA9D9D0F-1A4A-4A27-A19F-3032626A8491}" Namespace="MC" TcBaseType="true" HideType="true">NCTOPLC_AXIS_REF_CAMCOUPLINGSTATE</Name>
+			<BitSize>8</BitSize>
+			<SubItem>
+				<Name>CamActivationPending</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CamDeactivationPending</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CamActive</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CamDataQueued</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CamScalingPending</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-000000000039}" TcBaseType="true" HideType="true">UINTARR8</Name>
+			<BitSize>128</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>8</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC" TcBaseType="true">NCTOPLC_AXIS_REF</Name>
+			<BitSize>2048</BitSize>
+			<SubItem>
+				<Name>StateDWord</Name>
+				<Type GUID="{CBC83B73-B816-4597-A9E5-2B03263CA131}" Namespace="MC">NCTOPLC_AXIS_REF_STATE</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ErrorCode</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AxisState</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<Comment><![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AxisModeConfirmation</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>HomingState</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<Comment><![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CoupleState</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<Comment><![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>160</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SvbEntries</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>192</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SafEntries</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>224</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AxisId</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>256</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>OpModeDWord</Name>
+				<Type GUID="{6BDEED54-7268-405F-A18B-665A0AE0FEE9}" Namespace="MC">NCTOPLC_AXIS_REF_OPMODE</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>288</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ActPos</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>320</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ModuloActPos</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>384</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ActiveControlLoopIndex</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>448</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ControlLoopIndex</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>464</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ModuloActTurns</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>480</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ActVelo</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>512</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>PosDiff</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>576</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SetPos</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>640</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SetVelo</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>704</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SetAcc</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>768</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>TargetPos</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>832</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ModuloSetPos</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>896</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ModuloSetTurns</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>960</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CmdNo</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>992</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CmdState</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>1008</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SetJerk</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>1024</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SetTorque</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>1088</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ActTorque</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>1152</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>StateDWord2</Name>
+				<Type GUID="{669F3788-48FD-42CF-8A59-2DA946853FB6}" Namespace="MC">NCTOPLC_AXIS_REF_STATE2</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>1216</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>StateDWord3</Name>
+				<Type GUID="{60E203BA-3CEE-4BB0-8728-643B1F529592}" Namespace="MC">NCTOPLC_AXIS_REF_STATE3</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>1248</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>TouchProbeState</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>1280</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>TouchProbeCounter</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>1312</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CamCouplingState</Name>
+				<Type GUID="{BA9D9D0F-1A4A-4A27-A19F-3032626A8491}" Namespace="MC">NCTOPLC_AXIS_REF_CAMCOUPLINGSTATE</Type>
+				<ArrayInfo>
+					<LBound>0</LBound>
+					<Elements>8</Elements>
+				</ArrayInfo>
+				<BitSize>64</BitSize>
+				<BitOffs>1344</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CamCouplingTableID</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000039}">UINTARR8</Type>
+				<BitSize>128</BitSize>
+				<BitOffs>1408</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ActTorqueDerivative</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>1536</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SetTorqueDerivative</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>1600</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AbsPhasingPos</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>1664</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>TorqueOffset</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>1728</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ActPosWithoutPosCorrection</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>1792</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ActAcc</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>1856</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>DcTimeStamp</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>1920</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>UserData</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>1984</BitOffs>
+			</SubItem>
+			<Properties>
+				<Property>
+					<Name>NcStructType</Name>
+					<Value>2</Value>
+				</Property>
+			</Properties>
+			<Relations>
+				<Relation Priority="100">
+					<Type GUID="{429B767E-373B-40AE-BFA5-E1C08B444DF3}">NCAXLESTRUCT_TOPLC</Type>
+				</Relation>
+				<Relation Priority="100">
+					<Type GUID="{E8DA524A-605F-4879-82E6-B86EF6986572}">NCAXLESTRUCT_TOPLC2</Type>
+				</Relation>
+				<Relation Priority="100">
+					<Type GUID="{B507963E-69F3-4B64-BB8C-2BD7A560976D}">NCAXLESTRUCT_TOPLC3</Type>
+				</Relation>
+				<Relation Priority="100">
+					<Type GUID="{F794B740-82D7-4637-848E-4F74A711D038}">NCAXLESTRUCT_TOPLC4</Type>
+				</Relation>
+				<Relation Priority="100">
+					<Type GUID="{40BD39B0-C3EA-4F74-9F4F-5F1982786F7C}"></Type>
+				</Relation>
+				<Relation Priority="100">
+					<Type GUID="{40BD39B2-C3EA-4F74-9F4F-5F1982786F7C}"></Type>
+				</Relation>
+				<Relation Priority="100">
+					<Type GUID="{8CDE0C45-AB9D-42DB-BC94-1CF7521AB268}"></Type>
+				</Relation>
+				<Relation Priority="100">
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}"></Type>
+				</Relation>
+				<Relation Priority="100">
+					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}"></Type>
+				</Relation>
+				<Relation Priority="100">
+					<Type GUID="{10036166-C9D3-404B-BDD3-323034AAA7F4}"></Type>
+				</Relation>
+			</Relations>
+		</DataType>
+		<DataType>
+			<Name GUID="{B47A481E-EB9F-357C-E102-48878B97DB7B}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..4] OF BYTE</Name>
+			<BitSize>32</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>4</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{6AE51ED4-2F21-994D-0AF2-434ED0E81DC1}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..8] OF USINT</Name>
+			<BitSize>64</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000002}">USINT</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>8</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{06996938-A0CC-D594-2D93-F13C682B876A}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..32] OF UINT</Name>
+			<BitSize>512</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>32</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{08D99F99-574D-FAC7-C82A-15DC40DE3400}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..6] OF UINT</Name>
+			<BitSize>96</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>6</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{8C94E62D-EB52-5447-A247-1DED664397EE}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..9] OF BOOL</Name>
+			<BitSize>72</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>9</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{9BF88394-E348-0538-E485-2DE7C567386D}" Namespace="Tc3_PackML" AutoDeleteType="true">E_PMLUnitMode</Name>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[ePMLUnitMode_UNDEFINED]]></Text>
+				<Enum>0</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLUnitMode_AUTOMATIC]]></Text>
+				<Enum>1</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLUnitMode_MAINTENANCE]]></Text>
+				<Enum>2</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLUnitMode_MANUAL]]></Text>
+				<Enum>3</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLUnitMode_SEMIAUTOMATIC]]></Text>
+				<Enum>4</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLUnitMode_DRYRUN]]></Text>
+				<Enum>5</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLUnitMode_USERMODE1]]></Text>
+				<Enum>6</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLUnitMode_USERMODE2]]></Text>
+				<Enum>7</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLUnitMode_IDLE]]></Text>
+				<Enum>8</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLUnitMode_ESTOP]]></Text>
+				<Enum>9</Enum>
+			</EnumInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{E33464B0-DBDA-F4B4-022E-12978214C49C}" Namespace="Tc3_PackML" AutoDeleteType="true">E_PMLState</Name>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[ePMLState_UNDEFINED]]></Text>
+				<Enum>0</Enum>
+				<Comment><![CDATA[ states according to PackTags v3.0 ]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLState_CLEARING]]></Text>
+				<Enum>1</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLState_STOPPED]]></Text>
+				<Enum>2</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLState_STARTING]]></Text>
+				<Enum>3</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLState_IDLE]]></Text>
+				<Enum>4</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLState_SUSPENDED]]></Text>
+				<Enum>5</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLState_EXECUTE]]></Text>
+				<Enum>6</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLState_STOPPING]]></Text>
+				<Enum>7</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLState_ABORTING]]></Text>
+				<Enum>8</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLState_ABORTED]]></Text>
+				<Enum>9</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLState_HOLDING]]></Text>
+				<Enum>10</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLState_HELD]]></Text>
+				<Enum>11</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLState_UNHOLDING]]></Text>
+				<Enum>12</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLState_SUSPENDING]]></Text>
+				<Enum>13</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLState_UNSUSPENDING]]></Text>
+				<Enum>14</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLState_RESETTING]]></Text>
+				<Enum>15</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLState_COMPLETING]]></Text>
+				<Enum>16</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ePMLState_COMPLETE]]></Text>
+				<Enum>17</Enum>
+			</EnumInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{D9B4E8A0-FD5E-D85D-E065-3E56BAA4ABDB}" AutoDeleteType="true">ST_PackMLCmdForCom</Name>
+			<BitSize>80</BitSize>
+			<SubItem>
+				<Name>bStart</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bHold</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bUnHold</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bSuspend</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>24</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bAbort</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bStop</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>40</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bComplete</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bClear</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>56</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bReset</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bStateComplete</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>72</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{536181E2-9B54-D3E0-E708-84D1379850DC}" AutoDeleteType="true">S_Error</Name>
+			<Comment><![CDATA[
+Nazwa:			S_Error
+Opis:			Struktura bledu
+Wersja:			v0.2
+Data:			2018-10-10
+Autor:			TW
+Urzadzenia:		
+Konfiguracja:	
+Info:
+- dodano string2
+]]></Comment>
+			<BitSize>4000</BitSize>
+			<SubItem>
+				<Name>bError</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>udiStationID</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>sStationName</Name>
+				<Type GUID="{18071995-0000-0000-0000-000100000050}">STRING(80)</Type>
+				<BitSize>648</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nErrorCode</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>736</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>sErrorString</Name>
+				<Type GUID="{18071995-0000-0000-0000-0001000000C8}">STRING(200)</Type>
+				<BitSize>1608</BitSize>
+				<BitOffs>768</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>sErrorString2</Name>
+				<Type GUID="{18071995-0000-0000-0000-0001000000C8}">STRING(200)</Type>
+				<BitSize>1608</BitSize>
+				<BitOffs>2376</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bReset</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>3984</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{488BC32C-6080-FE76-9A88-50E84D83250A}" AutoDeleteType="true">ST_MachinePermissions</Name>
+			<BitSize>128</BitSize>
+			<SubItem>
+				<Name>bPermission00</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bPermission01</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bPermission02</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bPermission03</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>24</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bPermission04</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bPermission05</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>40</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bPermission06</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bPermission07</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>56</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bPermission10</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bPermission11</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>72</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bPermission12</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>80</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bPermission13</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>88</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bPermission14</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bPermission15</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>104</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bPermission16</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>112</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bPermission17</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>120</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{068C40E1-849A-290B-EC16-BE243CAB6A87}" AutoDeleteType="true">ST_ReservedSignals</Name>
+			<BitSize>160</BitSize>
+			<SubItem>
+				<Name>bReserved00</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bReserved01</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bReserved02</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bReserved03</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>24</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bReserved04</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bReserved05</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>40</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bReserved06</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bReserved07</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>56</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bReserved10</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bReserved11</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>72</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bReserved12</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>80</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bReserved13</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>88</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bReserved14</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bReserved15</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>104</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bReserved16</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>112</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bReserved17</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>120</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iReserved20</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iReserved30</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+				<Comment><![CDATA[ REZERWA ]]></Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>144</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{10B77F4A-9325-90E8-AC75-6910DBE6256A}" AutoDeleteType="true">ST_Communication</Name>
+			<BitSize>8640</BitSize>
+			<SubItem>
+				<Name>ePackMLMode</Name>
+				<Type GUID="{9BF88394-E348-0538-E485-2DE7C567386D}" Namespace="Tc3_PackML">E_PMLUnitMode</Type>
+				<Comment><![CDATA[Mode ]]></Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ePackMLAutoState</Name>
+				<Type GUID="{E33464B0-DBDA-F4B4-022E-12978214C49C}" Namespace="Tc3_PackML">E_PMLState</Type>
+				<Comment><![CDATA[PackML Auto State]]></Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>sPackMLCommand</Name>
+				<Type GUID="{D9B4E8A0-FD5E-D85D-E065-3E56BAA4ABDB}">ST_PackMLCmdForCom</Type>
+				<Comment><![CDATA[PackML Commands]]></Comment>
+				<BitSize>80</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>eError</Name>
+				<Type GUID="{536181E2-9B54-D3E0-E708-84D1379850DC}">S_Error</Type>
+				<BitSize>4000</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bEnable</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>4128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bCycleStart</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>4136</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bCycleStop</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>4144</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bCycleReset</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>4152</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bManualMode</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>4160</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bHoming</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>4168</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bHomingDone</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>4176</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bConfectionEnding</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>4184</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>tCycleTime</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000048}">TIME</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>4192</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iWatchdog</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>4224</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>sRecipeName</Name>
+				<Type GUID="{18071995-0000-0000-0000-0001000000FF}">STRING(255)</Type>
+				<BitSize>2048</BitSize>
+				<BitOffs>4240</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>sRecipeIndex</Name>
+				<Type GUID="{18071995-0000-0000-0000-0001000000FF}">STRING(255)</Type>
+				<BitSize>2048</BitSize>
+				<BitOffs>6288</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>eMachinePermissions</Name>
+				<Type GUID="{488BC32C-6080-FE76-9A88-50E84D83250A}">ST_MachinePermissions</Type>
+				<BitSize>128</BitSize>
+				<BitOffs>8336</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>eReservedSignals</Name>
+				<Type GUID="{068C40E1-849A-290B-EC16-BE243CAB6A87}">ST_ReservedSignals</Type>
+				<BitSize>160</BitSize>
+				<BitOffs>8464</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{7BB99BC5-EA9A-9AE9-9479-DBE8E93920B5}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..6] OF BYTE</Name>
+			<BitSize>48</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>6</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{9A6F2C00-9352-7195-A7D1-8A6E966FCA76}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..5] OF BYTE</Name>
+			<BitSize>40</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>5</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{875D2B22-B7EB-497E-B933-0C004593CCF3}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">PLCTONC_AXIS_REF_CTRL</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>Enable</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FeedEnablePlus</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FeedEnableMinus</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>HomingSensor</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AcceptBlockedDrive</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>PlcDebugFlag</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>30</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>NcDebugFlag</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>31</BitOffs>
+			</SubItem>
+			<Format Name="Short">
+				<Printf>%08x</Printf>
+			</Format>
+			<Format Name="Cpp">
+				<Printf>0x%08x</Printf>
+			</Format>
+			<Format Name="IEC">
+				<Printf>16#%08X</Printf>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC" TcBaseType="true">PLCTONC_AXIS_REF</Name>
+			<BitSize>1024</BitSize>
+			<SubItem>
+				<Name>ControlDWord</Name>
+				<Type GUID="{875D2B22-B7EB-497E-B933-0C004593CCF3}" Namespace="MC">PLCTONC_AXIS_REF_CTRL</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Override</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AxisModeRequest</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AxisModeDWord</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AxisModeLReal</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>PositionCorrection</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>192</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ExtSetPos</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>256</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ExtSetVelo</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>320</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ExtSetAcc</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>384</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ExtSetDirection</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>448</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ExtControllerOutput</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>512</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>GearRatio1</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>576</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>GearRatio2</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>640</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>GearRatio3</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>704</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>GearRatio4</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>768</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>MapState</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>832</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>PlcCycleControl</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>840</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>PlcCycleCount</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>848</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ExtTorque</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>896</BitOffs>
+			</SubItem>
+			<Properties>
+				<Property>
+					<Name>NcStructType</Name>
+					<Value>1</Value>
+				</Property>
+			</Properties>
+			<Relations>
+				<Relation Priority="100">
+					<Type GUID="{60392271-8688-4F4C-B404-618DF106325D}"></Type>
+				</Relation>
+				<Relation Priority="100">
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}"></Type>
+				</Relation>
+			</Relations>
+		</DataType>
+	</DataTypes>
+	<Instance TmcHash="{110F35D3-3B97-8FA0-B1A9-3683AD6AB5FD}">
+		<Vars VarGrpType="1">
+			<Name>WeightTask Inputs</Name>
+			<Var>
+				<Name>P05_Weight.IbWeight1FormSensor</Name>
+				<Comment><![CDATA[Czujnik nad Waga 1]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight2FormSensor</Name>
+				<Comment><![CDATA[Czujnik nad Waga 2]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight3FormSensor</Name>
+				<Comment><![CDATA[Czujnik nad Waga 3]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight4FormSensor</Name>
+				<Comment><![CDATA[Czujnik nad Waga 4]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight5FormSensor</Name>
+				<Comment><![CDATA[Czujnik nad Waga 4]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight6FormSensor</Name>
+				<Comment><![CDATA[Czujnik nad Waga 4]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight1Overrange</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight1DataInvalid</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.InWeight1Value</Name>
+				<Comment><![CDATA[ Wartość wagi]]></Comment>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight1Error</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight1CalibrationInProgress</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight1SteadyState</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight1SyncError</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight2Overrange</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight2DataInvalid</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.InWeight2Value</Name>
+				<Comment><![CDATA[ Wartość wagi]]></Comment>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight2Error</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight2CalibrationInProgress</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight2SteadyState</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight2SyncError</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight3Overrange</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight3DataInvalid</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.InWeight3Value</Name>
+				<Comment><![CDATA[ Wartość wagi]]></Comment>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight3Error</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight3CalibrationInProgress</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight3SteadyState</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight3SyncError</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight4Overrange</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight4DataInvalid</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.InWeight4Value</Name>
+				<Comment><![CDATA[ Wartość wagi]]></Comment>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight4Error</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight4CalibrationInProgress</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight4SteadyState</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight4SyncError</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight5Overrange</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight5DataInvalid</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.InWeight5Value</Name>
+				<Comment><![CDATA[ Wartość wagi]]></Comment>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight5Error</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight5CalibrationInProgress</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight5SteadyState</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight5SyncError</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight6Overrange</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight6DataInvalid</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.InWeight6Value</Name>
+				<Comment><![CDATA[ Wartość wagi]]></Comment>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight6Error</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight6CalibrationInProgress</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight6SteadyState</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight6SyncError</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight1ActuatorSensorUp</Name>
+				<Comment><![CDATA[Czujnik podnoszenia Waga 1]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight2ActuatorSensorUp</Name>
+				<Comment><![CDATA[Czujnik podnoszenia Waga 2]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight3ActuatorSensorUp</Name>
+				<Comment><![CDATA[Czujnik podnoszenia Waga 3]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight4ActuatorSensorUp</Name>
+				<Comment><![CDATA[Czujnik podnoszenia Waga 4]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbEmergencyStop</Name>
+				<Comment><![CDATA[Jeśli TRUE - maszyna w stanie bezpiecznym, FALSE - EStop]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+		</Vars>
+		<Vars VarGrpType="2" AreaNo="1">
+			<Name>WeightTask Outputs</Name>
+			<Var>
+				<Name>P05_Weight.QbWeight1StartCalibration</Name>
+				<Comment><![CDATA[wyjścia]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight1DisableCalibration</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight1InputFreeze</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight1SampleMode</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight1Tara</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight2StartCalibration</Name>
+				<Comment><![CDATA[wyjścia]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight2DisableCalibration</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight2InputFreeze</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight2SampleMode</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight2Tara</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight3StartCalibration</Name>
+				<Comment><![CDATA[wyjścia]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight3DisableCalibration</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight3InputFreeze</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight3SampleMode</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight3Tara</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight4StartCalibration</Name>
+				<Comment><![CDATA[wyjścia]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight4DisableCalibration</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight4InputFreeze</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight4SampleMode</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight4Tara</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight5StartCalibration</Name>
+				<Comment><![CDATA[wyjścia]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight5DisableCalibration</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight5InputFreeze</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight5SampleMode</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight5Tara</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight6StartCalibration</Name>
+				<Comment><![CDATA[wyjścia]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight6DisableCalibration</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight6InputFreeze</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight6SampleMode</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.QbWeight6Tara</Name>
+				<Type>BOOL</Type>
+			</Var>
+		</Vars>
+		<Vars VarGrpType="1" ContextId="1" AreaNo="16">
+			<Name>PlcTask Inputs</Name>
+			<Var>
+				<Name>MAIN.IbTwoPhasesFormSensorBetweenDispencers</Name>
+				<Comment><![CDATA[ Wejście czujnika pomiedzy dozownikami do przesuwania formatek]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.IbFormCheckFormSensor</Name>
+				<Comment><![CDATA[ Wejście wykrycia formatek przed szlabanem]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.IbBottleInFormCheckBottleSensor</Name>
+				<Comment><![CDATA[ Wejscie wykrycia butelki przed szlabane]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.IbFourthFormCheckFormSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.IbSecondFormCheckFormSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.IbCapSorterAfterFormSensor3</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.IbLidSealerFirstFormSensor</Name>
+				<Comment><![CDATA[ Czujnik obecności 2-ej formatki przygrzewacze platynek]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.IbLidFeederThirdFormSensor</Name>
+				<Comment><![CDATA[ Czujnik obecności formatki trzecia formatka ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.IbLidFeederAfterSensor</Name>
+				<Comment><![CDATA[ Czujnik obecności formatki wyjazd	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight5ActuatorSensorUp</Name>
+				<Comment><![CDATA[Czujnik podnoszenia Waga 5 ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P05_Weight.IbWeight6ActuatorSensorUp</Name>
+				<Comment><![CDATA[Czujnik podnoszenia Waga 6 ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic641_N12DigitalInput</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic641PressureRegulator</Name>
+				<Type GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}">ARRAY [1..2] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic645_1PressureRegulator</Name>
+				<Type GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}">ARRAY [1..2] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic645_2PressureRegulator</Name>
+				<Type GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}">ARRAY [1..2] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic641_N11AnalogInput1</Name>
+				<Type GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}">ARRAY [1..2] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic641_N11AnalogInput2</Name>
+				<Type GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}">ARRAY [1..2] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic641_N11AnalogInput3</Name>
+				<Type GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}">ARRAY [1..2] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic641_N11AnalogInput4</Name>
+				<Type GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}">ARRAY [1..2] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic645_N11AnalogInput1</Name>
+				<Type GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}">ARRAY [1..2] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic645_N11AnalogInput2</Name>
+				<Type GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}">ARRAY [1..2] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic645_N11AnalogInput3</Name>
+				<Type GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}">ARRAY [1..2] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic645_N11AnalogInput4</Name>
+				<Type GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}">ARRAY [1..2] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic642_N11DigitalInput</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic642_N12DigitalInput</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic642_N13DigitalInput</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic643_N11DigitalInput</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic643_N12DigitalInput</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic643_N13DigitalInput</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic644_N11DigitalInput</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic644_N12DigitalInput</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic644_N13DigitalInput</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic645_N12DigitalInput</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic646_N11DigitalInput</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic646_N12DigitalInput</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic646_N13DigitalInput</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic647_N11DigitalInput</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumatic647_N12DigitalInput</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumaticPI641_N11DigitalInput</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumaticPI641_N12DigitalInput</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.IABPneumaticPI641_N13DigitalInput</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiDispencerReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbDispencerReaderTagPresent</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBDispencerReaderErrorValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbDispencerReaderCmdEnd</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBDispencerReaderDataCounterIn</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbDispencerReaderCmdStartAck</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiAfterDispencersReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbAfterDispencersReaderTagPresent</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBAfterDispencersReaderErrorValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbAfterDispencersReaderCmdEnd</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBAfterDispencersReaderDataCounterIn</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbAfterDispencersReaderCmdStartAck</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiLidFeederReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbLidFeederReaderTagPresent</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBLidFeederReaderErrorValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbLidFeederReaderCmdEnd</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBLidFeederReaderDataCounterIn</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbLidFeederReaderCmdStartAck</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiBeforeScrewerReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbBeforeScrewerReaderTagPresent</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBBeforeScrewerReaderErrorValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbBeforeScrewerReaderCmdEnd</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBBeforeScrewerReaderDataCounterIn</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbBeforeScrewerReaderCmdStartAck</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiAfterScrewerReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbAfterScrewerReaderTagPresent</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBAfterScrewerReaderErrorValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbAfterScrewerReaderCmdEnd</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBAfterScrewerReaderDataCounterIn</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbAfterScrewerReaderCmdStartAck</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiBottleTransferReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbBottleTransferReaderTagPresent</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBBottleTransferReaderErrorValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbBottleTransferReaderCmdEnd</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBBottleTransferReaderDataCounterIn</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbBottleTransferReaderCmdStartAck</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiCapSorterReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbCapSorterReaderTagPresent</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBCapSorterReaderErrorValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbCapSorterReaderCmdEnd</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBCapSorterReaderDataCounterIn</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbCapSorterReaderCmdStartAck</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiAfterDispencers2PhaseReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbAfterDispencers2PhaseReaderTagPresent</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBAfterDispencers2PhaseReaderErrorValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbAfterDispencers2PhaseReaderCmdEnd</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBAfterDispencers2PhaseReaderDataCounterIn</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbAfterDispencers2PhaseReaderCmdStartAck</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiLidSealerReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbLidSealerReaderTagPresent</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBLidSealerReaderErrorValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbLidSealerReaderCmdEnd</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBLidSealerReaderDataCounterIn</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbLidSealerReaderCmdStartAck</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P01_TwoPhasesBarriers.IbBarrierBetweenWeightOpenedSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P01_TwoPhasesBarriers.IbBarrierBetweenWeightClosedSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P01_TwoPhasesBarriers.IbBarrierBetweenDispencerOpenedSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P01_TwoPhasesBarriers.IbBarrierBetweenDispencerClosedSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P01_TwoPhasesBarriers.IbGateBeforeWeights56</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P01_BottleFeeder.IbBottleFeederNotInsertedSensor</Name>
+				<Comment><![CDATA[ Czujnik źle włozonej butelki za stacją	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P01_BottleFeeder.uiBottleFeederTurnTableSW</Name>
+				<Comment><![CDATA[ Stół obrotowy]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_BottleFeeder.uiBottleFeederTurnTableActualVelocity</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.IbPucksInserterFuseDrivesOK</Name>
+				<Comment><![CDATA[ Zabezpieczenie serwa]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.IbPucksInserterTransporter1OK</Name>
+				<Comment><![CDATA[ Bezpiecznik silnikowe napędu transportera 1]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.IbPucksInserterTransporter2OK</Name>
+				<Comment><![CDATA[ Bezpiecznik silnikowe napędu transportera 2	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.IbPucksInserterFuseFB1OK</Name>
+				<Comment><![CDATA[ Bezpiecznik FB1 przepalony]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.IbPucksInserterHammerHeightEncoderSetCDone</Name>
+				<Comment><![CDATA[ Enkoder - Set Counter done]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.IudiPucksInserterHammerHeightEncoderCV</Name>
+				<Comment><![CDATA[ Enkoder - Counter value]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.IbPucksInserterConveyorWcState</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.uiPucksInserterTurnTableSW</Name>
+				<Comment><![CDATA[ Stół obrotowy]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.uiPucksInserterTurnTableActualVelocity</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.uiPucksInserterConveyorSW</Name>
+				<Comment><![CDATA[ Transporter]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.uiPucksInserterConveyorActualVelocity</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.diPucksInserterWheelZPhaseOffset</Name>
+				<Comment><![CDATA[ Offset serwa Z]]></Comment>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.InPucksInserterPushTable_m1_STW</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.InPucksInserterPushTable_m1_VelocityCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.InPucksInserterPushTable_m1_ErrorCode</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.InPucksInserterPushTable_m2_VelocityCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.InPucksInserterPushTable_m2_STW</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.InPucksInserterPushTable_m2_ErrorCode</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.InPucksInserterPushTable_m3_STW</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.InPucksInserterPushTable_m3_VelocityCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.InPucksInserterPushTable_m3_ErrorCode</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_Gates.IbLidFeederBarrierOnSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P01_Gates.IbLidFeederBarrierOffSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P01_Gates.IbGateBeforeWeights14Sensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P01_Gates.IbGateBeforeWeights56Sensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_BottlePusher.IbBottlePusherActuatorSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_BottlePusher.IbBottlePusherBottleBeforeSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_BottlePusher.IbBottlePusherBottleAfterSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencer1DropCatcherBackSensor</Name>
+				<Comment><![CDATA[	Czujnik wycofania tacki kropel dozowników]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencer2DropCatcherBackSensor</Name>
+				<Comment><![CDATA[	Czujnik wycofania tacki kropel dozowników]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencer3DropCatcherBackSensor</Name>
+				<Comment><![CDATA[	Czujnik wycofania tacki kropel dozowników]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencer4DropCatcherBackSensor</Name>
+				<Comment><![CDATA[	Czujnik wycofania tacki kropel dozowników]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencersDragLeftLeadBefore1UpSensor</Name>
+				<Comment><![CDATA[	Czujnik]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencersCatch1SensorValue</Name>
+				<Comment><![CDATA[	Wejscie czujnika otwarcia siłownika chwytania]]></Comment>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencersCatch2SensorValue</Name>
+				<Comment><![CDATA[	Wejscie czujnika otwarcia siłownika chwytania]]></Comment>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencersCatch3SensorValue</Name>
+				<Comment><![CDATA[	Wejscie czujnika otwarcia siłownika chwytania]]></Comment>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencersCatch4SensorValue</Name>
+				<Comment><![CDATA[	Wejscie czujnika otwarcia siłownika chwytania]]></Comment>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencersDragLeftLeadAfter1UpSensor</Name>
+				<Comment><![CDATA[	Czujnik]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencersDragRightLeadBefore1UpSensor</Name>
+				<Comment><![CDATA[	Czujnik]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencersDragRightLeadAfter1UpSensor</Name>
+				<Comment><![CDATA[	Czujnik]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencersDragLeftDragUpSensor</Name>
+				<Comment><![CDATA[ 	Czujnik]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencersDragLeftDragDownSensor</Name>
+				<Comment><![CDATA[ 	Czujnik]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencersDragRightDragUpSensor</Name>
+				<Comment><![CDATA[ 	Czujnik]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencersDragRightDragDownSensor</Name>
+				<Comment><![CDATA[ 	Czujnik]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencersDragLeftDragHomingSensor</Name>
+				<Comment><![CDATA[	Czujnik bazowania]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencersDragRightDragHomingSensor</Name>
+				<Comment><![CDATA[	Czujnik bazowania]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencerAfterCheckFormSensor</Name>
+				<Comment><![CDATA[	Czujnik po przecionganiu formatek na ukos]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencer12NoColisionWhenDosingSensor</Name>
+				<Comment><![CDATA[	Czujnik indukcyjny]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencer34NoColisionWhenDosingSensor</Name>
+				<Comment><![CDATA[	Czujnik indukcyjny]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbTankLevelHighEX</Name>
+				<Comment><![CDATA[EX]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbTankLevelLowEX</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbTankLevelExError</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencersCatch1HeightEncoderPulses</Name>
+				<Comment><![CDATA[PLC.A13]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbDispencersCatchHeightEncoderSetCDone</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IudiDispencersCatchHeightEncoderCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbTank1LevelLow</Name>
+				<Comment><![CDATA[ Niski poziom masy w zbiorniku]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbTank2LevelLow</Name>
+				<Comment><![CDATA[ Niski poziom masy w zbiorniku]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbTank1PumpFuseOK</Name>
+				<Comment><![CDATA[Potwierdzenie z zabezpieczenia pompy 1 - OK]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbTank2PumpFuseOK</Name>
+				<Comment><![CDATA[Potwierdzenie z zabezpieczenia pompy 2 - OK]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbTank3PumpFuseOK</Name>
+				<Comment><![CDATA[Potwierdzenie z zabezpieczenia pompy 2 - OK]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbTank4PumpFuseOK</Name>
+				<Comment><![CDATA[Potwierdzenie z zabezpieczenia pompy 2 - OK]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.AInTankHeatingTempCVSensor</Name>
+				<Comment><![CDATA[ Wartość aktualnej temperatury grzałki]]></Comment>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbTankHeatingTempSensorFailure</Name>
+				<Comment><![CDATA[ Informacja o uszkodzeniu czujnika temperatury grzałki	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbFuseTankMixerEngineOK</Name>
+				<Comment><![CDATA[Bezpiecznik silnika mieszadła OK]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IbFuseTankMixerEngineWorking</Name>
+				<Comment><![CDATA[Potwierdzenie pracy silnika mieszadła OK	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IusiTank1SensorValue0</Name>
+				<Type>USINT</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IusiTank1SensorValue1</Name>
+				<Type>USINT</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IusiTank1SensorValue2</Name>
+				<Type>USINT</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IusiTank1SensorValue3</Name>
+				<Type>USINT</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IusiTank1SensorDiagnosis</Name>
+				<Type>USINT</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IusiTank2SensorValue0</Name>
+				<Type>USINT</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IusiTank2SensorValue1</Name>
+				<Type>USINT</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IusiTank2SensorValue2</Name>
+				<Type>USINT</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IusiTank2SensorValue3</Name>
+				<Type>USINT</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.IusiTank2SensorDiagnosis</Name>
+				<Type>USINT</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.aDispenser1VirtualLifter.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.aDispenser2VirtualLifter.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.aDispenser3VirtualLifter.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.aDispenser4VirtualLifter.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.arTemp.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>P02_DispencersCharts.DispencerAxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>P02_DispencersCharts.DispencerLifterAxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>P06_WickFeeder.IbFuseWickFeederSorterEngineOK</Name>
+				<Comment><![CDATA[Bezpiecznik silnika sortera OK]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_WickFeeder.InWickFeederSorterVelocityCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P06_WickFeeder.InWickFeederSorterSTW</Name>
+				<Comment><![CDATA[ Statusword transportera wejściowo wyjściowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P06_WickFeeder.IbWickFeeder2DownSensor1</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_WickFeeder.IbWickFeederHeightEncoderSetCDone</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_WickFeeder.IudiWickFeederHeightEncoderCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidPuttedCheck.IbLidPuttedCheckHeightEncoderPulses</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidPuttedCheck.IbLidPuttedCheckCameraError</Name>
+				<Comment><![CDATA[Kamera do sprawdzania platynek]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidPuttedCheck.IbLidPuttedCheckCameraGood</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidPuttedCheck.IbLidPuttedCheckCameraBusy</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidPuttedCheck.IuiLidPuttedCheckCameraProgram</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidPuttedCheck.IbLidPuttedCheck11Sensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidPuttedCheck.IbLidPuttedCheck12Sensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidPuttedCheck.IbLidPuttedCheck13Sensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidPuttedCheck.IbLidPuttedCheck21Sensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidPuttedCheck.IbLidPuttedCheck22Sensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidPuttedCheck.IbLidPuttedCheck23Sensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.IbLidSealerDragHomingSensor</Name>
+				<Comment><![CDATA[ Czujnik bazowania]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.IbLidSealerDragLeadBefore1UpSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.IbLidSealerDragLeadBefore1DownSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.IbLidSealerDragUpSensor</Name>
+				<Comment><![CDATA[ Czujnik pozycji siłownika grzałki zadaniczej góra]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.IbLidSealerDragDownSensor</Name>
+				<Comment><![CDATA[ Czujnik pozycji siłownika grzałki zadaniczej dół]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.IbLidSealerHeightEncoderPulses</Name>
+				<Comment><![CDATA[WEJŚĆIA I WYJŚĆIA SPRZĘTOWE 1		]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.IbLidSealerTempSensorFailure</Name>
+				<Comment><![CDATA[ Informacja o uszkodzeniu czujnika temperatury grzałki podajnika platynek]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.AIbLidSealerHeaterTempCVSensor</Name>
+				<Comment><![CDATA[ Wartość aktualnej temperatury grzałki podajnika platynek]]></Comment>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.IbLidSealer2HeightEncoderPulses</Name>
+				<Comment><![CDATA[WEJŚĆIA I WYJŚĆIA SPRZĘTOWE 2]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.IbLidSealer2UpSensor</Name>
+				<Comment><![CDATA[ Czujnik pozycji siłownika grzałki zadaniczej góra]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.IbLidSealer2DownSensor</Name>
+				<Comment><![CDATA[ Czujnik pozycji siłownika grzałki zadaniczej dół]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.AIbLidSealer2HeaterTempCVSensor</Name>
+				<Comment><![CDATA[ Wartość aktualnej temperatury grzałki podajnika platynek]]></Comment>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.IbLidSealer2TempSensorFailure</Name>
+				<Comment><![CDATA[ Informacja o uszkodzeniu czujnika temperatury grzałki podajnika platynek]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.IbLidSealerUpSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.IbLidSealerDragLeadBefore2UpSensor</Name>
+				<Comment><![CDATA[ Czujnik]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.InROPPSlowerSTW</Name>
+				<Comment><![CDATA[ Statusword transportera wyjściowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.InROPPSlowerVelocityCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.InROPPSlowerErrorCode</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbROPPFeederHeightEncoderSetCDone</Name>
+				<Comment><![CDATA[ Enkoder - Set Counter done]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IudiROPPFeederHeightEncoderCV</Name>
+				<Comment><![CDATA[ Enkoder - Counter value]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbROPPFeederSorterWcState</Name>
+				<Comment><![CDATA[ Statusword transportera wejściowo wyjściowego]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.InROPPFeederSorterSTW</Name>
+				<Comment><![CDATA[ Statusword transportera wejściowo wyjściowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.InROPPFeederSorterVelocityCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbROPPCappingHeightEncoderSetCDone</Name>
+				<Comment><![CDATA[ Enkoder - Set Counter done]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IudiROPPCappingHeightEncoderCV</Name>
+				<Comment><![CDATA[ Enkoder - Counter value]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbROPPCapping1WcState</Name>
+				<Comment><![CDATA[ Statusword transportera wejściowo wyjściowego]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.InROPPCapping1VelocityCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.InROPPCapping1STW</Name>
+				<Comment><![CDATA[ Statusword transportera wejściowo wyjściowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.InROPPCapping2VelocityCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.InROPPCapping2STW</Name>
+				<Comment><![CDATA[ Statusword transportera wejściowo wyjściowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbROPPCapping2WcState</Name>
+				<Comment><![CDATA[ Statusword transportera wejściowo wyjściowego]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbBeforeROPPReaderTagPresent</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.AusiBeforeROPPReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IBBeforeROPPReaderErrorValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbBeforeROPPReaderCmdEnd</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IBBeforeROPPReaderDataCounterIn</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbBeforeROPPReaderCmdStartAck</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.AusiAfterROPPReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbAfterROPPReaderTagPresent</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IBAfterROPPReaderErrorValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbAfterROPPReaderCmdEnd</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IBAfterROPPReaderDataCounterIn</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbAfterROPPReaderCmdStartAck</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbROPPCycleStartButton</Name>
+				<Comment><![CDATA[Przycisk Startu cyklu]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbROPPCycleStopButton</Name>
+				<Comment><![CDATA[Przycisk Stopu cyklu]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbROPPEmergencyStopButton0Pressed</Name>
+				<Comment><![CDATA[Safety]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbROPPEmergencyStopButton1Pressed</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbROPP0DoorsOpen</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbROPP1DoorsOpen</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbROPPCompressedAirOK</Name>
+				<Comment><![CDATA[Zasilanie powietrzem sprężonym OK	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbROPPFuseFB1OK</Name>
+				<Comment><![CDATA[		]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbROPPFuseFB2OK</Name>
+				<Comment><![CDATA[	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbROPPFuseFB3OK</Name>
+				<Comment><![CDATA[	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbROPPFuseFB4OK</Name>
+				<Comment><![CDATA[	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbROPPFuseFB5OK</Name>
+				<Comment><![CDATA[	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbROPPFuseFB6OK</Name>
+				<Comment><![CDATA[	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbROPPFuseFB7OK</Name>
+				<Comment><![CDATA[	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbROPPFuseFB8OK</Name>
+				<Comment><![CDATA[		]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbROPPFuseFB9OK</Name>
+				<Comment><![CDATA[		]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IABPneumaticROPPEB1DigitalInput</Name>
+				<Type GUID="{B47A481E-EB9F-357C-E102-48878B97DB7B}">ARRAY [1..4] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IuiPneumaticROPPEB1State</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.IbCapFeederHeightEncoderSetCDone</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.IudiCapFeederHeightEncoderCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.IbCapFeederSorterCapSensor</Name>
+				<Comment><![CDATA[ Wejście z czujnika ultradzwiękowego nasadki sortera]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.IbCapFeederFullSleeveSensor</Name>
+				<Comment><![CDATA[ Wejście przepełnienia rękawa sortera]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.IbCapFeederLevelSensor</Name>
+				<Comment><![CDATA[ Wejście czujnika poziomu sortera]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.IbFuseCapFeederEngineOK</Name>
+				<Comment><![CDATA[Bezpiecznik silnika sortera OK]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.IbCapFeederHomingSensor</Name>
+				<Comment><![CDATA[ Czujnnik bazowania, sorter w gornej pozycji ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.IbCapFeederSorterWcState</Name>
+				<Comment><![CDATA[ Statusword transportera wejściowo wyjściowego]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.InCapFeederSorterVelocityCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.InCapFeederSorterSTW</Name>
+				<Comment><![CDATA[ Statusword transportera wejściowo wyjściowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.IbCapFeederPipeSensor</Name>
+				<Comment><![CDATA[ Czujnik obecnośći flipflopa w rękawie]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.IbCapPuttedCheckSensor</Name>
+				<Comment><![CDATA[ Wejście wykrycia nasadki ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.IbCapPuttedCheckFormSensor</Name>
+				<Comment><![CDATA[ Wejście wykrycia formatek w sprawdzaniu nasadek]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.IbCapPuttedCheckHeightEncoderPulses</Name>
+				<Comment><![CDATA[	(*PLC.A14*) 	// Enkoder podnośnika czujnika kontroli nakrętki]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.IbCapPuttedCheckWenglorFormSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.IbCapPuttedCheckEncoderSetCDone</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.IudiCapPuttedCheckHeightEncoderCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.IbCapPuttedCheckSensorScale_Wenglor</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.IbCapPuttedCheckSensorWarning_1_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.IbCapPuttedCheckSensorWarning_2_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.IdiCapPuttedCheckSensorCV_Wenglor</Name>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.IbCapPuttedCheckSensorWarning_3_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.IbCapPuttedCheckSensorWarning_4_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.IbCapPuttedCheckSensorWarning_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.IbCapPuttedCheckSensorError_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.IbCapPuttedCheckSensorSSC1_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.IbCapPuttedCheckSensorSSC2_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.IbGripperScrewersThirdFormCheckFormSensor</Name>
+				<Comment><![CDATA[ Czujnik dojazdu 3 formatki]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.IbGripperScrewersBeforeThirdFormCheckFormSensor</Name>
+				<Comment><![CDATA[ Czujnik po 3 formatce]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.IbGripperScrewersSixthFormCheckFormSensor</Name>
+				<Comment><![CDATA[Czujnik dojazdu 6 formatki]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.IbGripperScrewersDragUpSensor</Name>
+				<Comment><![CDATA[ Czujnik]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.IbGripperScrewersDragDownSensor</Name>
+				<Comment><![CDATA[ Czujnik]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.IbGripperScrewersDragHomingSensor</Name>
+				<Comment><![CDATA[ Czujnik bazowania]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.IbGripperScrewersDragLeadBefore1UpSensor</Name>
+				<Comment><![CDATA[ Czujnik]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.IbGripperScrewersDragLeadBefore2UpSensor</Name>
+				<Comment><![CDATA[ Czujnik]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.IdiGripperScrewer1HeightCV</Name>
+				<Comment><![CDATA[ Wejscie czujnika dociśnięcia]]></Comment>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.IrGripperScrewer1ActualMotorTemperature</Name>
+				<Comment><![CDATA[ Aktualna temperatura silnika zakręcarki]]></Comment>
+				<Type>REAL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.IbGripperScrewer1CatchHeightEncoderPulse</Name>
+				<Comment><![CDATA[ Wejście impulsów enkodera podnośnika chwytaka pod zakręcarką]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.IrGripperScrewer2ActualMotorTemperature</Name>
+				<Comment><![CDATA[ Aktualna temperatura silnika zakręcarki]]></Comment>
+				<Type>REAL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.IdiGripperScrewer2HeightCV</Name>
+				<Comment><![CDATA[ Wejscie czujnika dociśnięcia]]></Comment>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.IbGripperScrewersHeightEncoderSetCDone</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.IudiGripperScrewersHeightEncoderCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.IbGripperScrewer2CatchHeightEncoderPulse</Name>
+				<Comment><![CDATA[ Wejście impulsów enkodera podnośnika chwytaka pod zakręcarką]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.atemp1.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.atemp2.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckCapOKSensor</Name>
+				<Comment><![CDATA[ Wejście wykrycia nasadki ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckCapNotScrewedSensor</Name>
+				<Comment><![CDATA[ Wejście wykrycia złego zakręcenia ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckBottleSensor</Name>
+				<Comment><![CDATA[ Wejście wykrycia butelki	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckAfterScrewerFormSensor</Name>
+				<Comment><![CDATA[ Wejście wykrycia formatek w sprawdzaniu nasade]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckFormSensor</Name>
+				<Comment><![CDATA[ Wejście wykrycia formatek w sprawdzaniu nasade]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckDialAfterScrewerFormSensor</Name>
+				<Comment><![CDATA[ Wejście wykrycia formatek na skos]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckHeightEncoderPulses</Name>
+				<Comment><![CDATA[ Enkoder podnośnika czujnika kontroli nakrętki]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckEncoderSetCDone</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckCameraError</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IudiCapCorrectCheckHeightEncoderCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckCameraGood</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckCameraLogic1CapPresent</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckCameraBusy</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IuiCapCorrectCheckCameraProgram</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckSensorScale_Wenglor</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckSensorWarning_1_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IdiCapCorrectCheckSensorCV_Wenglor</Name>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckSensorWarning_2_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckSensorWarning_3_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckSensorWarning_4_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckSensorWarning_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckSensorError_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckSensorSSC1_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.IbCapCorrectCheckSensorSSC2_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IbRollerScrewerHeightEncoderSetCDone</Name>
+				<Comment><![CDATA[ WEJŚĆIA I WYJŚCIA SPRZĘTOWE]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IudiRollerScrewerHeightEncoderCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IbRollerScrewerCatchHeightEncoderSetCDone</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IudiRollerScrewerCatchHeightEncoderCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IbRollerScrewerFuseFB1OK</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IuiPneumaticRollerScrewerState</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IbRollerScrewerFuseRollerScrewerOK</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IbRollerScrewerFuseRollerScrewerCatchOK</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IbRollerScrewerPowerSupplyOK</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IbRollerScrewerDoors1Open</Name>
+				<Comment><![CDATA[GVL_IO_SAFETY.IbSafetyRelayRC40	 			AT %I*  :BOOL;	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IbRollerScrewerCycleStartStopButton</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IbRollerScrewerCompressedAirOK</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IbRollerScrewerUnPressedTopSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IbRollerScrewerRollsUnPressedSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IbRollerScrewerCatchSensorOpened</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IbRollerScrewerDoors2Open</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IbRollerScrewerCapPuttedSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IbReaderTagPresent</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IBReaderErrorValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IrRollerScrewerRearActualMotorTemperature</Name>
+				<Type>REAL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IrRollerScrewerFrontActualMotorTemperature</Name>
+				<Type>REAL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IbReaderCmdEnd</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IBReaderDataCounterIn</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IbReaderCmdStartAck</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.AusiReaderInputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P13_BottleTransfer.IbFirstFormCheckFormSensor</Name>
+				<Comment><![CDATA[ Sygnal pierwszej formatki]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P13_BottleTransfer.IbSecondFormCheckFormSensor</Name>
+				<Comment><![CDATA[ Sygnal drugiej formatki]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P13_BottleTransfer.IbBottleCheckAfterBottleTransferSensor</Name>
+				<Comment><![CDATA[ Wejście z czujnika wykrycia butelki za robotem]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P13_BottleTransfer.IbBottleTransferFormAfterSensor</Name>
+				<Comment><![CDATA[ Czujnik formatki za robotem]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P13_BottleTransfer.IbBottleTransferFormAfterSensor2</Name>
+				<Comment><![CDATA[ Czujnik 2 formatki za robotem]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P13_BottleTransfer.IaDataRobotIO</Name>
+				<Type GUID="{6AE51ED4-2F21-994D-0AF2-434ED0E81DC1}">ARRAY [1..8] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P13_BottleTransfer.IaDataRobotREG</Name>
+				<Type GUID="{06996938-A0CC-D594-2D93-F13C682B876A}">ARRAY [1..32] OF UINT</Type>
+			</Var>
+			<Var>
+				<Name>P13_BottleTransferAfterDrag.IABPneumatic648DigitalInput</Name>
+				<Type GUID="{B47A481E-EB9F-357C-E102-48878B97DB7B}">ARRAY [1..4] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P13_BottleTransferAfterDrag.IuiPneumatic648State</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P14_BadBottleConyevor.IbBadBottleConveyorFullSensor</Name>
+				<Comment><![CDATA[ Czujnik przepelnienia odrzuconych butelek]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P14_BadBottleConyevor.InBadBottleConveyorVelocityCV</Name>
+				<Comment><![CDATA[po kom]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P14_BadBottleConyevor.InBadBottleConveyorSTW</Name>
+				<Comment><![CDATA[ Statusword transportera wejściowo wyjściowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P14_BadBottleConyevor.InBadBottleConveyorErrorCode</Name>
+				<Comment><![CDATA[po kom]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.InFormTransporterDispencerSTW</Name>
+				<Comment><![CDATA[ Statusword transportera wejściowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.InFormTransporterDispencerVelocityCV</Name>
+				<Comment><![CDATA[po kom]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.InFormTransporterDispencerErrorCode</Name>
+				<Comment><![CDATA[po kom]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.InFormTransporterScrewerVelocityCV</Name>
+				<Comment><![CDATA[po kom]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.InFormTransporterScrewerSTW</Name>
+				<Comment><![CDATA[ Statusword transportera wyjściowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.InFormTransporterScrewerErrorCode</Name>
+				<Comment><![CDATA[po kom]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.InFormTransporterROPPSTW</Name>
+				<Comment><![CDATA[ Statusword transportera wyjściowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.InFormTransporterROPPVelocityCV</Name>
+				<Comment><![CDATA[po kom]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.InFormTransporterROPPErrorCode</Name>
+				<Comment><![CDATA[po kom]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.InFormTransporterAfterCapSorterVelocityCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.InFormTransporterAfterCapSorterSTW</Name>
+				<Comment><![CDATA[ Statusword transportera wyjściowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.InFormTransporterAfterCapSorterErrorCode</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.InFormTransporterBeforeScrewerSTW</Name>
+				<Comment><![CDATA[ Statusword transportera wyjściowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.InFormTransporterBeforeScrewerVelocityCV</Name>
+				<Comment><![CDATA[po kom]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.InFormTransporterBeforeScrewerErrorCode</Name>
+				<Comment><![CDATA[po kom]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.InFormTransporterAfterScrewerVelocityCV</Name>
+				<Comment><![CDATA[po kom]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.InFormTransporterAfterScrewerSTW</Name>
+				<Comment><![CDATA[ Statusword transportera wyjściowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.InFormTransporterAfterScrewerErrorCode</Name>
+				<Comment><![CDATA[po kom]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P16_LabelMachine.IbLabelMachineFullSensor</Name>
+				<Comment><![CDATA[ Czujnik przepelnienia butelek na etykieciarce]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P16_LabelMachine.IbLabelMachineWorking</Name>
+				<Comment><![CDATA[ Etykieciarka praca]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P16_LabelMachine.IbLabelMachineNotError</Name>
+				<Comment><![CDATA[ Etykieciarka awaria]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P17_TurnTables.IbExitTurnTablePackageSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P17_TurnTables.uiTurnTableSW</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P17_TurnTables.uiTurnTableActualVelocity</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P17_TurnTables.InExitConveyorSTW</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P17_TurnTables.InExitConveyorVelocityCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P17_TurnTables.InExitConveyorErrorCode</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P17_TurnTables.IbExitConveyorGateAfterSensor</Name>
+				<Comment><![CDATA[Blizej szlabanu]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P17_TurnTables.IbExitConveyorGateAfterSensor2</Name>
+				<Comment><![CDATA[Dalej szlabanu]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P20_ExhaustFan.IbExhaustSystemSwitchNormalMode</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P20_ExhaustFan.IbExhaustSystemSwitchExMode</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P20_ExhaustFan.IbExhaustSystemReady</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P20_ExhaustFan.IbExhaustSystemAlarm</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P20_ExhaustFan.IbExhaustSystemFlowOk</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P20_ExhaustFan.IbExhaustSystemAlarmLevel1</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeederDragHomingSensor</Name>
+				<Comment><![CDATA[ Czujnik bazowania]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeederDragUpSensor</Name>
+				<Comment><![CDATA[ Czujnik]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeederDragDownSensor</Name>
+				<Comment><![CDATA[ Czujnik]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeederDragLeadBefore1UpSensor</Name>
+				<Comment><![CDATA[ Czujnik]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeederUpSensor1</Name>
+				<Comment><![CDATA[ Czujnik pozycji górnej ssawki podajnika platynek]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeederUpSensor2</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeederDownSensor1</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeederDownSensor2</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeederLowLevelSensor1</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeederLowLevelSensor2</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeederFormPositioning1HideSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeederFormPositioning2HideSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeederFirstFormSensorBeforeDrag</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeederSuckerSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeeder2SuckerSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.AIbLidFeederHeaterTempCVSensor</Name>
+				<Comment><![CDATA[ Wartość aktualnej temperatury grzałki podajnika platynek]]></Comment>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeederTempSensorFailure</Name>
+				<Comment><![CDATA[ Informacja o uszkodzeniu czujnika temperatury grzałki podajnika platynek]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeederHeightEncoderPulse</Name>
+				<Comment><![CDATA[ Wejście impulsów enkodera podnośnika platynek regulacji wysokości ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeeder2UpSensor1</Name>
+				<Comment><![CDATA[ Czujnik pozycji górnej ssawki podajnika platynek]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeeder2DownSensor1</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeeder2DownSensor2</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.AIbLidFeeder2HeaterTempCVSensor</Name>
+				<Comment><![CDATA[ Wartość aktualnej temperatury grzałki podajnika platynek]]></Comment>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeeder2TempSensorFailure</Name>
+				<Comment><![CDATA[ Informacja o uszkodzeniu czujnika temperatury grzałki podajnika platynek]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeederHeightEncoderSetCDone</Name>
+				<Comment><![CDATA[ Czujnik niskiego pozimu platynek
+Vasyl 24.10.25 Aktualizacja enkodera]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IudiLidFeederHeightEncoderCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeederDragLeadBefore2UpSensor</Name>
+				<Comment><![CDATA[ Czujnik]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.IbLidFeederFormPositioningUpSensor</Name>
+				<Comment><![CDATA[ ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P_EtherCAT_Diag.uiDevState</Name>
+				<Comment><![CDATA[ DevState mastera EtherCAT'a]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P_EtherCAT_Diag.uiFrmWcState</Name>
+				<Comment><![CDATA[ FrmWcState]]></Comment>
+				<Type GUID="{08D99F99-574D-FAC7-C82A-15DC40DE3400}">ARRAY [1..6] OF UINT</Type>
+			</Var>
+			<Var>
+				<Name>P_GroupsWcStates.arrWcStateSyncUnitGroup</Name>
+				<Comment><![CDATA[Link to SyncUnit WcStates]]></Comment>
+				<Type GUID="{8C94E62D-EB52-5447-A247-1DED664397EE}">ARRAY [1..9] OF BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aPucksInserterWheelAxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aDispencer1AxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aDispencerLifter12AxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aDispencer2AxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aDispencer3AxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aDispencerLifter34AxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aDispencer4AxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aFormsDragingRightAxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aFormsDragingLeftAxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aWickFeederDragingAxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aLidFeederDragingAxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aLidSealerDragingAxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aAfterRobotDragingAxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aCapSorterDragAxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aBottleDragingAxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aGripperScrewer1LiftAxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aGripperScrewer2LiftAxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aGripperScrewer1AxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aGripperScrewer2AxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aGripperScrewer1EncoderAxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aGripperScrewer2EncoderAxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>gvlCommunication.stBottleSorterRead</Name>
+				<Comment><![CDATA[Odczytane zmienne z BottleSorter]]></Comment>
+				<Type GUID="{10B77F4A-9325-90E8-AC75-6910DBE6256A}">ST_Communication</Type>
+			</Var>
+			<Var>
+				<Name>gvlCommunication.stCapSorterRead</Name>
+				<Comment><![CDATA[Odczytane zmienne z CapSorter]]></Comment>
+				<Type GUID="{10B77F4A-9325-90E8-AC75-6910DBE6256A}">ST_Communication</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbEmergencyStopButton</Name>
+				<Comment><![CDATA[Jeśli FALSE - Estop wysyołany przez przyciski]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbBottleFeederSafety</Name>
+				<Comment><![CDATA[ Status Safety z podajnika butelek]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbSafetyResetIn</Name>
+				<Comment><![CDATA[ Przycisk Reset]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbCommunicationErrorUF50</Name>
+				<Comment><![CDATA[Do alarmu komunikacji z safety]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbCommunicationErrorUP50B</Name>
+				<Comment><![CDATA[Do alarmu komunikacji z safety]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbBottleSorterDisable</Name>
+				<Comment><![CDATA[Sygnał z kluczyka blokady safety]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbCapSorterDisable</Name>
+				<Comment><![CDATA[Sygnał z kluczyka blokady safety]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbPowerSupplyOK</Name>
+				<Comment><![CDATA[Napięcie zasilania OK]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbDCSupply1OK</Name>
+				<Comment><![CDATA[Zasilacz alarm	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbFuseFB1OK</Name>
+				<Comment><![CDATA[Bezpiecznik FB1 przepalony]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbDCSupply2OK</Name>
+				<Comment><![CDATA[Zasilacz alarm	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbFuseFB2OK</Name>
+				<Comment><![CDATA[Bezpiecznik FB2 przepalony]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbDCSupply3OK</Name>
+				<Comment><![CDATA[Zasilacz alarm	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbFuseDrivesOK</Name>
+				<Comment><![CDATA[Bezpiecznik Servonapędów]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbFuseFormTransporter1OK</Name>
+				<Comment><![CDATA[Bezpiecznik silnikowe napędu transportera 1]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbFuseFormTransporter2OK</Name>
+				<Comment><![CDATA[Bezpiecznik silnikowe napędu transportera 2]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbFuseFormTransporter3OK</Name>
+				<Comment><![CDATA[Bezpiecznik silnikowe napędu transportera 3 (odrzuty)]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbFuseFormTransporter4OK</Name>
+				<Comment><![CDATA[Bezpiecznik silnikowe napędu transportera 4 (spowalniacz)]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbFuseFormTransporter5OK</Name>
+				<Comment><![CDATA[Bezpiecznik silnikowe napędu transportera 4 (33F1)]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbFuseFormTransporter6OK</Name>
+				<Comment><![CDATA[Bezpiecznik silnikowe napędu transportera 4 (34F1)]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbBottleFeederTurntableOK</Name>
+				<Comment><![CDATA[Zabezpieczenie silnikowe stolu obrtooergo]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbDCSupply4OK</Name>
+				<Comment><![CDATA[Zasilacz alarm			]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbDCSupply5OK</Name>
+				<Comment><![CDATA[Zasilacz alarm		]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbFuseFB3OK</Name>
+				<Comment><![CDATA[Bezpiecznik FB3 przepalony]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbDC5VSupply1OK</Name>
+				<Comment><![CDATA[Zasilacz 5V alarm	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbLinearPowerSupplyOK</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbStepperPowerSupplyOK</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbFuseFanEXMotor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbStepperMotorsFuseOK</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbFuse10F9OK</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbFuse10F11OK</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbTanksDoorsOpen</Name>
+				<Comment><![CDATA[Otwarte drzwi pod zbiornikami]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbLidSealingDoorsOpen</Name>
+				<Comment><![CDATA[Otwarte drzwi przygrzewaczki]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbGripperScrewerDoorsOpen</Name>
+				<Comment><![CDATA[Otwarte drzwi przy zakrecarkach]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbDispencersDoorsOpen</Name>
+				<Comment><![CDATA[Otwarte drzwi przy dozownikach]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbBottleTransferDoorsOpen</Name>
+				<Comment><![CDATA[Otwarte drzwi z boku dozowników]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbEmergencyStopButton0Pressed</Name>
+				<Comment><![CDATA[Przyciśnięty przycisk E-Stop0	Pulpit główny przod]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbEmergencyStopButton1Pressed</Name>
+				<Comment><![CDATA[Przyciśnięty przycisk E-Stop1 przy transporterze odrzuconych opakowań]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbEmergencyStopButton2Pressed</Name>
+				<Comment><![CDATA[Przyciśnięty przycisk E-Stop2 przy drzwiach robota]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbEmergencyStopButton3Pressed</Name>
+				<Comment><![CDATA[Przyciśnięty przycisk E-Stop3 przy zakręcarkach]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbEmergencyStopButton4Pressed</Name>
+				<Comment><![CDATA[Przyciśnięty przycisk E-Stop4	Pulpit tylny]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbBottleFeederSafetyDoor1Open</Name>
+				<Comment><![CDATA[ Czujnik otwarcia drzwi dostępowych ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbBottleFeederSafetyDoor2Open</Name>
+				<Comment><![CDATA[ Czujnik otwarcia drzwi dostępowych drugie]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbBottleFeederSafetyDoor3Open</Name>
+				<Comment><![CDATA[ Czujnik otwarcia drzwi dostępowych drugie]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbPucksInserterRollerFuse</Name>
+				<Comment><![CDATA[ Zabezpieczenie 71F4 Rolka obracająca]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbPucksInserterPushTableFuse</Name>
+				<Comment><![CDATA[ Zabezpieczenie 71F3 Stół podający]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbEmergencyStopButtonPushtable1</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbEmergencyStopButtonPushtable2</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbCycleStartButton</Name>
+				<Comment><![CDATA[Przycisk Startu cyklu]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbCycleStopButton</Name>
+				<Comment><![CDATA[Przycisk Stopu cyklu]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbCompressedAirOK</Name>
+				<Comment><![CDATA[Zasilanie powietrzem sprężonym OK	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbFuseCircularInkjetOK</Name>
+				<Comment><![CDATA[Zabezpieczenie silnikowe InkJet obwodowy	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbPowerSuppyTerminal1UpUndervoltage</Name>
+				<Comment><![CDATA[ Brak napięcia zasilania na module ST1 w szafie głównej]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbPowerSuppyTerminal1UsUndervoltage</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbPowerSuppyTerminal2UpUndervoltage</Name>
+				<Comment><![CDATA[ Brak napięcia zasilania na module ST1 w szafie robota]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbPowerSuppyTerminal2UsUndervoltage</Name>
+				<Comment><![CDATA[ Brak napięcia E-Bus na module ST1 w szafie robota]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbGateBeforeGripperScrewerSensor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbTurnTableSafety</Name>
+				<Comment><![CDATA[Przyciśnięty przycisk E-Stop0	Pulpit główny]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbTurnTableMotorOK</Name>
+				<Comment><![CDATA[Zabezpieczenie silnikowe stolu obrtooergo ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbTurnTableEmergencyStopButtonPressed</Name>
+				<Comment><![CDATA[Przyciśnięty przycisk E-Stop0	Pulpit główny]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbTurnTableCycleStartButton</Name>
+				<Comment><![CDATA[Przycisk Startu cyklu]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbTurnTableCycleStopButton</Name>
+				<Comment><![CDATA[Przycisk Stopu cyklu]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbTurnTableFuseProtection</Name>
+				<Comment><![CDATA[Zabezpieczenie stół obrotowy]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbExitConveyorOK</Name>
+				<Comment><![CDATA[Zabezpieczenie silnikowe stolu obrtooergo]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbPucksInserterDoorsOpen</Name>
+				<Comment><![CDATA[Otwarte drzwi podajnika opakowań]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbPucksInserterEmergencyStopButton0Pressed</Name>
+				<Comment><![CDATA[Przyciśnięty przycisk E-Stop0	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbPucksInserterEmergencyStopButton1Pressed</Name>
+				<Comment><![CDATA[Przyciśnięty przycisk E-Stop1	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbPucksInserterCycleStartButton</Name>
+				<Comment><![CDATA[Przycisk Startu cyklu]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbPucksInserterCycleStopButton</Name>
+				<Comment><![CDATA[Przycisk Stopu cyklu]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbExModeSwitchNormalMode</Name>
+				<Comment><![CDATA[ Wybór trybu pracy - tryb zwykły]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbExModeSwitchExMode</Name>
+				<Comment><![CDATA[ Wybór trybu pracy - tryb pracy wybuchowej]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbPressureInSystemSensor</Name>
+				<Comment><![CDATA[ Czujnik ciśnienia w układzie ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_ROPP.aROPPDragAxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL_RS.aRollerScrewerFrontAxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL_RS.aRollerScrewerRearAxisRef.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>VIS.DCcurrertStepeerScrewers</Name>
+				<Comment><![CDATA[Zmienne do odczytu prądu krokówek]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>VIS.DCcurrertStepeerDosers</Name>
+				<Type>UINT</Type>
+			</Var>
+		</Vars>
+		<Vars VarGrpType="2" ContextId="1" AreaNo="17">
+			<Name>PlcTask Outputs</Name>
+			<Var>
+				<Name>P00_PneumaticValves.QABPneumatic645ValveCoils</Name>
+				<Type GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}">ARRAY [1..2] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.QABPneumatic641PressureRegulator</Name>
+				<Type GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}">ARRAY [1..2] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.QABPneumatic641ValveCoils</Name>
+				<Comment><![CDATA[ZMIENNE STERUJĄCE WYSPY ZAWOROWEJ]]></Comment>
+				<Type GUID="{7BB99BC5-EA9A-9AE9-9479-DBE8E93920B5}">ARRAY [1..6] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.QABPneumatic642ValveCoils</Name>
+				<Type GUID="{9A6F2C00-9352-7195-A7D1-8A6E966FCA76}">ARRAY [1..5] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.QABPneumatic643ValveCoils</Name>
+				<Type GUID="{9A6F2C00-9352-7195-A7D1-8A6E966FCA76}">ARRAY [1..5] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.QABPneumatic644ValveCoils</Name>
+				<Type GUID="{9A6F2C00-9352-7195-A7D1-8A6E966FCA76}">ARRAY [1..5] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.QABPneumatic646ValveCoils</Name>
+				<Type GUID="{9A6F2C00-9352-7195-A7D1-8A6E966FCA76}">ARRAY [1..5] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.QABPneumatic647ValveCoils</Name>
+				<Type GUID="{9A6F2C00-9352-7195-A7D1-8A6E966FCA76}">ARRAY [1..5] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.QABPneumaticPI641ValveCoils</Name>
+				<Type GUID="{7BB99BC5-EA9A-9AE9-9479-DBE8E93920B5}">ARRAY [1..6] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.QABPneumatic645_1PressureRegulator</Name>
+				<Type GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}">ARRAY [1..2] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_PneumaticValves.QABPneumatic645_2PressureRegulator</Name>
+				<Type GUID="{A973D240-0BBB-8261-35B4-E09CC3C8301C}">ARRAY [1..2] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbDispencerReaderCmdStart</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBDispencerReaderCmmandValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBDispencerReaderDataCounterOut</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiDispencerReaderOutputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbAfterDispencersReaderCmdStart</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBAfterDispencersReaderCmmandValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBAfterDispencersReaderDataCounterOut</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiAfterDispencersReaderOutputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbLidFeederReaderCmdStart</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBLidFeederReaderCmmandValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBLidFeederReaderDataCounterOut</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiLidFeederReaderOutputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbBeforeScrewerReaderCmdStart</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBBeforeScrewerReaderCmmandValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBBeforeScrewerReaderDataCounterOut</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiBeforeScrewerReaderOutputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbAfterScrewerReaderCmdStart</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBAfterScrewerReaderCmmandValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBAfterScrewerReaderDataCounterOut</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiAfterScrewerReaderOutputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbBottleTransferReaderCmdStart</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBBottleTransferReaderCmmandValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBBottleTransferReaderDataCounterOut</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiBottleTransferReaderOutputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbCapSorterReaderCmdStart</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBCapSorterReaderCmmandValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBCapSorterReaderDataCounterOut</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiCapSorterReaderOutputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbAfterDispencers2PhaseReaderCmdStart</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBAfterDispencers2PhaseReaderCmmandValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBAfterDispencers2PhaseReaderDataCounterOut</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiAfterDispencers2PhaseReaderOutputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IbLidSealerReaderCmdStart</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBLidSealerReaderCmmandValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.IBLidSealerReaderDataCounterOut</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P00_ReadRFIDCard.AusiLidSealerReaderOutputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P00_Signalization.QbStartLamp</Name>
+				<Comment><![CDATA[ Sygnalizacja startu cyklu poprzez lampkę na przyciskac]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_Signalization.QiLineRedSignalizationLamp</Name>
+				<Comment><![CDATA[ Sygnalizacja czerwony kolor listwy LED]]></Comment>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>P00_Signalization.QiLineGreenSignalizationLamp</Name>
+				<Comment><![CDATA[ Sygnalizacja zielony kolor listwy LED	]]></Comment>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>P00_Signalization.QiLineBlueSignalizationLamp</Name>
+				<Comment><![CDATA[ Sygnalizacja niebieski kolor listwy LED		]]></Comment>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>P00_Signalization.QiLineWhiteSignalizationLamp</Name>
+				<Comment><![CDATA[ Sygnalizacja biały kolor listwy LED	]]></Comment>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>P00_Signalization.QbResetLamp</Name>
+				<Comment><![CDATA[ Sygnalizacja Resetu bezpieczeństwa poprzez lampkę naprzycisku reset]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_Signalization.QbBuzzer</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_Signalization.QbTurnTableStartLamp</Name>
+				<Comment><![CDATA[ Sygnalizacja startu cyklu poprzez lampkę na przyciskac		]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_Signalization.QbTurnTableResetLamp</Name>
+				<Comment><![CDATA[ Sygnalizacja Resetu bezpieczeństwa poprzez lampkę naprzycisku reset]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_Signalization.QbPucksInserterStartLamp</Name>
+				<Comment><![CDATA[ Sygnalizacja startu cyklu poprzez lampkę na przyciskac		]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P00_Signalization.QbPucksInserterResetLamp</Name>
+				<Comment><![CDATA[ Sygnalizacja Resetu bezpieczeństwa poprzez lampkę naprzycisku reset]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P01_BottleFeeder.uiBottleFeederTurnTableCW</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_BottleFeeder.udiBottleFeederTurnTableVelocity</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.QbPucksInserterHammerHeightUpCmd</Name>
+				<Comment><![CDATA[ Wyjście sterujące podnośnikiem]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.QbPucksInserterHammerHeightDownCmd</Name>
+				<Comment><![CDATA[ Wyjście sterujące podnośnikiem]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.QbPucksInserterHammerHeightEncoderSetC</Name>
+				<Comment><![CDATA[ Enkoder - Set Counter ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.QudiPucksInserterHammerHeightEncoderSetCV</Name>
+				<Comment><![CDATA[ Enkoder - Set Counter value]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.uiPucksInserterTurnTableCW</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.udiPucksInserterTurnTableVelocity</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.uiPucksInserterConveyorCW</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.udiPucksInserterConveyorVelocity</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.QnPucksInserterPushTable_m1_VelocitySV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.QnPucksInserterPushTable_m1_CTW</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.QnPucksInserterPushTable_m2_VelocitySV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.QnPucksInserterPushTable_m2_CTW</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.QnPucksInserterPushTable_m3_VelocitySV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P01_PucksInserter.QnPucksInserterPushTable_m3_CTW</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.QbDispencersCatch1HeightUpCmd</Name>
+				<Comment><![CDATA[ Wyjście sterujące podnośnikiem chwytaka i tacki dozownika , Silnik w górę]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.QbDispencersCatch1HeightDownCmd</Name>
+				<Comment><![CDATA[ Wyjście sterujące podnośnikiem chwytaka i tacki dozownika, Silnik w dół]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.QbDispencersCatchHeightEncoderSetC</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.QudiDispencersCatchHeightEncoderSetCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.QbTank1LevelSensorCalibration</Name>
+				<Comment><![CDATA[ Kalibracja czujnika poziomu leja nr 1]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.QbTank2LevelSensorCalibration</Name>
+				<Comment><![CDATA[ Kalibracja czujnika poziomu leja nr 2]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.QbTank1Pressure</Name>
+				<Comment><![CDATA[ Ciśnienie w zbiorniku nr 1]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.QbTank1PumpStart</Name>
+				<Comment><![CDATA[Załączenie pompy masy do zbiornika]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.QbTank2PumpStart</Name>
+				<Comment><![CDATA[Załączenie pompy masy do zbiornika]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.QbTank3PumpStart</Name>
+				<Comment><![CDATA[Załączenie pompy masy do zbiornika]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.QbTank4PumpStart</Name>
+				<Comment><![CDATA[Załączenie pompy masy do zbiornika]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.QbTankHeatingPWMOut</Name>
+				<Comment><![CDATA[ Wyjście sterujące temperaturą grzałki]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.QbTank1MixerStart</Name>
+				<Comment><![CDATA[Załączenie mieszadła masy do zbiornika]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.aDispenser1VirtualLifter.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.aDispenser2VirtualLifter.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.aDispenser3VirtualLifter.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.aDispenser4VirtualLifter.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>P02_Dispencers.arTemp.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>P02_DispencersCharts.DispencerAxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>P02_DispencersCharts.DispencerLifterAxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>P06_WickFeeder.QbWickFeederSorterEngine</Name>
+				<Comment><![CDATA[ Wyjście silnikiem sortera]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_WickFeeder.QbWickFeederSorterAir</Name>
+				<Comment><![CDATA[ Wyjście sterujące szybkim zaworem wydmuchu]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_WickFeeder.QbWickFeederSorterAir2</Name>
+				<Comment><![CDATA[ Wyjście sterujące szybkim zaworem wydmuchu]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_WickFeeder.QnWickFeederSorterVelocitySV</Name>
+				<Comment><![CDATA[ Nastawa prędkości]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P06_WickFeeder.QnWickFeederSorterCTW</Name>
+				<Comment><![CDATA[ Controlword transportera we/wy]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P06_WickFeeder.QbWickFeeder_HeightMotorUp</Name>
+				<Comment><![CDATA[ Sterowanie silnikiem podnosnika stacji w górę ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_WickFeeder.QbWickFeeder_HeightMotorDown</Name>
+				<Comment><![CDATA[Sterowanie silnikiem podnosnika stacji w dół]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_WickFeeder.QbWickFeederHeightEncoderSetC</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_WickFeeder.QudiWickFeederHeightEncoderSetCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidPuttedCheck.QbLidPuttedCheckHeightUpCmd</Name>
+				<Comment><![CDATA[ Wyjście sterujące podnośnikiem sprawdzania platynki, Silnik w górę]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidPuttedCheck.QbLidPuttedCheckHeightDownCmd</Name>
+				<Comment><![CDATA[ Wyjście sterujące podnośnikiem sprawdzania platynki, Silnik w dół]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidPuttedCheck.QbLidPuttedCheckCameraTrigger</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidPuttedCheck.QbLidPuttedCheckCameraChangeProgram</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidPuttedCheck.QuiLidPuttedCheckCameraProgram</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.QbLidSealerBlockActuator</Name>
+				<Comment><![CDATA[ Blokada ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.QbLidSealerHeightUpCmd</Name>
+				<Comment><![CDATA[ Wyjście sterujące podnośnikiem siłownika grzałki zadaniczej, Silnik w górę]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.QbLidSealerHeightDownCmd</Name>
+				<Comment><![CDATA[ Wyjście sterujące podnośnikiem siłownika grzałki zadaniczej, Silnik w dół]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.QbLidSealerHeaterPWMOut</Name>
+				<Comment><![CDATA[ Wyjście sterujące temperaturą grzałki zadaniczej]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.QbLidSealerCoolingFan</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.QbLidSealer2HeightDownCmd</Name>
+				<Comment><![CDATA[ Wyjście sterujące podnośnikiem siłownika grzałki zadaniczej, Silnik w dół]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.QbLidSealer2CoolingFan</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.QbLidSealer2HeightUpCmd</Name>
+				<Comment><![CDATA[ Wyjście sterujące podnośnikiem siłownika grzałki zadaniczej, Silnik w górę]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidSealer.QbLidSealer2HeaterPWMOut</Name>
+				<Comment><![CDATA[ Wyjście sterujące temperaturą grzałki zadaniczej]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QnROPPSlowerVelocitySV</Name>
+				<Comment><![CDATA[ Nastawa prędkości transportera]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QnROPPSlowerCTW</Name>
+				<Comment><![CDATA[ Controlword transportera wyjsciowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QbROPPFeederHeightUpCmd</Name>
+				<Comment><![CDATA[ Wyjście sterujące podnośnikiem podajnika nakrętek, Silnik w górę]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QbROPPFeederHeightDownCmd</Name>
+				<Comment><![CDATA[ Wyjście sterujące podnośnikiem podajnika nakrętek, Silnik w dół]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QbROPPFeederHeightEncoderSetC</Name>
+				<Comment><![CDATA[ Enkoder - Set Counter ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QudiROPPFeederHeightEncoderSetCV</Name>
+				<Comment><![CDATA[ Enkoder - Set Counter value]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QbROPPFeederSorterVibrator</Name>
+				<Comment><![CDATA[ Wyjście sterujące ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QbROPPFeederSorterAir</Name>
+				<Comment><![CDATA[ Wyjście sterujące ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QbROPPFeederConveyorStart</Name>
+				<Comment><![CDATA[ Wyjście sterujące ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QbROPPFeederConveyorStop</Name>
+				<Comment><![CDATA[ Wyjście sterujące ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QnROPPFeederSorterVelocitySV</Name>
+				<Comment><![CDATA[ Nastawa prędkości]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QnROPPFeederSorterCTW</Name>
+				<Comment><![CDATA[ Controlword transportera we/wy]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QbROPPCappingHeightUpCmd</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QbROPPCappingHeightDownCmd</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QudiROPPCappingHeightEncoderSetCV</Name>
+				<Comment><![CDATA[ Enkoder - Set Counter value]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QbROPPCappingHeightEncoderSetC</Name>
+				<Comment><![CDATA[ Enkoder - Set Counter ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QbROPPCapping1Tool1Actuator</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QbROPPCapping2Tool1Actuator</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QbROPPCapping12Tool1BlockActuator</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QbROPPCappingBlockActuator</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QbROPPCappingFormPositioning</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QnROPPCapping1VelocitySV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QnROPPCapping1CTW</Name>
+				<Comment><![CDATA[ Controlword transportera we/wy]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QnROPPCapping2VelocitySV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QnROPPCapping2CTW</Name>
+				<Comment><![CDATA[ Controlword transportera we/wy]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbBeforeROPPReaderCmdStart</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IBBeforeROPPReaderCmmandValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IBBeforeROPPReaderDataCounterOut</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.AusiBeforeROPPReaderOutputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IbAfterROPPReaderCmdStart</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IBAfterROPPReaderCmmandValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.IBAfterROPPReaderDataCounterOut</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.AusiAfterROPPReaderOutputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QiROPPRedSignalizationLamp</Name>
+				<Comment><![CDATA[Lampy]]></Comment>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QiROPPGreenSignalizationLamp</Name>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QiROPPBlueSignalizationLamp</Name>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QiROPPWhiteSignalizationLamp</Name>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QbROPPStartLamp</Name>
+				<Comment><![CDATA[ Sygnalizacja startu cyklu poprzez lampkę na przyciskac]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QbROPPResetLamp</Name>
+				<Comment><![CDATA[ Sygnalizacja Resetu bezpieczeństwa poprzez lampkę naprzycisku reset]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QbROPPDoors0Close</Name>
+				<Comment><![CDATA[ Rozkaz zamkniecia ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QbROPPDoors1Close</Name>
+				<Comment><![CDATA[ Rozkaz zamkniecia ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QbROPPCompressedAir</Name>
+				<Comment><![CDATA[Zawór główny]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P07_ROPP.QABPneumaticROPPEB1ValveCoils</Name>
+				<Comment><![CDATA[DI wyspy pneumatycznej]]></Comment>
+				<Type GUID="{9A6F2C00-9352-7195-A7D1-8A6E966FCA76}">ARRAY [1..5] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.QbCapFeederHeightEncoderSetC</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.QbCapFeederHeightUpCmd</Name>
+				<Comment><![CDATA[ Wyjście sterujące podnośnikiem podajnika nakrętek, Silnik w górę]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.QbCapFeederHeightDownCmd</Name>
+				<Comment><![CDATA[ Wyjście sterujące podnośnikiem podajnika nakrętek, Silnik w dół]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.QbCapFeederSorterEngine</Name>
+				<Comment><![CDATA[ Wyjście silnikiem sortera]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.QudiCapFeederHeightEncoderSetCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.QbCapFeederSorterAir</Name>
+				<Comment><![CDATA[ Wyjście sterujące szybkim zaworem wydmuchu]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.QbCapFeederSorterAir2</Name>
+				<Comment><![CDATA[ Wyjście sterujące szybkim zaworem wydmuchu]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.QnCapFeederSorterVelocitySV</Name>
+				<Comment><![CDATA[ Nastawa prędkości]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.QnCapFeederSorterCTW</Name>
+				<Comment><![CDATA[ Controlword transportera we/wy]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.QbCapFeederGate1</Name>
+				<Comment><![CDATA[ Wyjście sterujące słabanem #1 w rękawe]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P08_CapFeeder.QbCapFeederGate2</Name>
+				<Comment><![CDATA[ Wyjście sterujące słabanem #1 w rękawe]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.QbCapPuttedCheckHeightUpCmd</Name>
+				<Comment><![CDATA[	(*PLC.A19*) 	// Wyjście sterujące podnośnikiem sprawdzania nasadek w formatkach, Silnik w górę]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.QbCapPuttedCheckHeightDownCmd</Name>
+				<Comment><![CDATA[	(*PLC.A19*)		// Wyjście sterujące podnośnikiem sprawdzania nasadek w formatkach, Silnik w dół]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.QbCapPuttedCheckHeightEncoderSetC</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.QudiCapPuttedCheckHeightEncoderSetCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.QbCapPuttedCheckSensorControlSignal_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.QbCapPuttedCheckSensorFindMe_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.QbCapPuttedCheckSensorTeachSSC1_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P09_CapPuttedCheck.QbCapPuttedCheckSensorTeachSSC2_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.fb2GripperScrewer1.fbHeight.fbMotorMonitoring.uiBipolarTorqueLimitValue</Name>
+				<Comment><![CDATA[ Raw data, linked to Bipolar torque limit value]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.fb2GripperScrewer1.fbScrewing1.fbMotorMonitoring.uiBipolarTorqueLimitValue</Name>
+				<Comment><![CDATA[ Raw data, linked to Bipolar torque limit value]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.fb2GripperScrewer1.fbScrewing2.fbMotorMonitoring.uiBipolarTorqueLimitValue</Name>
+				<Comment><![CDATA[ Raw data, linked to Bipolar torque limit value]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.fb2GripperScrewerNew1.fbHeight.fbMotorMonitoring.uiBipolarTorqueLimitValue</Name>
+				<Comment><![CDATA[ Raw data, linked to Bipolar torque limit value]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.fb2GripperScrewerNew1.fbScrewing1.fbMotorMonitoring.uiBipolarTorqueLimitValue</Name>
+				<Comment><![CDATA[ Raw data, linked to Bipolar torque limit value]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.fb2GripperScrewerNew1.fbScrewing2.fbMotorMonitoring.uiBipolarTorqueLimitValue</Name>
+				<Comment><![CDATA[ Raw data, linked to Bipolar torque limit value]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.fb2GripperScrewer2.fbHeight.fbMotorMonitoring.uiBipolarTorqueLimitValue</Name>
+				<Comment><![CDATA[ Raw data, linked to Bipolar torque limit value]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.fb2GripperScrewer2.fbScrewing1.fbMotorMonitoring.uiBipolarTorqueLimitValue</Name>
+				<Comment><![CDATA[ Raw data, linked to Bipolar torque limit value]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.fb2GripperScrewer2.fbScrewing2.fbMotorMonitoring.uiBipolarTorqueLimitValue</Name>
+				<Comment><![CDATA[ Raw data, linked to Bipolar torque limit value]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.fb2GripperScrewerNew2.fbHeight.fbMotorMonitoring.uiBipolarTorqueLimitValue</Name>
+				<Comment><![CDATA[ Raw data, linked to Bipolar torque limit value]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.fb2GripperScrewerNew2.fbScrewing1.fbMotorMonitoring.uiBipolarTorqueLimitValue</Name>
+				<Comment><![CDATA[ Raw data, linked to Bipolar torque limit value]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.fb2GripperScrewerNew2.fbScrewing2.fbMotorMonitoring.uiBipolarTorqueLimitValue</Name>
+				<Comment><![CDATA[ Raw data, linked to Bipolar torque limit value]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.QnGripperScrewer1TorqueLimit</Name>
+				<Comment><![CDATA[ Ograniczenie momentu napędu zakręcarki szczękowej ]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.QbGripperScrewer1CatchHeightUpCmd</Name>
+				<Comment><![CDATA[ Wyjście sterujące podnośnikiem siłownika stabilizującego pod zakręcarką szczękową, Silnik w górę]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.QbGripperScrewer1CatchHeightDownCmd</Name>
+				<Comment><![CDATA[ Wyjście sterujące podnośnikiem siłownika stabilizującego pod zakręcarką szczękową, Silnik w dół]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.QnGripperScrewer1ProportionalGain</Name>
+				<Comment><![CDATA[ Kp ]]></Comment>
+				<Type>REAL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.QnGripperScrewer2TorqueLimit</Name>
+				<Comment><![CDATA[ Ograniczenie momentu napędu zakręcarki szczękowej ]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.QnGripperScrewer2ProportionalGain</Name>
+				<Comment><![CDATA[ Kp ]]></Comment>
+				<Type>REAL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.QbGripperScrewersHeightEncoderSetC</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.QbGripperScrewer2CatchHeightUpCmd</Name>
+				<Comment><![CDATA[ Wyjście sterujące podnośnikiem siłownika stabilizującego pod zakręcarką szczękową, Silnik w górę]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.QbGripperScrewer2CatchHeightDownCmd</Name>
+				<Comment><![CDATA[ Wyjście sterujące podnośnikiem siłownika stabilizującego pod zakręcarką szczękową, Silnik w dół]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.QudiGripperScrewersHeightEncoderSetCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.atemp1.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>P10_GripperScrewer.atemp2.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.QbCapCorrectCheckHeightUpCmd</Name>
+				<Comment><![CDATA[ Wyjście sterujące podnośnikiem sprawdzania nasadek w formatkach, Silnik w górę]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.QbCapCorrectCheckHeightDownCmd</Name>
+				<Comment><![CDATA[ Wyjście sterujące podnośnikiem sprawdzania nasadek w formatkach, Silnik w dół]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.QbCapCorrectCheckHeightEncoderSetC</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.QudiCapCorrectCheckHeightEncoderSetCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.QbCapCorrectCheckCameraTrigger</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.QuiCapCorrectCheckCameraProgram</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.QbCapCorrectCheckCameraChangeProgram</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.QbCapCorrectCheckSensorControlSignal_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.QbCapCorrectCheckSensorFindMe_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.QbCapCorrectCheckSensorTeachSSC1_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_CapCorrectCheck.QbCapCorrectCheckSensorTeachSSC2_Wenglor</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.QbRollerScrewerHeightEncoderSetC</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.QudiRollerScrewerHeightEncoderSetCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.QbRollerScrewerCatchHeightUpCmd</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.QbRollerScrewerCatchHeightDownCmd</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.QbRollerScrewerCatchHeightEncoderSetC</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.QudiRollerScrewerCatchHeightEncoderSetCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.QABPneumaticRollerScrewerValveCoils</Name>
+				<Type GUID="{9A6F2C00-9352-7195-A7D1-8A6E966FCA76}">ARRAY [1..5] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.QbRollerScrewerGreenSignalizationLamp</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.QbRollerScrewerRedSignalizationLamp</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.QbRollerScrewerWhiteSignalizationLamp</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.QbRollerScrewerYellowSignalizationLamp</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.QbRollerScrewerHeightMotorUp</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.QbRollerScrewerHeightMotorDown</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.QnRollerScrewerFrontTorqueLimit</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.QnRollerScrewerRearTorqueLimit</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IbReaderCmdStart</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IBReaderCmmandValue</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.IBReaderDataCounterOut</Name>
+				<Type>BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P11_RollerScrewer.AusiReaderOutputData</Name>
+				<Type GUID="{D7AB3542-E0E4-C385-4DF4-9C4B099F28AB}">ARRAY [0..27] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P13_BottleTransfer.QbBottleTransferRobotMode1</Name>
+				<Comment><![CDATA[Zezwalanie na pracę robota 1]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P13_BottleTransfer.QbBottleTransferRobotMode2</Name>
+				<Comment><![CDATA[Zezwalanie na pracę robota 2	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P13_BottleTransfer.QaDataRobotIO</Name>
+				<Comment><![CDATA[ WEJSCIA I WYJSCIA SPRZETOWE	]]></Comment>
+				<Type GUID="{6AE51ED4-2F21-994D-0AF2-434ED0E81DC1}">ARRAY [1..8] OF USINT</Type>
+			</Var>
+			<Var>
+				<Name>P13_BottleTransfer.QaDataRobotREG</Name>
+				<Type GUID="{06996938-A0CC-D594-2D93-F13C682B876A}">ARRAY [1..32] OF UINT</Type>
+			</Var>
+			<Var>
+				<Name>P13_BottleTransferAfterDrag.QABPneumatic648ValveCoils</Name>
+				<Comment><![CDATA[DI wyspy pneumatycznej]]></Comment>
+				<Type GUID="{9A6F2C00-9352-7195-A7D1-8A6E966FCA76}">ARRAY [1..5] OF BYTE</Type>
+			</Var>
+			<Var>
+				<Name>P14_BadBottleConyevor.QnBadBottleConveyorVelocitySV</Name>
+				<Comment><![CDATA[ Nastawa prędkości transportera]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P14_BadBottleConyevor.QnBadBottleConveyorConvCTW</Name>
+				<Comment><![CDATA[ Controlword transportera we/wy]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.QnFormTransporterDispencerVelocitySV</Name>
+				<Comment><![CDATA[ Nastawa prędkości transportera]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.QnFormTransporterDispencerCTW</Name>
+				<Comment><![CDATA[ Controlword transportera wejsciowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.QnFormTransporterScrewerVelocitySV</Name>
+				<Comment><![CDATA[ Nastawa prędkości transportera]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.QnFormTransporterScrewerCTW</Name>
+				<Comment><![CDATA[ Controlword transportera wyjsciowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.QnFormTransporterROPPVelocitySV</Name>
+				<Comment><![CDATA[ Nastawa prędkości transportera]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.QnFormTransporterROPPCTW</Name>
+				<Comment><![CDATA[ Controlword transportera wyjsciowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.QnFormTransporterAfterCapSorterVelocitySV</Name>
+				<Comment><![CDATA[ Nastawa prędkości transportera]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.QnFormTransporterAfterCapSorterCTW</Name>
+				<Comment><![CDATA[ Controlword transportera wyjsciowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.QnFormTransporterBeforeScrewerVelocitySV</Name>
+				<Comment><![CDATA[ Nastawa prędkości transportera]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.QnFormTransporterBeforeScrewerCTW</Name>
+				<Comment><![CDATA[ Controlword transportera wyjsciowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.QnFormTransporterAfterScrewerVelocitySV</Name>
+				<Comment><![CDATA[ Nastawa prędkości transportera]]></Comment>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P15_FormTransporters.QnFormTransporterAfterScrewerCTW</Name>
+				<Comment><![CDATA[ Controlword transportera wyjsciowego]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P16_LabelMachine.QbLabelMachineStart</Name>
+				<Comment><![CDATA[PLC.A20]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P16_LabelMachine.QbLabelMachineStop</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P17_TurnTables.uiTurnTableCW</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P17_TurnTables.udiTurnTableVelocity</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P17_TurnTables.QnExitConveyorVelocitySV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>P17_TurnTables.QnExitConveyorConvCTW</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>P17_TurnTables.QbExitConveyorGate</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P20_ExhaustFan.QbExhaustSystemEnable</Name>
+				<Comment><![CDATA[****************Wentylator wyciągaowy******************]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.QbLidFeederBlockActuator</Name>
+				<Comment><![CDATA[ Blokada ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.QbLidFeeder_SuckerActuator</Name>
+				<Comment><![CDATA[ Sterowanie zaworem ssawki platynek na wyspie zaworowej]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.QbLidFeederHeaterPWMOut</Name>
+				<Comment><![CDATA[ Wyjście sterujące grzałką podajnika platynek]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.QbLidFeeder_HeightMotorUp</Name>
+				<Comment><![CDATA[ Sterowanie silnikiem podnosnika stacji w górę ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.QbLidFeeder_HeightMotorDown</Name>
+				<Comment><![CDATA[Sterowanie silnikiem podnosnika stacji w dół]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.QbLidFeeder2_SuckerActuator</Name>
+				<Comment><![CDATA[ Sterowanie zaworem ssawki platynek na wyspie zaworowej]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.QbLidFeeder2HeaterPWMOut</Name>
+				<Comment><![CDATA[ Wyjście sterujące grzałką podajnika platynek]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.QbLidFeederHeightEncoderSetC</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>P06_LidFeeder.QudiLidFeederHeightEncoderSetCV</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aPucksInserterWheelAxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aDispencer1AxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aDispencerLifter12AxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aDispencer2AxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aDispencer3AxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aDispencerLifter34AxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aDispencer4AxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aFormsDragingRightAxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aFormsDragingLeftAxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aWickFeederDragingAxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aLidFeederDragingAxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aLidSealerDragingAxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aAfterRobotDragingAxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aCapSorterDragAxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aBottleDragingAxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aGripperScrewer1LiftAxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aGripperScrewer2LiftAxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aGripperScrewer1AxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aGripperScrewer2AxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aGripperScrewer1EncoderAxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL.aGripperScrewer2EncoderAxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbSafetyResetCapSorterIn</Name>
+				<Comment><![CDATA[ Przycisk Reset]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbSafetyResetBottleSorterIn</Name>
+				<Comment><![CDATA[ Przycisk Reset]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbSafetyResetDelay</Name>
+				<Comment><![CDATA[ Zezwolenie na pierwsze zresetowanie]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbResetFuseFB1</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbResetFuseFB2</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbResetFuseFB3</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbDispencersDoorsClose</Name>
+				<Comment><![CDATA[ Rozkaz zamkniecia ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbGripperScrewerClose</Name>
+				<Comment><![CDATA[ Rozkaz zamkniecia ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbBottleTransferDoorsClose</Name>
+				<Comment><![CDATA[ Rozkaz zamkniecia ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbTanksDoorsClose</Name>
+				<Comment><![CDATA[ Rozkaz zamkniecia]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbLidSealingDoorsClose</Name>
+				<Comment><![CDATA[ Rozkaz zamkniecia]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbPickInserterDoorsClose</Name>
+				<Comment><![CDATA[ Rozkaz zamkniecia ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_ROPP.aROPPDragAxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL_RS.aRollerScrewerFrontAxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL_RS.aRollerScrewerRearAxisRef.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+		</Vars>
+	</Instance>
+</TcSmItem>

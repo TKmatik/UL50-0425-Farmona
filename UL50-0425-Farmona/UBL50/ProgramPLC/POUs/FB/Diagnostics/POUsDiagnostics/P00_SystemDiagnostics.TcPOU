@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="P00_SystemDiagnostics" Id="{7e196210-9fee-4653-8689-56e94c2c639b}" SpecialFunc="None">
+    <Declaration><![CDATA[//==================================================================================================
+//							Beckhoff Automation Poland
+//									2.11.2018
+//					Program zbiorczy diagnostyki systemu
+// 
+//	v1.4 	|| TC v 3.1.4022.25 	|| Dodany state machine
+//	v1.3 	|| TC v 3.1.4022.20 	|| Usuniete P_MDP, dodany podprogram EventLoggera P_SystemDiag_EventLog
+//	v1.2 	|| TC v 3.1.4020.32 	|| Dodane P_EtherCAT_ChangeCounter
+//	v1.1 	|| TC v 3.1.4020.14 	|| Dodane wyjscia bOk, bWarning, bError
+//	v1.0 	|| TC v 3.1.4020.0 		|| Pierwsza wersja
+//==================================================================================================
+PROGRAM P00_SystemDiagnostics
+VAR_INPUT
+	bReset													: BOOL;
+END_VAR                                     				
+VAR_OUTPUT                                  				
+	eDiagState												: E_DiagState;
+	bOK														: BOOL;									// Brak bledow i ostrzezen
+	bWarning												: BOOL;									// Ostrzezenie
+	bError													: BOOL;									// Zbiorcza flaga bledow
+	udiErrorID												: UDINT;								// Numer bledu
+	sErrorDescription										: WSTRING;								// Opis blad
+END_VAR                                     	
+VAR                                         	
+	tonCheckDiagnosisResettingTime							: TON;									// Timer do zabezpieczenia zeby program nie utknal w ressetingu
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[P_SystemInfo();																												// Wywolanie programow sprawdzajacych
+P_Persistent();
+P_EtherCAT_Diag();
+P_EtherCAT_ChangeCounter();
+P_Checks();
+P_TaskInfo();
+P_PlcTaskSystemInfo();							
+P_GroupsWcStates();
+
+
+bError													:= 	P_SystemInfo.bError 				OR 
+															P_Persistent.bError 				OR 
+															P_EtherCAT_Diag.bError 				OR
+															P_EtherCAT_ChangeCounter.bError 	OR 
+															P_Checks.bError 					OR 
+															P_TaskInfo.bError 					OR 
+															P_PlcTaskSystemInfo.bError 			OR 
+															P_GroupsWcStates.bError;
+                                                		
+bWarning												:= 	P_SystemInfo.bWarning 				OR 
+															P_Persistent.bWarning 				OR 
+															P_EtherCAT_Diag.bWarning 			OR 
+															P_EtherCAT_ChangeCounter.bWarning 	OR 
+															P_Checks.bWarning 					OR 
+															P_TaskInfo.bWarning 				OR 
+															P_PlcTaskSystemInfo.bWarning;
+													
+bOk															:= NOT (bError OR bWarning);
+
+
+
+IF P_SystemInfo.bError OR P_SystemInfo.bWarning THEN																			// Przypisanie numerow bledow oraz opisow do zmiennych 
+	udiErrorID												:= P_SystemInfo.udiErrorID; 										// Bledy od 1-4
+	sErrorDescription										:= P_SystemInfo.sErrorDescription;	
+	                                            			
+ELSIF P_Persistent.bError THEN                  			
+	udiErrorID												:= P_Persistent.udiErrorID;
+	sErrorDescription										:= P_Persistent.sErrorDescription;
+	                                            			
+ELSIF P_EtherCAT_Diag.bError THEN               			
+	udiErrorID												:= P_EtherCAT_Diag.udiErrorID;        
+	sErrorDescription										:= P_EtherCAT_Diag.sErrorDescription;	
+	
+ELSIF P_EtherCAT_ChangeCounter.bError THEN
+	udiErrorID												:= P_EtherCAT_ChangeCounter.udiErrorID;
+	sErrorDescription										:= P_EtherCAT_ChangeCounter.sErrorDescription;	
+	                                            			
+ELSIF P_Checks.bError THEN                      			
+	udiErrorID												:= P_Checks.udiErrorID;        
+	sErrorDescription										:= P_Checks.sErrorDescription;	
+                                                			
+ELSIF P_TaskInfo.bError THEN                    			
+	udiErrorID												:= P_TaskInfo.udiErrorID;       
+	sErrorDescription										:= P_TaskInfo.sErrorDescription;
+	                                            			
+ELSIF P_PlcTaskSystemInfo.bError THEN           			
+	udiErrorID												:=  P_PlcTaskSystemInfo.udiErrorID;       
+	sErrorDescription										:=  P_PlcTaskSystemInfo.sErrorDescription;
+	                                            	
+ELSIF P_GroupsWcStates.bError THEN              	
+	udiErrorID												:= P_GroupsWcStates.udiErrorID; 									// Bledy od 10-11
+	sErrorDescription										:= P_GroupsWcStates.sErrorDescription;
+	
+ELSIF NOT bError THEN
+	udiErrorID												:= 0;
+	sErrorDescription										:= "";	
+END_IF
+
+
+// State machine
+CASE eDiagState OF
+
+	///////////////
+	E_DiagState.eOK:
+	
+		IF bError OR P_SystemInfo.bWarning THEN
+			eDiagState										:= E_DiagState.eError;
+		END_IF
+		
+	///////////////////		
+	E_DiagState.eError:
+
+		IF bReset THEN
+			eDiagState										:= E_DiagState.eResetting;
+		END_IF
+
+	//////////////////////
+	E_DiagState.eResetting:
+
+		(*Program P_EtherCAT_Diag automatycznie przyjmuje stan OK lub Error w zaleznosci od stanu modulow*)
+		P_EtherCAT_ChangeCounter.bReset						:= NOT P_EtherCAT_ChangeCounter.bOK;
+		P_Checks.bReset										:= NOT P_Checks.bOK;
+		P_Persistent.bReset									:= NOT P_Persistent.bOK;
+		P_TaskInfo.bReset									:= NOT P_TaskInfo.bOK;
+		P_SystemInfo.bReset									:= P_SystemInfo.bError OR P_SystemInfo.bWarning;
+		P_PlcTaskSystemInfo.bReset							:= NOT P_PlcTaskSystemInfo.bOK;
+		P_GroupsWcStates.bReset								:= NOT P_GroupsWcStates.bOK;																	
+		
+		
+		IF NOT bError THEN 
+			P_EtherCAT_ChangeCounter.bReset					:= FALSE;
+		    P_Checks.bReset									:= FALSE;
+		    P_Persistent.bReset								:= FALSE;
+		    P_TaskInfo.bReset								:= FALSE;
+		    P_SystemInfo.bReset								:= FALSE;
+		    P_PlcTaskSystemInfo.bReset						:= FALSE;
+		    P_GroupsWcStates.bReset							:= FALSE;
+			
+			eDiagState										:= E_DiagState.eOK;
+		END_IF
+		
+		IF bError AND tonCheckDiagnosisResettingTime.Q THEN														// Jesli pomimo resetu dalej jest blad przejsie do statu eError
+			
+			P_EtherCAT_ChangeCounter.bReset					:= FALSE;											// Kasowanie zmiennych od resetu programow sprawdzajacych
+		    P_Checks.bReset									:= FALSE;
+		    P_Persistent.bReset								:= FALSE;
+		    P_TaskInfo.bReset								:= FALSE;
+		    P_SystemInfo.bReset								:= FALSE;
+			P_PlcTaskSystemInfo.bReset						:= FALSE;
+			P_GroupsWcStates.bReset							:= FALSE;
+
+			eDiagState:= E_DiagState.eError;
+		END_IF
+	
+END_CASE
+	
+// Log to events - You can switch it off in Initialization phase
+P_SystemDiag_EventLog();
+
+
+
+tonCheckDiagnosisResettingTime.IN							:= eDiagState = E_DiagState.eResetting; 					// Uzywane do kasowania resetu na poszczegolnych podprogramach
+tonCheckDiagnosisResettingTime.PT							:= T#400MS;												 		// patrz case Resetting(zrobione po to aby kiedy utrzyma sie blad
+tonCheckDiagnosisResettingTime();                       																	// przejsc do casu error
+]]></ST>
+    </Implementation>
+    <LineIds Name="P00_SystemDiagnostics">
+      <LineId Id="3" Count="133" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

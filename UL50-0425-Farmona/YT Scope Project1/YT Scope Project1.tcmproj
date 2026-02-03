@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{dd2af723-1a57-4455-bd8c-c0d3f4dc2c60}</ProjectGuid>
+    <AssemblyName>YT Scope Project1</AssemblyName>
+    <Name>YT Scope Project1</Name>
+    <RootNamespace>YT Scope Project1</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="czujnik wenglor correct.tcscopex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="dozowniki.svdx">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="przeciągania.tcscopex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Scope Project1.tcscopex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Scope Project2.tcscopex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="wenglor czarny korek.svdx">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="YT Scope Project.tcscopex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="zakrecarki.svdx">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+</Project>

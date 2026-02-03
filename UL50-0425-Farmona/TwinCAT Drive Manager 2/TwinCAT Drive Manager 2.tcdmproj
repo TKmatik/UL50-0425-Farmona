@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Name>Drive Manager 2</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{c6636d9a-ffcf-49b0-b869-29ce21127468}</ProjectGuid>
+    <TcPath>
+    </TcPath>
+    <AssemblyName>TwinCAT Drive Manager 2</AssemblyName>
+    <RootNamespace>TwinCAT Drive Manager 2</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="20U1 %28AX8620-0000-0105%29.tcdmdrv">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="20U1 %28AX8620-0000-0105%29\20U2_Doz1Doz2 %28AX8206-0100-0106%29.tcdmdrv">
+      <SubType>Content</SubType>
+      <DependentUpon>20U1 (AX8620-0000-0105).tcdmdrv</DependentUpon>
+    </Content>
+    <Content Include="20U1 %28AX8620-0000-0105%29\20U3_PodDoz12PodDoz34 %28AX8206-0100-0106%29.tcdmdrv">
+      <SubType>Content</SubType>
+      <DependentUpon>20U1 (AX8620-0000-0105).tcdmdrv</DependentUpon>
+    </Content>
+    <Content Include="20U1 %28AX8620-0000-0105%29\20U4_Zak1Pod1 %28AX8206-0100-0106%29.tcdmdrv">
+      <SubType>Content</SubType>
+      <DependentUpon>20U1 (AX8620-0000-0105).tcdmdrv</DependentUpon>
+    </Content>
+    <Content Include="20U1 %28AX8620-0000-0105%29\20U5_Zak2Pod2 %28AX8206-0100-0106%29.tcdmdrv">
+      <SubType>Content</SubType>
+      <DependentUpon>20U1 (AX8620-0000-0105).tcdmdrv</DependentUpon>
+    </Content>
+    <Content Include="20U1 %28AX8620-0000-0105%29\20U6_Doz3Doz4%28AX8206-0100-0106%29.tcdmdrv">
+      <SubType>Content</SubType>
+      <DependentUpon>20U1 (AX8620-0000-0105).tcdmdrv</DependentUpon>
+    </Content>
+    <Content Include="PM1PrzecDoz %28EL7047%29.tcdmdrv">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="PM2PrzecZak %28EL7047%29.tcdmdrv">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="R3_PM3PrzecSorNak %28EL7047%29.tcdmdrv">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Term 71 %28EL7047%29.tcdmdrv">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Term 79 %28EL7047%29.tcdmdrv">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Term 81 %28EL7047%29.tcdmdrv">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+</Project>

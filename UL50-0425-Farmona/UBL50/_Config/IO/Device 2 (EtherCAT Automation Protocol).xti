@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.19" ClassName="CDevEthernetProtocolNvDef" SubType="112">
+	<Device Id="1" DevType="112" AmsPort="28673" AmsNetId="0.0.0.0.2.1" RemoteName="Device 1 (EtherCAT Automation Protocol)">
+		<Name>__FILENAME__</Name>
+		<AddressInfo>
+			<Pnp>
+				<DeviceDesc>UL50-0225 Ethernet (TwinCAT-Intel PCI Ethernet Adap</DeviceDesc>
+				<DeviceName>\DEVICE\{39FB011C-7310-41E4-972E-2552ED9F6AC0}</DeviceName>
+				<DeviceData>000000000000</DeviceData>
+			</Pnp>
+		</AddressInfo>
+		<Image Id="8" AddrType="1" ImageType="3">
+			<Name>Image</Name>
+		</Image>
+		<Box File="UF50 Publisher.xti" Id="30"/>
+		<Box File="UF50  Subscriber.xti" Id="32"/>
+		<Box File="UP50B Publisher.xti" Id="33"/>
+		<Box File="UP50B  Subscriber.xti" Id="34"/>
+		<Ethernet DeviceDesc="UL50-0225 Ethernet (TwinCAT-Intel PCI Ethernet Adapter (Gigabit) V2)"/>
+		<Eap EapDeviceGuid="{8C39A719-9537-4996-BAF6-80B38899BFF4}"/>
+	</Device>
+</TcSmItem>

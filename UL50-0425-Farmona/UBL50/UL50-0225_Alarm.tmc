@@ -1,0 +1,1660 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass">
+  <Translations>
+    <Text TxtId="Alarm" />
+    <Text TxtId="Stop Awaryjny, sprawdź bezpieczeństwo, zresetuj przyciskiem na panelu" />
+    <Text TxtId="aGeneralAlarms" />
+    <Text TxtId="Bład systemu | Diagnostyka systemu wykryła błąd - uruchom ponownie" />
+    <Text TxtId="Błąd systemu | Sprawdź sterownik i połączenia sieciowe a następnie uruchom ponownie maszynę" />
+    <Text TxtId="Błąd uruchamiania stacji | Brak możliwość wyłączenia stacji - zresetuj zasilanie" />
+    <Text TxtId="Błąd bazowania | Zbyt długie bazowanie stacji - sprawdź urządzenia" />
+    <Text TxtId="Błąd zatrzymywania | Zbyt długie zatrzymywanie cyklu w trybie normalnym" />
+    <Text TxtId="Błąd zasilania | Zanik fazy, lub zła kolejność faz - sprawdź podłączenie {0}" />
+    <Text TxtId="Błąd zasilania DC | Alarm zasilacza 10G1 - sprawdź zasilanie" />
+    <Text TxtId="Błąd zasilania DC | Alarm zasilacza 10G2 - sprawdź zasilanie" />
+    <Text TxtId="Błąd sprężonego powietrza | Zbyt niskie ciśnienie zasilania sprężonego powietrza - zwiększ ciśnienie {0}" />
+    <Text TxtId="Błąd bezpieczników 24VDC | Jeden z bezpieczników w bloku FB1 uległ przepaleniu - wymień bezpiecznik" />
+    <Text TxtId="Błąd bezpieczników 24VDC | Jeden z bezpieczników w bloku FB2 uległ przepaleniu - wymień bezpiecznik" />
+    <Text TxtId="Błąd bezpieczników 24VDC | Jeden z bezpieczników w bloku FB3 uległ przepaleniu - wymień bezpiecznik" />
+    <Text TxtId="Serwowzmacniacz | Wyłączone zabezpieczenie silnikowe - sprawdż zabezpieczenie" />
+    <Text TxtId="Napęd transportera | Wyłączone zabezpieczenie silnikowe - sprawdż zabezpieczenie" />
+    <Text TxtId="Napęd obrotu stacji znakowania | Wyłączone zabezpieczenie silnikowe - sprawdż zabezpieczenie" />
+    <Text TxtId="Stacja wyjściowa | Niewyjęta butelka z formatki - usuń butelkę" />
+    <Text TxtId="Stacja wejściowa | Źle włozona butelka - popraw" />
+    <Text TxtId="Sterownik główny | Brak napięcia zasilania na module ST2 w szafie głównej - sprawdź bezpiecznik" />
+    <Text TxtId="Sterownik w szafie robota | Brak napięcia zasilania na module ST1 w szafie robota - sprawdź bezpiecznik" />
+    <Text TxtId="Sterownik w szafie robota | Brak napięcia E-Bus na module ST1 w szafie robota - sprawdź bezpiecznik" />
+    <Text TxtId="Stacja zakręcarek | Zablokowana formatka za zakręcarką sprawdź położenie" />
+    <Text TxtId="Napęd stołu obrotowego | Wyłączone zabezpieczenie silnikowe - sprawdż zabezpieczenie" />
+    <Text TxtId="Transporter odrzuconych | Zapełniony transporter odrzuconych butelek" />
+    <Text TxtId="Stacja dozowników | Zablokowana formatka przy dozownikach od strony drzwi. Usuń formatki i opakowania" />
+    <Text TxtId="Stacja zakręcarek | Zablokowana lub źle ustawiona formatka przed zakręcarkami. Sprawdź ustawienie formatek oraz czujniki obecności" />
+    <Text TxtId="Stacja zakręcarek | Źle ustawione formatki przed zakręcarką. Sprawdź czujniki obecności formatek" />
+    <Text TxtId="Stacja dozowników |Źle ustawione formatki przy dozownikach od strony drzwi. Przesuń formatki za wagi" />
+    <Text TxtId="Podajnik zamknięć | Brak zamknięć w 4 butelkach - sprawdź sorter" />
+    <Text TxtId="Brak gotowości stacji | Zbyt długie przygotowywanie stacji do gotowości {0}" />
+    <Text TxtId="Stacja zakręcarek | Formatki nie są dosunięte do pozycji przeciągania - odblokuj (wypadła nakrętka)" />
+    <Text TxtId="Sorter butelek | Brak komunikacji ze sterownikiem - włącz zasilanie/sprawdź podłączenie" />
+    <Text TxtId="Sorter nasadek | Brak komunikacji ze sterownikiem - włącz zasilanie/sprawdź podłączenie" />
+    <Text TxtId="Sorter nasadek - przeciąganie | Formatki nie są dosunięte do pozycji przeciągania - odblokuj (wypadła nakrętka)" />
+    <Text TxtId="Układ bezpieczeństwa | Brak komunikacji z sorterem nasadek - włącz linie/sprawdź komunikacje" />
+    <Text TxtId="Układ bezpieczeństwa | Brak komunikacji z sorterem butelek - włącz linie/sprawdź komunikacje" />
+    <Text TxtId="Stacja dozowników | Formatki nie są dosunięte do pozycji przeciągania - odblokuj (wypadła butelka)" />
+    <Text TxtId="Napęd stołu odbiorczego | Wyłączone zabezpieczenie silnikowe - sprawdż zabezpieczenie" />
+    <Text TxtId="Stacja przeciągania dozowniki lewe | Pozycja podnośnika dozowników jest poniżej ustawionej" />
+    <Text TxtId="Stacja przeciągania dozowniki prawe | Pozycja podnośnika dozowników jest poniżej ustawionej" />
+    <Text TxtId="Brak kapsla/lub kilku pod rząd przed stacją ROPP , nałóż kapsle na butelki" />
+    <Text TxtId="General" />
+    <Text TxtId="Stacja ROPP | Zablokowana formatka za ROPP" />
+    <Text TxtId="Stacja zgrzewania platynek (opcja)| Zablokowana formatka za stacją" />
+    <Text TxtId="Stacja sortera nakrętek | Zablokowana formatka za sorterem" />
+    <Text TxtId="Stacja przeciągania dozowniki lewe | Formatki nie przeciągnięte" />
+    <Text TxtId="Błąd sterownika | Błąd komunikacji modułów komunikacyjnych" />
+    <Text TxtId="P_GroupsWcStates" />
+    <Text TxtId="Błąd sterownika | Błąd komunikacji modułów I/O" />
+    <Text TxtId="Błąd sterownika | Błąd komunikacji grupy falowników" />
+    <Text TxtId="Błąd sterownika | Błąd komunikacji grupy modułów safety" />
+    <Text TxtId="Błąd sterownika | Błąd komunikacji grupy modułów pneumatycznych" />
+    <Text TxtId="Błąd sterownika | Błąd komunikacji grupy safety NC" />
+    <Text TxtId="Błąd sterownika | Błąd komunikacji grupy analogowych" />
+    <Text TxtId="Błąd sterownika | Przekroczenie czasu cyklu" />
+    <Text TxtId="P_PlcTaskSystemInfo" />
+    <Text TxtId="Błąd sterownika | Oczekiwanie na licencję sterownika" />
+    <Text TxtId="P_SystemInfo" />
+    <Text TxtId="Błąd sterownika | Załadowano nieaktualne dane sterownika" />
+    <Text TxtId="Błąd sterownika | Wystąpił BlueScreenOfDeath" />
+    <Text TxtId="Błąd sterownika | Błąd wczytania danych sterownika" />
+    <Text TxtId="Błąd sterownika | Błąd programu sprawdzającego cykl sterownik" />
+    <Text TxtId="P_TaskInfo" />
+    <Text TxtId="Błąd sterownika | Błąd diagnostyki sieci EtherCAT" />
+    <Text TxtId="P_EtherCAT_Diag" />
+    <Text TxtId="Błąd sterownika | Błąd jednego z urządzeń sieci EtherCAT" />
+    <Text TxtId="P_EtherCAT_ChangeCounter" />
+    <Text TxtId="Błąd sterownika | Błąd programu sprawdzającego operacje sterownika" />
+    <Text TxtId="P_Checks" />
+    <Text TxtId="Zbiornik 1 | Brak masy w leju" />
+    <Text TxtId="aTanks" />
+    <Text TxtId="Zbiornik 2 | Brak masy w leju" />
+    <Text TxtId="Mixer | Wyłączone zabezpieczenie przy próbie uruchomienia" />
+    <Text TxtId="Pompa 1 | Przepalony bezpiecznik - sprawdź połączenie i wymień" />
+    <Text TxtId="Pompa 2 | Przepalony bezpiecznik - sprawdź połączenie i wymień" />
+    <Text TxtId="Etykieciarka | Błąd - sprawdź urządzenie" />
+    <Text TxtId="aLabelMachine" />
+    <Text TxtId="Etykieciarka | Błąd załączenia - brak sygnału potwierdzenia pracy. Może być zablokowana przez system wizyjny - sprawdź urządzenie" />
+    <Text TxtId="Etykieciarka | Zapełniony transporter - sprawdź czujnik" />
+    <Text TxtId="Blokada otwarcia siłownika wjazdu opakowania - lewy - popraw lub usuń opakowanie" />
+    <Text TxtId="FB_BottleFeeder" />
+    <Text TxtId="Blokada otwarcia siłownika wjazdu opakowania - prawy - popraw lub usuń opakowanie" />
+    <Text TxtId="Blokada lewej pozycji siłownika chwytaka - sprawdź położenie ramienia" />
+    <Text TxtId="Blokada prawej pozycji siłownika chwytaka - sprawdź położenie ramienia" />
+    <Text TxtId="Blokada górnej pozycji siłownika chwytaka - sprawdź położenie ramienia lub usuń opakowanie" />
+    <Text TxtId="Blokada dolnej pozycji siłownika chwytaka - sprawdź położenie ramienia lub usuń opakowanie" />
+    <Text TxtId="Brak opakowań w podajniku - dołóż opakownia lub sprawdź ich ułożenie" />
+    <Text TxtId="Blokada otwarcia szlabanu wjazdowego nr 1 - sprawdź czujnik lub odblokuj mechanicznie" />
+    <Text TxtId="FB_SpringGateV2" />
+    <Text TxtId="Blokada zamknięcia szlabanu wjazdowego nr 1 - sprawdź czujnik lub odblokuj mechanicznie" />
+    <Text TxtId="Błąd Falownika {0}" />
+    <Text TxtId="FB_MitsubishiInverter" />
+    <Text TxtId="Przekroczenie czasu oczekiwania na odpowiedź falownika" />
+    <Text TxtId="Błąd komunikacji z urządzeniem (WcState)" />
+    <Text TxtId="Utracono gotowość falownika do pracy" />
+    <Text TxtId="Sprawdź zabezpieczenie silnikowe" />
+    <Text TxtId="Siłownik | Blokada wysunięcia - sprawdź czujnik lub odblokuj" />
+    <Text TxtId="FB_Gate" />
+    <Text TxtId="Siłownik | Blokada wsunięcia - sprawdź czujnik lub odblokuj" />
+    <Text TxtId="Błąd napędu tłoka - upewnij się że został dobrze złożony. Błąd NC: {0}" />
+    <Text TxtId="FB_ServoDispencerServoLifter" />
+    <Text TxtId="Błąd napędu podnośnika. Błąd NC: {0}" />
+    <Text TxtId="Nastawa dozy powyżej maksymalnej wartości - zmniejsz ilość dozy {0}" />
+    <Text TxtId="Nastawa dozy poniżej minimalnej wartość - zwiększ ilość dozy {0}" />
+    <Text TxtId="Zacięcie zaworu zasysania podczas zamykania - sprawdź czujnik" />
+    <Text TxtId="Zacięcie zaworu zasysania masy podczas otwierania - sprawdź czujnik" />
+    <Text TxtId="Zacięcie zaworu tłoczenia masy podczas zamykania - sprawdź czujnik" />
+    <Text TxtId="Zacięcie zaworu tłoczenia masy podczas otwierania - sprawdź czujnik" />
+    <Text TxtId="Zacięcie tacki przy otwieraniu - sprawdź czujnik" />
+    <Text TxtId="Zacięcie tacki przy zamykaniu - sprawdź czujnik" />
+    <Text TxtId="Próba uruchomienia z zbyt niską pozycją wylewki względem chwytaka - zmień pozycję gotowości dozownika lub chwytaka" />
+    <Text TxtId="Blokada otwarcia chwytaka - sprawdź czujnik" />
+    <Text TxtId="FB_CatchStationWithSensor" />
+    <Text TxtId="Blokada podnośnika lub brak zasilania - sprawdź czujnik lub odblokuj mechanicznie" />
+    <Text TxtId="Wartość zadana wysokości jest większa od maksymalnej - zmień ustawienia w recepturze {0}" />
+    <Text TxtId="Wartość zadana wysokości jest mniejsza od minimalnej - zmień ustawienia w recepturze {0}" />
+    <Text TxtId="Wartość aktualna jest zbyt różna od zadanej - zmień ustawienia w recepturze lub ustaw stację" />
+    <Text TxtId="Błąd napędu przeciągania. Błąd NC: {0}" />
+    <Text TxtId="FB_FormsDragStepper" />
+    <Text TxtId="Siłownik przeciągania | Blokada podnoszenia - sprawdź czujnik lub odblokuj" />
+    <Text TxtId="Siłownik przeciągania | Blokada opuszczania siłownika - sprawdź czujnik lub odblokuj" />
+    <Text TxtId="Siłownik prowadzenia | Blokada podnoszenia - sprawdź czujnik lub odblokuj" />
+    <Text TxtId="Błąd czujnika temperatury zbiornika" />
+    <Text TxtId="FB_TankHeating" />
+    <Text TxtId="Błąd grzania zbiornika, brak wzrostu temperatury" />
+    <Text TxtId="Podnoszenie wagi nr 1 | Blokada podnoszenia siłownika - sprawdź czujnik lub odblokuj" />
+    <Text TxtId="FB_WeightStation" />
+    <Text TxtId="Podnoszenie wagi nr 2 | Blokada podnoszenia siłownika - sprawdź czujnik lub odblokuj" />
+    <Text TxtId="Podnoszenie wagi nr 3 | Blokada podnoszenia siłownika - sprawdź czujnik lub odblokuj" />
+    <Text TxtId="Podnoszenie wagi nr 4 | Blokada podnoszenia siłownika - sprawdź czujnik lub odblokuj" />
+    <Text TxtId="Podnoszenie wagi nr 5 | Blokada podnoszenia siłownika - sprawdź czujnik lub odblokuj" />
+    <Text TxtId="Podnoszenie wagi nr 6 | Blokada podnoszenia siłownika - sprawdź czujnik lub odblokuj" />
+    <Text TxtId="Błąd modułu - sprawdź połączenie" />
+    <Text TxtId="FB_BeckhoffEL3356Weight" />
+    <Text TxtId="Przekroczenie zakresu - sprawdź czy nie jest zablokowana" />
+    <Text TxtId="Zadana wartość gęstości poniżej 0." />
+    <Text TxtId="FB_WeightCorrection" />
+    <Text TxtId="Zbyt długa próba zassania platynki - uzupełnij platynki lub popraw ich położenie" />
+    <Text TxtId="FB_LidFeeder" />
+    <Text TxtId="Nieudana próba podania platynki - zwiększ ciśnienie" />
+    <Text TxtId="Błąd czujnika temperatury grzałki - sprawdź połączenie" />
+    <Text TxtId="Blokada siłownika dolnego podczas opuszczania - sprawdź czujnik" />
+    <Text TxtId="Blokada siłownika dolnego podczas podnoszenia - sprawdź czujnik" />
+    <Text TxtId="Blokada siłownika górnego podczas opuszczania - sprawdź czujnik" />
+    <Text TxtId="Błąd grzania, brak wzrostu temperatury - sprawdź czujnik" />
+    <Text TxtId="Błąd grzania, brak sygnału z czujnika temperatury - sprawdź czujnik" />
+    <Text TxtId="FB_VisionChecker" />
+    <Text TxtId="Blokada siłownika podczas podnoszenia - sprawdź czujnik" />
+    <Text TxtId="FB_LidSealer" />
+    <Text TxtId="Blokada siłownika podczas opuszczania - sprawdź czujnik" />
+    <Text TxtId="FB_CapFeeder" />
+    <Text TxtId="Bład zabezpieczenia silnika - sprawdź wyłącznik" />
+    <Text TxtId="Pusty rękaw sortera - uzupełnij nasadki" />
+    <Text TxtId="Błąd falownika" />
+    <Text TxtId="FB_Checker" />
+    <Text TxtId="FB_CatchStation" />
+    <Text TxtId="Błąd napędu podnoszenia. Błąd NC: {0}" />
+    <Text TxtId="FB_2GripperScrewers" />
+    <Text TxtId="Błąd napędu zakręcającego 1. Błąd NC: {0}" />
+    <Text TxtId="Błąd napędu zakręcającego 2. Błąd NC: {0}" />
+    <Text TxtId="Zbyt wysoka temperatura napędu zakręcającego 1 &gt; 130C - zmniejsz moment zakręcania {0}" />
+    <Text TxtId="Zbyt wysoka temperatura napędu zakręcającego 2 &gt; 130C - zmniejsz moment zakręcania {0}" />
+    <Text TxtId="FB_VisionChecker_new" />
+    <Text TxtId="Błąd robota {0}" />
+    <Text TxtId="FB_Robot2Bottles" />
+    <Text TxtId="Blokada wysunięcia szlabanu 1 - lewy - odblokuj" />
+    <Text TxtId="FB_PucksInserter" />
+    <Text TxtId="Blokada schowania szlabanu 1 - lewy - odblokuj" />
+    <Text TxtId="Blokada wysunięcia szlabanu 2 - prawy - odblokuj" />
+    <Text TxtId="Blokada schowania szlabanu 2 - prawy - odblokuj" />
+    <Text TxtId="Blokada wysunięcia tacki - odblokuj" />
+    <Text TxtId="Blokada schowania tacki - odblokuj" />
+    <Text TxtId="Blokada opuszczania wbijaka - odblokuj" />
+    <Text TxtId="Blokada podnoszenia wbijaka - odblokuj" />
+    <Text TxtId="Blokada wysunięcia pozycjonowania formatek - odblokuj" />
+    <Text TxtId="Blokada schowania pozycjonowania formatek - odblokuj" />
+    <Text TxtId="FB_ROPPFeeder" />
+    <Text TxtId="FB_ROPPCapping" />
+    <Text TxtId="Błąd falownika głowicy 1" />
+    <Text TxtId="Błąd falownika głowicy 2" />
+    <Text TxtId="Błąd górnej pozycji głowicy dociskającej 1- upewnij się że jest wybrane dobre narzędzie lub sprawdź czujnik" />
+    <Text TxtId="Zresetuj błąd na panelu falownika {0}" />
+    <Text TxtId="FB_LenzeInverter" />
+    <Text TxtId="Przepełnienie" />
+    <Text TxtId="Błąd górnej pozycji wbijaka - sprawdź czujnik lub odblokuj mechanicznie" />
+    <Text TxtId="Błąd wysunięcia siłownika bocznego - sprawdź wyłącznik" />
+    <Text TxtId="Błąd schowania siłownika bocznego - sprawdź czujnik lub odblokuj mechanicznie" />
+    <Text TxtId="Błąd wysunięcia siłownika podnoszenia formatki - sprawdź czujnik lub odblokuj mechanicznie" />
+    <Text TxtId="Błąd schowania siłownika podnoszenia formatki - sprawdź czujnik lub odblokuj mechanicznie" />
+    <Text TxtId="Pusty rekaw wbijaka nasadek - sprawdź czy nasadki sie nie zablokowały" />
+    <Text TxtId="Błąd falownika - możliwe zablokowanie mechaniczne transportera" />
+    <Text TxtId="Bład czujnika powietrza - sprwadź ciśnienie" />
+    <Text TxtId="Blokada nasadek przed wbijaniem - sprawdź czujnik" />
+    <Text TxtId="Brak nakrętek w zbiorniku - sprawdź czujnik lub dosyp nakrętki" />
+    <Text TxtId="Błąd napędu karuzeli. Błąd NC: {0}" />
+    <Text TxtId="Błąd falownika przenośnika butelek: {0}" />
+    <Text TxtId="FB_CapPusher" />
+    <Text TxtId="Rezerwa 1" />
+    <Text TxtId="Siłownik przeciągania | Blokada wysunięcia - sprawdź czujnik lub odblokuj" />
+    <Text TxtId="FB_FormsDragActuator" />
+    <Text TxtId="Siłownik przeciągania | Blokada wsunięcia - sprawdź czujnik lub odblokuj" />
+    <Text TxtId="Banda końcowa | Blokada wysunięcia - sprawdź czujnik lub odblokuj" />
+    <Text TxtId="Szlaban | Blokada wysunięcia - sprawdź czujnik lub odblokuj" />
+    <Text TxtId="Bład czujników przed przeciąganiem - sprawdź ułożenie formatek" />
+    <Text TxtId="Bład czujników za przeciąganiem - sprawdź ułożenie formatek" />
+    <Text TxtId="FB_WickFeeder" />
+    <Text TxtId="Błąd siłownika rozdzielacza pozycja 1" />
+    <Text TxtId="Błąd siłownika rozdzielacza pozycja 2" />
+    <Text TxtId="Błąd wysunięcia siłownika separatora 1" />
+    <Text TxtId="Błąd cofnięcia siłownika separatora 1" />
+    <Text TxtId="Błąd wysunięcia siłownika separatora 2" />
+    <Text TxtId="Błąd cofnięcia siłownika separatora 2" />
+    <Text TxtId="Błąd wysunięcia wbijaka 1" />
+    <Text TxtId="Błąd cofnięcia wbijaka 1" />
+    <Text TxtId="Błąd wysunięcia wbijaka 2" />
+    <Text TxtId="Błąd cofnięcia wbijaka 2" />
+    <Text TxtId="Blokada knota w rękawie 1" />
+    <Text TxtId="Blokada knota w rękawie 2" />
+  </Translations>
+  <DataTypes>
+    <DataType>
+      <Name GUID="{2F7803E3-B7B5-4F40-80BF-5BBB9C56AC4B}">AlarmClass</Name>
+      <DisplayName TxtId=""><![CDATA[Alarm]]></DisplayName>
+      <EventId>
+        <Name Id="1">Alarm_0001</Name>
+        <DisplayName TxtId=""><![CDATA[Stop Awaryjny, sprawdź bezpieczeństwo, zresetuj przyciskiem na panelu]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="2">Alarm_0002</Name>
+        <DisplayName TxtId=""><![CDATA[Bład systemu | Diagnostyka systemu wykryła błąd - uruchom ponownie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="3">Alarm_0003</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd systemu | Sprawdź sterownik i połączenia sieciowe a następnie uruchom ponownie maszynę]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="4">Alarm_0004</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd uruchamiania stacji | Brak możliwość wyłączenia stacji - zresetuj zasilanie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="5">Alarm_0005</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd bazowania | Zbyt długie bazowanie stacji - sprawdź urządzenia]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="6">Alarm_0006</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd zatrzymywania | Zbyt długie zatrzymywanie cyklu w trybie normalnym]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="7">Alarm_0007</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd zasilania | Zanik fazy, lub zła kolejność faz - sprawdź podłączenie {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="8">Alarm_0008</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd zasilania DC | Alarm zasilacza 10G1 - sprawdź zasilanie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="9">Alarm_0009</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd zasilania DC | Alarm zasilacza 10G2 - sprawdź zasilanie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="10">Alarm_0010</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd sprężonego powietrza | Zbyt niskie ciśnienie zasilania sprężonego powietrza - zwiększ ciśnienie {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="11">Alarm_0011</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd bezpieczników 24VDC | Jeden z bezpieczników w bloku FB1 uległ przepaleniu - wymień bezpiecznik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="12">Alarm_0012</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd bezpieczników 24VDC | Jeden z bezpieczników w bloku FB2 uległ przepaleniu - wymień bezpiecznik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="13">Alarm_0013</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd bezpieczników 24VDC | Jeden z bezpieczników w bloku FB3 uległ przepaleniu - wymień bezpiecznik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="14">Alarm_0014</Name>
+        <DisplayName TxtId=""><![CDATA[Serwowzmacniacz | Wyłączone zabezpieczenie silnikowe - sprawdż zabezpieczenie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="15">Alarm_0015</Name>
+        <DisplayName TxtId=""><![CDATA[Napęd transportera | Wyłączone zabezpieczenie silnikowe - sprawdż zabezpieczenie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="16">Alarm_0016</Name>
+        <DisplayName TxtId=""><![CDATA[Napęd obrotu stacji znakowania | Wyłączone zabezpieczenie silnikowe - sprawdż zabezpieczenie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="17">Alarm_0017</Name>
+        <DisplayName TxtId=""><![CDATA[Stacja wyjściowa | Niewyjęta butelka z formatki - usuń butelkę]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="18">Alarm_0018</Name>
+        <DisplayName TxtId=""><![CDATA[Stacja wejściowa | Źle włozona butelka - popraw]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="19">Alarm_0019</Name>
+        <DisplayName TxtId=""><![CDATA[Sterownik główny | Brak napięcia zasilania na module ST2 w szafie głównej - sprawdź bezpiecznik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="20">Alarm_0020</Name>
+        <DisplayName TxtId=""><![CDATA[Sterownik w szafie robota | Brak napięcia zasilania na module ST1 w szafie robota - sprawdź bezpiecznik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="21">Alarm_0021</Name>
+        <DisplayName TxtId=""><![CDATA[Sterownik w szafie robota | Brak napięcia E-Bus na module ST1 w szafie robota - sprawdź bezpiecznik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="22">Alarm_0022</Name>
+        <DisplayName TxtId=""><![CDATA[Stacja zakręcarek | Zablokowana formatka za zakręcarką sprawdź położenie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="23">Alarm_0023</Name>
+        <DisplayName TxtId=""><![CDATA[Napęd transportera | Wyłączone zabezpieczenie silnikowe - sprawdż zabezpieczenie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="24">Alarm_0024</Name>
+        <DisplayName TxtId=""><![CDATA[Napęd transportera | Wyłączone zabezpieczenie silnikowe - sprawdż zabezpieczenie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="25">Alarm_0025</Name>
+        <DisplayName TxtId=""><![CDATA[Napęd transportera | Wyłączone zabezpieczenie silnikowe - sprawdż zabezpieczenie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="26">Alarm_0026</Name>
+        <DisplayName TxtId=""><![CDATA[Napęd transportera | Wyłączone zabezpieczenie silnikowe - sprawdż zabezpieczenie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="27">Alarm_0027</Name>
+        <DisplayName TxtId=""><![CDATA[Napęd stołu obrotowego | Wyłączone zabezpieczenie silnikowe - sprawdż zabezpieczenie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="28">Alarm_0028</Name>
+        <DisplayName TxtId=""><![CDATA[Transporter odrzuconych | Zapełniony transporter odrzuconych butelek]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="29">Alarm_0029</Name>
+        <DisplayName TxtId=""><![CDATA[Stacja dozowników | Zablokowana formatka przy dozownikach od strony drzwi. Usuń formatki i opakowania]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="30">Alarm_0030</Name>
+        <DisplayName TxtId=""><![CDATA[Stacja zakręcarek | Zablokowana lub źle ustawiona formatka przed zakręcarkami. Sprawdź ustawienie formatek oraz czujniki obecności]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="31">Alarm_0031</Name>
+        <DisplayName TxtId=""><![CDATA[Stacja zakręcarek | Źle ustawione formatki przed zakręcarką. Sprawdź czujniki obecności formatek]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="32">Alarm_0032</Name>
+        <DisplayName TxtId=""><![CDATA[Stacja dozowników |Źle ustawione formatki przy dozownikach od strony drzwi. Przesuń formatki za wagi]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="33">Alarm_0033</Name>
+        <DisplayName TxtId=""><![CDATA[Podajnik zamknięć | Brak zamknięć w 4 butelkach - sprawdź sorter]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="34">Alarm_0034</Name>
+        <DisplayName TxtId=""><![CDATA[Brak gotowości stacji | Zbyt długie przygotowywanie stacji do gotowości {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="35">Alarm_0035</Name>
+        <DisplayName TxtId=""><![CDATA[Stacja zakręcarek | Formatki nie są dosunięte do pozycji przeciągania - odblokuj (wypadła nakrętka)]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="36">Alarm_0036</Name>
+        <DisplayName TxtId=""><![CDATA[Sorter butelek | Brak komunikacji ze sterownikiem - włącz zasilanie/sprawdź podłączenie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="37">Alarm_0037</Name>
+        <DisplayName TxtId=""><![CDATA[Sorter nasadek | Brak komunikacji ze sterownikiem - włącz zasilanie/sprawdź podłączenie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="38">Alarm_0038</Name>
+        <DisplayName TxtId=""><![CDATA[Sorter nasadek - przeciąganie | Formatki nie są dosunięte do pozycji przeciągania - odblokuj (wypadła nakrętka)]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="39">Alarm_0039</Name>
+        <DisplayName TxtId=""><![CDATA[Układ bezpieczeństwa | Brak komunikacji z sorterem nasadek - włącz linie/sprawdź komunikacje]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="40">Alarm_0040</Name>
+        <DisplayName TxtId=""><![CDATA[Układ bezpieczeństwa | Brak komunikacji z sorterem butelek - włącz linie/sprawdź komunikacje]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="41">Alarm_0041</Name>
+        <DisplayName TxtId=""><![CDATA[Stacja dozowników | Formatki nie są dosunięte do pozycji przeciągania - odblokuj (wypadła butelka)]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="42">Alarm_0042</Name>
+        <DisplayName TxtId=""><![CDATA[Napęd stołu odbiorczego | Wyłączone zabezpieczenie silnikowe - sprawdż zabezpieczenie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="43">Alarm_0043</Name>
+        <DisplayName TxtId=""><![CDATA[Stacja przeciągania dozowniki lewe | Pozycja podnośnika dozowników jest poniżej ustawionej]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="44">Alarm_0044</Name>
+        <DisplayName TxtId=""><![CDATA[Stacja przeciągania dozowniki prawe | Pozycja podnośnika dozowników jest poniżej ustawionej]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aGeneralAlarms]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="45">Alarm_0045</Name>
+        <DisplayName TxtId=""><![CDATA[Brak kapsla/lub kilku pod rząd przed stacją ROPP , nałóż kapsle na butelki]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[General]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="46">Alarm_0046</Name>
+        <DisplayName TxtId=""><![CDATA[Stacja ROPP | Zablokowana formatka za ROPP]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[General]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="47">Alarm_0047</Name>
+        <DisplayName TxtId=""><![CDATA[Stacja zgrzewania platynek (opcja)| Zablokowana formatka za stacją]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[General]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="48">Alarm_0048</Name>
+        <DisplayName TxtId=""><![CDATA[Stacja sortera nakrętek | Zablokowana formatka za sorterem]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[General]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="49">Alarm_0049</Name>
+        <DisplayName TxtId=""><![CDATA[Stacja przeciągania dozowniki lewe | Formatki nie przeciągnięte]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[General]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="50">Alarm_0050</Name>
+        <DisplayName TxtId=""><![CDATA[Stacja przeciągania dozowniki lewe | Formatki nie przeciągnięte]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[General]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="80">Alarm_0080</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd sterownika | Błąd komunikacji modułów komunikacyjnych]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[P_GroupsWcStates]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="81">Alarm_0081</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd sterownika | Błąd komunikacji modułów I/O]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[P_GroupsWcStates]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="82">Alarm_0082</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd sterownika | Błąd komunikacji grupy falowników]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[P_GroupsWcStates]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="83">Alarm_0083</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd sterownika | Błąd komunikacji grupy modułów safety]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[P_GroupsWcStates]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="84">Alarm_0084</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd sterownika | Błąd komunikacji grupy modułów pneumatycznych]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[P_GroupsWcStates]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="85">Alarm_0085</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd sterownika | Błąd komunikacji grupy safety NC]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[P_GroupsWcStates]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="86">Alarm_0086</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd sterownika | Błąd komunikacji grupy analogowych]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[P_GroupsWcStates]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="87">Alarm_0087</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd sterownika | Przekroczenie czasu cyklu]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[P_PlcTaskSystemInfo]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="88">Alarm_0088</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd sterownika | Oczekiwanie na licencję sterownika]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[P_SystemInfo]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="89">Alarm_0089</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd sterownika | Załadowano nieaktualne dane sterownika]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[P_SystemInfo]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="90">Alarm_0090</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd sterownika | Wystąpił BlueScreenOfDeath]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[P_SystemInfo]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="91">Alarm_0091</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd sterownika | Błąd wczytania danych sterownika]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[P_SystemInfo]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="92">Alarm_0092</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd sterownika | Błąd programu sprawdzającego cykl sterownik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[P_TaskInfo]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="93">Alarm_0093</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd sterownika | Błąd diagnostyki sieci EtherCAT]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[P_EtherCAT_Diag]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="94">Alarm_0094</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd sterownika | Błąd jednego z urządzeń sieci EtherCAT]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[P_EtherCAT_ChangeCounter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="95">Alarm_0095</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd sterownika | Błąd programu sprawdzającego operacje sterownika]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[P_Checks]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="100">Alarm_0100</Name>
+        <DisplayName TxtId=""><![CDATA[Zbiornik 1 | Brak masy w leju]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aTanks]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="101">Alarm_0101</Name>
+        <DisplayName TxtId=""><![CDATA[Zbiornik 2 | Brak masy w leju]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aTanks]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="102">Alarm_0102</Name>
+        <DisplayName TxtId=""><![CDATA[Mixer | Wyłączone zabezpieczenie przy próbie uruchomienia]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aTanks]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="103">Alarm_0103</Name>
+        <DisplayName TxtId=""><![CDATA[Pompa 1 | Przepalony bezpiecznik - sprawdź połączenie i wymień]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aTanks]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="104">Alarm_0104</Name>
+        <DisplayName TxtId=""><![CDATA[Pompa 2 | Przepalony bezpiecznik - sprawdź połączenie i wymień]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aTanks]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="120">Alarm_0120</Name>
+        <DisplayName TxtId=""><![CDATA[Etykieciarka | Błąd - sprawdź urządzenie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aLabelMachine]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="121">Alarm_0121</Name>
+        <DisplayName TxtId=""><![CDATA[Etykieciarka | Błąd załączenia - brak sygnału potwierdzenia pracy. Może być zablokowana przez system wizyjny - sprawdź urządzenie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aLabelMachine]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="122">Alarm_0122</Name>
+        <DisplayName TxtId=""><![CDATA[Etykieciarka | Zapełniony transporter - sprawdź czujnik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[aLabelMachine]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="140">Alarm_0140</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada otwarcia siłownika wjazdu opakowania - lewy - popraw lub usuń opakowanie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_BottleFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="141">Alarm_0141</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada otwarcia siłownika wjazdu opakowania - prawy - popraw lub usuń opakowanie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_BottleFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="142">Alarm_0142</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada lewej pozycji siłownika chwytaka - sprawdź położenie ramienia]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_BottleFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="143">Alarm_0143</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada prawej pozycji siłownika chwytaka - sprawdź położenie ramienia]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_BottleFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="144">Alarm_0144</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada górnej pozycji siłownika chwytaka - sprawdź położenie ramienia lub usuń opakowanie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_BottleFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="145">Alarm_0145</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada dolnej pozycji siłownika chwytaka - sprawdź położenie ramienia lub usuń opakowanie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_BottleFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="146">Alarm_0146</Name>
+        <DisplayName TxtId=""><![CDATA[Brak opakowań w podajniku - dołóż opakownia lub sprawdź ich ułożenie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_BottleFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="160">Alarm_0160</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada otwarcia szlabanu wjazdowego nr 1 - sprawdź czujnik lub odblokuj mechanicznie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_SpringGateV2]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="161">Alarm_0161</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada zamknięcia szlabanu wjazdowego nr 1 - sprawdź czujnik lub odblokuj mechanicznie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_SpringGateV2]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="180">Alarm_0180</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd Falownika {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_MitsubishiInverter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="181">Alarm_0181</Name>
+        <DisplayName TxtId=""><![CDATA[Przekroczenie czasu oczekiwania na odpowiedź falownika]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_MitsubishiInverter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="182">Alarm_0182</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd komunikacji z urządzeniem (WcState)]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_MitsubishiInverter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="183">Alarm_0183</Name>
+        <DisplayName TxtId=""><![CDATA[Utracono gotowość falownika do pracy]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_MitsubishiInverter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="184">Alarm_0184</Name>
+        <DisplayName TxtId=""><![CDATA[Sprawdź zabezpieczenie silnikowe]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_MitsubishiInverter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="200">Alarm_0200</Name>
+        <DisplayName TxtId=""><![CDATA[Siłownik | Blokada wysunięcia - sprawdź czujnik lub odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_Gate]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="201">Alarm_0201</Name>
+        <DisplayName TxtId=""><![CDATA[Siłownik | Blokada wsunięcia - sprawdź czujnik lub odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_Gate]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="220">Alarm_0220</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd napędu tłoka - upewnij się że został dobrze złożony. Błąd NC: {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ServoDispencerServoLifter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="221">Alarm_0221</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd napędu podnośnika. Błąd NC: {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ServoDispencerServoLifter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="222">Alarm_0222</Name>
+        <DisplayName TxtId=""><![CDATA[Nastawa dozy powyżej maksymalnej wartości - zmniejsz ilość dozy {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ServoDispencerServoLifter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="223">Alarm_0223</Name>
+        <DisplayName TxtId=""><![CDATA[Nastawa dozy poniżej minimalnej wartość - zwiększ ilość dozy {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ServoDispencerServoLifter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="224">Alarm_0224</Name>
+        <DisplayName TxtId=""><![CDATA[Zacięcie zaworu zasysania podczas zamykania - sprawdź czujnik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ServoDispencerServoLifter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="225">Alarm_0225</Name>
+        <DisplayName TxtId=""><![CDATA[Zacięcie zaworu zasysania masy podczas otwierania - sprawdź czujnik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ServoDispencerServoLifter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="226">Alarm_0226</Name>
+        <DisplayName TxtId=""><![CDATA[Zacięcie zaworu tłoczenia masy podczas zamykania - sprawdź czujnik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ServoDispencerServoLifter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="227">Alarm_0227</Name>
+        <DisplayName TxtId=""><![CDATA[Zacięcie zaworu tłoczenia masy podczas otwierania - sprawdź czujnik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ServoDispencerServoLifter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="228">Alarm_0228</Name>
+        <DisplayName TxtId=""><![CDATA[Zacięcie tacki przy otwieraniu - sprawdź czujnik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ServoDispencerServoLifter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="229">Alarm_0229</Name>
+        <DisplayName TxtId=""><![CDATA[Zacięcie tacki przy zamykaniu - sprawdź czujnik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ServoDispencerServoLifter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="230">Alarm_0230</Name>
+        <DisplayName TxtId=""><![CDATA[Próba uruchomienia z zbyt niską pozycją wylewki względem chwytaka - zmień pozycję gotowości dozownika lub chwytaka]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ServoDispencerServoLifter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="240">Alarm_0240</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada otwarcia chwytaka - sprawdź czujnik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CatchStationWithSensor]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="241">Alarm_0241</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada podnośnika lub brak zasilania - sprawdź czujnik lub odblokuj mechanicznie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CatchStationWithSensor]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="242">Alarm_0242</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest większa od maksymalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CatchStationWithSensor]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="243">Alarm_0243</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest mniejsza od minimalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CatchStationWithSensor]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="244">Alarm_0244</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość aktualna jest zbyt różna od zadanej - zmień ustawienia w recepturze lub ustaw stację]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CatchStationWithSensor]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="260">Alarm_0260</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd napędu przeciągania. Błąd NC: {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_FormsDragStepper]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="261">Alarm_0261</Name>
+        <DisplayName TxtId=""><![CDATA[Siłownik przeciągania | Blokada podnoszenia - sprawdź czujnik lub odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_FormsDragStepper]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="262">Alarm_0262</Name>
+        <DisplayName TxtId=""><![CDATA[Siłownik przeciągania | Blokada opuszczania siłownika - sprawdź czujnik lub odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_FormsDragStepper]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="263">Alarm_0263</Name>
+        <DisplayName TxtId=""><![CDATA[Siłownik prowadzenia | Blokada podnoszenia - sprawdź czujnik lub odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_FormsDragStepper]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="264">Alarm_0264</Name>
+        <DisplayName TxtId=""><![CDATA[Siłownik prowadzenia | Blokada podnoszenia - sprawdź czujnik lub odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_FormsDragStepper]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="280">Alarm_0280</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd czujnika temperatury zbiornika]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_TankHeating]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="281">Alarm_0281</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd grzania zbiornika, brak wzrostu temperatury]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_TankHeating]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="300">Alarm_0300</Name>
+        <DisplayName TxtId=""><![CDATA[Podnoszenie wagi nr 1 | Blokada podnoszenia siłownika - sprawdź czujnik lub odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WeightStation]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="301">Alarm_0301</Name>
+        <DisplayName TxtId=""><![CDATA[Podnoszenie wagi nr 2 | Blokada podnoszenia siłownika - sprawdź czujnik lub odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WeightStation]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="302">Alarm_0302</Name>
+        <DisplayName TxtId=""><![CDATA[Podnoszenie wagi nr 3 | Blokada podnoszenia siłownika - sprawdź czujnik lub odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WeightStation]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="303">Alarm_0303</Name>
+        <DisplayName TxtId=""><![CDATA[Podnoszenie wagi nr 4 | Blokada podnoszenia siłownika - sprawdź czujnik lub odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WeightStation]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="304">Alarm_0304</Name>
+        <DisplayName TxtId=""><![CDATA[Podnoszenie wagi nr 5 | Blokada podnoszenia siłownika - sprawdź czujnik lub odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WeightStation]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="305">Alarm_0305</Name>
+        <DisplayName TxtId=""><![CDATA[Podnoszenie wagi nr 6 | Blokada podnoszenia siłownika - sprawdź czujnik lub odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WeightStation]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="320">Alarm_0320</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd modułu - sprawdź połączenie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_BeckhoffEL3356Weight]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="321">Alarm_0321</Name>
+        <DisplayName TxtId=""><![CDATA[Przekroczenie zakresu - sprawdź czy nie jest zablokowana]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_BeckhoffEL3356Weight]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="330">Alarm_0330</Name>
+        <DisplayName TxtId=""><![CDATA[Zadana wartość gęstości poniżej 0.]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WeightCorrection]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="340">Alarm_0340</Name>
+        <DisplayName TxtId=""><![CDATA[Zbyt długa próba zassania platynki - uzupełnij platynki lub popraw ich położenie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LidFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="341">Alarm_0341</Name>
+        <DisplayName TxtId=""><![CDATA[Nieudana próba podania platynki - zwiększ ciśnienie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LidFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="342">Alarm_0342</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd czujnika temperatury grzałki - sprawdź połączenie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LidFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="343">Alarm_0343</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada podnośnika lub brak zasilania - sprawdź czujnik lub odblokuj mechanicznie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LidFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="344">Alarm_0344</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest większa od maksymalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LidFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="345">Alarm_0345</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada siłownika dolnego podczas opuszczania - sprawdź czujnik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LidFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="346">Alarm_0346</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada siłownika dolnego podczas podnoszenia - sprawdź czujnik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LidFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="347">Alarm_0347</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada siłownika górnego podczas opuszczania - sprawdź czujnik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LidFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="348">Alarm_0348</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd grzania, brak wzrostu temperatury - sprawdź czujnik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LidFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="349">Alarm_0349</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd grzania, brak sygnału z czujnika temperatury - sprawdź czujnik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LidFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="360">Alarm_0360</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada podnośnika lub brak zasilania - sprawdź czujnik lub odblokuj mechanicznie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_VisionChecker]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="361">Alarm_0361</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest większa od maksymalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_VisionChecker]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="362">Alarm_0362</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest mniejsza od minimalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_VisionChecker]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="380">Alarm_0380</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada siłownika podczas podnoszenia - sprawdź czujnik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LidSealer]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="381">Alarm_0381</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada siłownika podczas opuszczania - sprawdź czujnik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LidSealer]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="382">Alarm_0382</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd czujnika temperatury grzałki - sprawdź połączenie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LidSealer]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="383">Alarm_0383</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada podnośnika lub brak zasilania - sprawdź czujnik lub odblokuj mechanicznie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LidSealer]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="384">Alarm_0384</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest większa od maksymalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LidSealer]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="385">Alarm_0385</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest mniejsza od minimalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LidSealer]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="386">Alarm_0386</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd grzania, brak wzrostu temperatury - sprawdź czujnik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LidSealer]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="387">Alarm_0387</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd grzania, brak sygnału z czujnika temperatury - sprawdź czujnik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LidSealer]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="400">Alarm_0400</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada podnośnika lub brak zasilania - sprawdź czujnik lub odblokuj mechanicznie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CapFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="401">Alarm_0401</Name>
+        <DisplayName TxtId=""><![CDATA[Bład zabezpieczenia silnika - sprawdź wyłącznik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CapFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="402">Alarm_0402</Name>
+        <DisplayName TxtId=""><![CDATA[Pusty rękaw sortera - uzupełnij nasadki]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CapFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="403">Alarm_0403</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest większa od maksymalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CapFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="404">Alarm_0404</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest mniejsza od minimalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CapFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="405">Alarm_0405</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd falownika]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CapFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="420">Alarm_0420</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada podnośnika lub brak zasilania - sprawdź czujnik lub odblokuj mechanicznie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_Checker]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="421">Alarm_0421</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest większa od maksymalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_Checker]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="422">Alarm_0422</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest mniejsza od minimalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_Checker]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="440">Alarm_0440</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada otwarcia chwytaka - sprawdź czujnik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CatchStation]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="441">Alarm_0441</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada podnośnika lub brak zasilania - sprawdź czujnik lub odblokuj mechanicznie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CatchStation]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="442">Alarm_0442</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest większa od maksymalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CatchStation]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="443">Alarm_0443</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest mniejsza od minimalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CatchStation]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="444">Alarm_0444</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość aktualna jest zbyt różna od zadanej - zmień ustawienia w recepturze lub ustaw stację]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CatchStation]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="460">Alarm_0460</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd napędu podnoszenia. Błąd NC: {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_2GripperScrewers]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="461">Alarm_0461</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd napędu zakręcającego 1. Błąd NC: {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_2GripperScrewers]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="462">Alarm_0462</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd napędu zakręcającego 2. Błąd NC: {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_2GripperScrewers]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="463">Alarm_0463</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest większa od maksymalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_2GripperScrewers]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="464">Alarm_0464</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest mniejsza od minimalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_2GripperScrewers]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="465">Alarm_0465</Name>
+        <DisplayName TxtId=""><![CDATA[Zbyt wysoka temperatura napędu zakręcającego 1 > 130C - zmniejsz moment zakręcania {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_2GripperScrewers]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="466">Alarm_0466</Name>
+        <DisplayName TxtId=""><![CDATA[Zbyt wysoka temperatura napędu zakręcającego 2 > 130C - zmniejsz moment zakręcania {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_2GripperScrewers]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="480">Alarm_0480</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada podnośnika lub brak zasilania - sprawdź czujnik lub odblokuj mechanicznie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_VisionChecker_new]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="481">Alarm_0481</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest większa od maksymalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_VisionChecker_new]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="482">Alarm_0482</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest mniejsza od minimalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_VisionChecker_new]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="500">Alarm_0500</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd robota {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_Robot2Bottles]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="520">Alarm_0520</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada wysunięcia szlabanu 1 - lewy - odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_PucksInserter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="521">Alarm_0521</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada schowania szlabanu 1 - lewy - odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_PucksInserter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="522">Alarm_0522</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada wysunięcia szlabanu 2 - prawy - odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_PucksInserter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="523">Alarm_0523</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada schowania szlabanu 2 - prawy - odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_PucksInserter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="524">Alarm_0524</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada wysunięcia tacki - odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_PucksInserter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="525">Alarm_0525</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada schowania tacki - odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_PucksInserter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="526">Alarm_0526</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada opuszczania wbijaka - odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_PucksInserter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="527">Alarm_0527</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada podnoszenia wbijaka - odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_PucksInserter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="528">Alarm_0528</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada wysunięcia pozycjonowania formatek - odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_PucksInserter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="529">Alarm_0529</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada schowania pozycjonowania formatek - odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_PucksInserter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="530">Alarm_0530</Name>
+        <DisplayName TxtId=""><![CDATA[Brak opakowań w podajniku - dołóż opakownia lub sprawdź ich ułożenie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_PucksInserter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="531">Alarm_0531</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada podnośnika lub brak zasilania - sprawdź czujnik lub odblokuj mechanicznie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_PucksInserter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="532">Alarm_0532</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest większa od maksymalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_PucksInserter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="533">Alarm_0533</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest mniejsza od minimalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_PucksInserter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="534">Alarm_0534</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość aktualna jest zbyt różna od zadanej - zmień ustawienia w recepturze lub ustaw stację]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_PucksInserter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="535">Alarm_0535</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd napędu karuzeli. Błąd NC: {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_PucksInserter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="536">Alarm_0536</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd falownika przenośnika butelek: {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_PucksInserter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="540">Alarm_0540</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada podnośnika lub brak zasilania - sprawdź czujnik lub odblokuj mechanicznie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ROPPFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="541">Alarm_0541</Name>
+        <DisplayName TxtId=""><![CDATA[Pusty rękaw sortera - uzupełnij nasadki]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ROPPFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="542">Alarm_0542</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest większa od maksymalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ROPPFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="543">Alarm_0543</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest mniejsza od minimalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ROPPFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="544">Alarm_0544</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd falownika]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ROPPFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="560">Alarm_0560</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada podnośnika lub brak zasilania - sprawdź czujnik lub odblokuj mechanicznie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ROPPCapping]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="561">Alarm_0561</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest większa od maksymalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ROPPCapping]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="562">Alarm_0562</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest mniejsza od minimalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ROPPCapping]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="563">Alarm_0563</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd falownika głowicy 1]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ROPPCapping]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="564">Alarm_0564</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd falownika głowicy 2]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ROPPCapping]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="565">Alarm_0565</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd górnej pozycji głowicy dociskającej 1- upewnij się że jest wybrane dobre narzędzie lub sprawdź czujnik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ROPPCapping]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="566">Alarm_0566</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd górnej pozycji głowicy dociskającej 1- upewnij się że jest wybrane dobre narzędzie lub sprawdź czujnik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_ROPPCapping]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="580">Alarm_0580</Name>
+        <DisplayName TxtId=""><![CDATA[Zresetuj błąd na panelu falownika {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LenzeInverter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="581">Alarm_0581</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd komunikacji z urządzeniem (WcState)]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LenzeInverter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="582">Alarm_0582</Name>
+        <DisplayName TxtId=""><![CDATA[Utracono gotowość falownika do pracy]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LenzeInverter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="583">Alarm_0583</Name>
+        <DisplayName TxtId=""><![CDATA[Przekroczenie czasu oczekiwania na odpowiedź falownika]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LenzeInverter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="584">Alarm_0584</Name>
+        <DisplayName TxtId=""><![CDATA[Przepełnienie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_LenzeInverter]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="590">Alarm_0590</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd górnej pozycji wbijaka - sprawdź czujnik lub odblokuj mechanicznie]]></DisplayName>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="591">Alarm_0591</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd wysunięcia siłownika bocznego - sprawdź wyłącznik]]></DisplayName>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="592">Alarm_0592</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd schowania siłownika bocznego - sprawdź czujnik lub odblokuj mechanicznie]]></DisplayName>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="593">Alarm_0593</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd wysunięcia siłownika podnoszenia formatki - sprawdź czujnik lub odblokuj mechanicznie]]></DisplayName>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="594">Alarm_0594</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd schowania siłownika podnoszenia formatki - sprawdź czujnik lub odblokuj mechanicznie]]></DisplayName>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="600">Alarm_0600</Name>
+        <DisplayName TxtId=""><![CDATA[Pusty rekaw wbijaka nasadek - sprawdź czy nasadki sie nie zablokowały]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CapPusher]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="601">Alarm_0601</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd falownika - możliwe zablokowanie mechaniczne transportera]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CapPusher]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="602">Alarm_0602</Name>
+        <DisplayName TxtId=""><![CDATA[Bład czujnika powietrza - sprwadź ciśnienie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CapPusher]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="603">Alarm_0603</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada nasadek przed wbijaniem - sprawdź czujnik]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CapPusher]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="604">Alarm_0604</Name>
+        <DisplayName TxtId=""><![CDATA[Brak nakrętek w zbiorniku - sprawdź czujnik lub dosyp nakrętki]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CapPusher]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="605">Alarm_0605</Name>
+        <DisplayName TxtId=""><![CDATA[Rezerwa 1]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_CapPusher]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="610">Alarm_0610</Name>
+        <DisplayName TxtId=""><![CDATA[Siłownik przeciągania | Blokada wysunięcia - sprawdź czujnik lub odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_FormsDragActuator]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="611">Alarm_0611</Name>
+        <DisplayName TxtId=""><![CDATA[Siłownik przeciągania | Blokada wsunięcia - sprawdź czujnik lub odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_FormsDragActuator]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="612">Alarm_0612</Name>
+        <DisplayName TxtId=""><![CDATA[Banda końcowa | Blokada wysunięcia - sprawdź czujnik lub odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_FormsDragActuator]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="613">Alarm_0613</Name>
+        <DisplayName TxtId=""><![CDATA[Szlaban | Blokada wysunięcia - sprawdź czujnik lub odblokuj]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_FormsDragActuator]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="614">Alarm_0614</Name>
+        <DisplayName TxtId=""><![CDATA[Bład czujników przed przeciąganiem - sprawdź ułożenie formatek]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_FormsDragActuator]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="615">Alarm_0615</Name>
+        <DisplayName TxtId=""><![CDATA[Bład czujników za przeciąganiem - sprawdź ułożenie formatek]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_FormsDragActuator]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="620">Alarm_0620</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada podnośnika lub brak zasilania - sprawdź czujnik lub odblokuj mechanicznie]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WickFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="621">Alarm_0621</Name>
+        <DisplayName TxtId=""><![CDATA[Pusty rękaw sortera - uzupełnij nasadki]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WickFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="622">Alarm_0622</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest większa od maksymalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WickFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="623">Alarm_0623</Name>
+        <DisplayName TxtId=""><![CDATA[Wartość zadana wysokości jest mniejsza od minimalnej - zmień ustawienia w recepturze {0}]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WickFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="624">Alarm_0624</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd falownika]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WickFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="625">Alarm_0625</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd siłownika rozdzielacza pozycja 1]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WickFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="626">Alarm_0626</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd siłownika rozdzielacza pozycja 2]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WickFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="627">Alarm_0627</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd wysunięcia siłownika separatora 1]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WickFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="628">Alarm_0628</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd cofnięcia siłownika separatora 1]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WickFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="629">Alarm_0629</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd wysunięcia siłownika separatora 2]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WickFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="630">Alarm_0630</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd cofnięcia siłownika separatora 2]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WickFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="631">Alarm_0631</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd wysunięcia wbijaka 1]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WickFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="632">Alarm_0632</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd cofnięcia wbijaka 1]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WickFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="633">Alarm_0633</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd wysunięcia wbijaka 2]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WickFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="634">Alarm_0634</Name>
+        <DisplayName TxtId=""><![CDATA[Błąd cofnięcia wbijaka 2]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WickFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="635">Alarm_0635</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada knota w rękawie 1]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WickFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="636">Alarm_0636</Name>
+        <DisplayName TxtId=""><![CDATA[Blokada knota w rękawie 2]]></DisplayName>
+        <DescriptionText TxtId=""><![CDATA[FB_WickFeeder]]></DescriptionText>
+        <Severity>Error</Severity>
+      </EventId>
+      <Hides>
+        <Hide GUID="{697CF878-CFFD-443C-9F86-AAD58C5B8BC9}" />
+        <Hide GUID="{117B2A9A-A7F7-42C4-A3AF-2B01B6FB3BE2}" />
+        <Hide GUID="{DF84A876-29DC-44EF-A2E4-9B6CE31D4103}" />
+        <Hide GUID="{F56DC487-E4AD-4377-B26A-DF4A0AFDFFD7}" />
+        <Hide GUID="{F777D736-E3D8-4AB4-81BD-D871705E4763}" />
+        <Hide GUID="{445C5EE6-265A-4B1A-B9C9-4A6616D15997}" />
+        <Hide GUID="{EEA73C22-276F-449D-8609-FCF42BCA2EB9}" />
+        <Hide GUID="{E8A8E929-4C87-453E-8BD3-C6EFF726A7FF}" />
+        <Hide GUID="{BBC00603-5915-4D6A-B312-79E70B35750C}" />
+        <Hide GUID="{CB271E20-B0EC-4140-9481-F88BA0C30E17}" />
+        <Hide GUID="{EB8CFBF6-8DD0-424E-B584-20E2A03B256D}" />
+        <Hide GUID="{A6A7D184-0649-46E1-9ED4-F5BDF5844CC4}" />
+        <Hide GUID="{61f7e84e-ebf8-407e-a467-223bc8201b18}" />
+        <Hide GUID="{B4534C27-5430-47DC-BDB6-D400D411F28D}" />
+        <Hide GUID="{377E3410-7DA6-43A8-A448-716BCBD93953}" />
+        <Hide GUID="{9E5E13ED-9DEB-4287-A2F6-FBAC9A5A2395}" />
+      </Hides>
+    </DataType>
+  </DataTypes>
+</TcModuleClass>

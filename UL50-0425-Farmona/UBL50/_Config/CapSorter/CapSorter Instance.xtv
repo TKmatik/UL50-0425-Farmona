@@ -1,0 +1,422 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.19" ClassName="CTComPlcObjDef" FileIdentifier="ef1f21cdfc96b37e3860babfc13222faf44d6892">
+	<Instance TmcHash="{6485E7D4-67EF-9A03-EADB-F3623551D099}">
+		<Vars VarGrpType="1">
+			<Name>PlcTask Inputs</Name>
+			<Var>
+				<Name>GVL_IO.IbPowerSupplyOK</Name>
+				<Comment><![CDATA[	Napięcie zasilania OK]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbDCSupply1OK</Name>
+				<Comment><![CDATA[	Zasilacz 10G1 OK]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbFuse10F3</Name>
+				<Comment><![CDATA[	Blok bezpiecznikowy 10F3 OK]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbFuse10F5</Name>
+				<Comment><![CDATA[	Blok bezpiecznikowy 10F5 OK]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbDCSupply2OK</Name>
+				<Comment><![CDATA[	Zasilacz 10G2 OK]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.ibDCSupply5VDC_OK</Name>
+				<Comment><![CDATA[ Zasilanie 5VDC OK]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbFuseDrivesOK</Name>
+				<Comment><![CDATA[	Zabezpieczenie Servonapędu]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbFuseTransporter</Name>
+				<Comment><![CDATA[	Zabezpieczenie transportera modulowego]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbEmergencyStop1Active</Name>
+				<Comment><![CDATA[	Aktywowany przycisk zatrzymania awaryjnego Estop poniżej szafy sterowniczej]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbEmergencyStop2Active</Name>
+				<Comment><![CDATA[	Aktywowany przycisk zatrzymania awaryjnego Estop przy zasypie zamkniec]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbEmergencyStop3Active</Name>
+				<Comment><![CDATA[	Aktywowany przycisk zatrzymania awaryjnego Estop przy zasypie zamkniec	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbSafetyDoorOpen1</Name>
+				<Comment><![CDATA[	Otwarte drzwi 1]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbSafetyDoorOpen2</Name>
+				<Comment><![CDATA[	Otwarte drzwi 2]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbFuseVacumPump</Name>
+				<Comment><![CDATA[	Zabezpieczenie pompa prozniowa	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbVacumPumpSensor</Name>
+				<Comment><![CDATA[Czujnik cisnienia pompa prozniowa]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbAirSupplyOK</Name>
+				<Comment><![CDATA[ Presostat powietrza]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IuiProfiNetError</Name>
+				<Comment><![CDATA[ Błąd komunikacji ProfiNet - 0 to OK]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IuiPnIoBoxStatePickMaster</Name>
+				<Comment><![CDATA[ Status komunikacji profinet]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IuiPnIoBoxStateRobotABB</Name>
+				<Comment><![CDATA[ Status komunikacji profinet]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotQueueFull1</Name>
+				<Comment><![CDATA[ Butelka wyjęta z kolejki wykrytych (nie wiem po co to nam)]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotQueueFull2</Name>
+				<Comment><![CDATA[ Butelka wyjęta z kolejki wykrytych (nie wiem po co to nam)]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotQueueFull3</Name>
+				<Comment><![CDATA[ Butelka wyjęta z kolejki wykrytych (nie wiem po co to nam)]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotPlaceDone1</Name>
+				<Comment><![CDATA[ Butelka odłożona 1]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotPlaceDone2</Name>
+				<Comment><![CDATA[ Butelka odłożona 2]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotPlaceDone3</Name>
+				<Comment><![CDATA[ Butelka odłożona 3]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotPlaceDone4</Name>
+				<Comment><![CDATA[ Butelka odłożona 4]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotPosAvailable1</Name>
+				<Comment><![CDATA[ Potwierdzenie przyjęcia pozycji Place1]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotPosAvailable2</Name>
+				<Comment><![CDATA[ Potwierdzenie przyjęcia pozycji Place2]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotPosAvailable3</Name>
+				<Comment><![CDATA[ Potwierdzenie przyjęcia pozycji Place3]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotVacumOn</Name>
+				<Comment><![CDATA[Sygnał załaczenia Vacum]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotVacumLevelOk</Name>
+				<Comment><![CDATA[Sygnał z czujnika Vacum]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotAutoOn</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotEmmergencyStop</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotExecutionError</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotMotionSupTrig</Name>
+				<Comment><![CDATA[ Kolizja]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotMotorsOnState</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotRevCounterLost</Name>
+				<Comment><![CDATA[Brak kalibracji]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotTaskExecuting</Name>
+				<Comment><![CDATA[Program się wykonuje]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotWriteAcces</Name>
+				<Comment><![CDATA[Załaczony dostęp zdalny]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotSMBBatteryChargeLow</Name>
+				<Comment><![CDATA[Alarm baterii]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IdiRobotRobotStatus0</Name>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IdiRobotUnitModeCurrent</Name>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IdiRobotStateCurrent</Name>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IdiRobotRobotStatus1</Name>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotRobotIdle</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotRobotError</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotRobotPMRTConnected</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IbRobotRobotHeartBeat</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IuiRobotFieldbusType</Name>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IudiRobotActiveOrder</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IudiRobotErrorCode</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IudiRobotCurrentRecipeID</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.IdiRobotBottelsCount</Name>
+				<Type>DINT</Type>
+			</Var>
+		</Vars>
+		<Vars VarGrpType="2" AreaNo="1">
+			<Name>PlcTask Outputs</Name>
+			<Var>
+				<Name>GVL_IO.QbSafetyDoorOpen</Name>
+				<Comment><![CDATA[	Otwarcie drzwi]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbResetFuse10F3</Name>
+				<Comment><![CDATA[ Reset bloku bezpiecznikowego 10F3]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbResetFuse10F5</Name>
+				<Comment><![CDATA[ Reset bloku bezpiecznikowego 10F5]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbBackLight</Name>
+				<Comment><![CDATA[ Załaczenie podświetlenia koła]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbVacumPumpEnable</Name>
+				<Comment><![CDATA[ Zalaczenie pompy prozniowej]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbAirSupply</Name>
+				<Comment><![CDATA[ Załączanie powietrza]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotPlace1</Name>
+				<Comment><![CDATA[ Zezwol na położenie na stlot 1 (wystawić dopiero po start w PackMlu]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotPlace2</Name>
+				<Comment><![CDATA[ Zezwol na położenie na stlot 2]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotPlace3</Name>
+				<Comment><![CDATA[ Zezwol na położenie na stlot 3]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotPlace4</Name>
+				<Comment><![CDATA[ Zezwol na położenie na stlot 4]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotPlaceDoneAck1</Name>
+				<Comment><![CDATA[ Potwierdzenie butelka odłożona 1]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotPlaceDoneAck2</Name>
+				<Comment><![CDATA[ Potwierdzenie butelka odłożona 2]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotPlaceDoneAck3</Name>
+				<Comment><![CDATA[ Potwierdzenie butelka odłożona 3]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotPlaceDoneAck4</Name>
+				<Comment><![CDATA[ Potwierdzenie butelka odłożona 4]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotStepMode</Name>
+				<Comment><![CDATA[ Praca krokowa]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotService</Name>
+				<Comment><![CDATA[ Przejście robota w tryb serwisowy - potrzebne do ManualMovements]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotServicePlace1</Name>
+				<Comment><![CDATA[ Ruch robota do stlot 1 ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotServicePlace2</Name>
+				<Comment><![CDATA[ Ruch robota do stlot 2]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotServicePlace3</Name>
+				<Comment><![CDATA[ Ruch robota do stlot 3]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotServicePlace4</Name>
+				<Comment><![CDATA[ Ruch robota do stlot 4]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotServiceVacumOn</Name>
+				<Comment><![CDATA[ Załącz vacum]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotServiceRejectOn</Name>
+				<Comment><![CDATA[ Załącz odrzut]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotServiceGripper</Name>
+				<Comment><![CDATA[ Pozycja ramienia]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QdiRobotUnitMode</Name>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QdiRobotCntrlCmd</Name>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QdiRobotRobotCmd0</Name>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QdiRobotRobotCmd1</Name>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotUnitModeChangeRequest</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotCmdChangeRequest</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotRequest</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotResetError</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QudiRobotRequestOrder</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QudiRobotRequestRecipeID</Name>
+				<Type>UDINT</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbRobotGetFlowCount</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.QbEmptingDoorSolenoid</Name>
+				<Type>BOOL</Type>
+			</Var>
+		</Vars>
+	</Instance>
+</TcSmItem>

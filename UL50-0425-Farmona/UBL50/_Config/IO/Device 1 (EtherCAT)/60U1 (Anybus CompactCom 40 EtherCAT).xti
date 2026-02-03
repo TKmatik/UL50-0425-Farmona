@@ -1,0 +1,360 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.13" ClassName="CFlbTermDef" SubType="9099">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000007}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..6] OF BIT</Name>
+			<BitSize>7</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>7</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-00200000000F}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..14] OF BIT</Name>
+			<BitSize>15</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>15</Elements>
+			</ArrayInfo>
+		</DataType>
+	</DataTypes>
+	<Box Id="60" BoxType="9099">
+		<Name>__FILENAME__</Name>
+		<ImageId>114</ImageId>
+		<EtherCAT SlaveType="2" PdiType="#x3680" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="51" FoeType="1" VendorId="#x0000001b" ProductCode="#x00000036" RevisionNo="#x00020018" InfoDataAddr="true" PortPhys="17" IdentificationAdo="308" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="Anybus CompactCom 40 EtherCAT" Desc="Anybus CompactCom 40 EtherCAT">
+			<SyncMan>004014012600010001000000000000001401004026010000</SyncMan>
+			<SyncMan>004814012200010002000000000000001401004822010000</SyncMan>
+			<SyncMan>001030006400010003000000000000004800001064010000</SyncMan>
+			<SyncMan>002830002000010004000000000000004800002820010000</SyncMan>
+			<Fmmu>0000000000000000001000020100000001000000000000000000000000000000</Fmmu>
+			<Fmmu>0000000000000000002800010100000002000000000000000000000000000000</Fmmu>
+			<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+			<BootStrapData>0040000400480004</BootStrapData>
+			<Pdo Name="VTEM - TxPDO" Index="#x1a01" Flags="#x0010" SyncMan="3">
+				<Entry Name="Input 0" Index="#x6001" Sub="#x01">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 1" Index="#x6001" Sub="#x02">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 2" Index="#x6001" Sub="#x03">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 3" Index="#x6001" Sub="#x04">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 4" Index="#x6001" Sub="#x05">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 5" Index="#x6001" Sub="#x06">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 6" Index="#x6001" Sub="#x07">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 7" Index="#x6001" Sub="#x08">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 8" Index="#x6001" Sub="#x09">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 9" Index="#x6001" Sub="#x0a">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 10" Index="#x6001" Sub="#x0b">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 11" Index="#x6001" Sub="#x0c">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 12" Index="#x6001" Sub="#x0d">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 13" Index="#x6001" Sub="#x0e">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 14" Index="#x6001" Sub="#x0f">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 15" Index="#x6001" Sub="#x10">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 16" Index="#x6001" Sub="#x11">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 17" Index="#x6001" Sub="#x12">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 18" Index="#x6001" Sub="#x13">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 19" Index="#x6001" Sub="#x14">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 20" Index="#x6001" Sub="#x15">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 21" Index="#x6001" Sub="#x16">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 22" Index="#x6001" Sub="#x17">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 23" Index="#x6001" Sub="#x18">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 24" Index="#x6001" Sub="#x19">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 25" Index="#x6001" Sub="#x1a">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 26" Index="#x6001" Sub="#x1b">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 27" Index="#x6001" Sub="#x1c">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 28" Index="#x6001" Sub="#x1d">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 29" Index="#x6001" Sub="#x1e">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 30" Index="#x6001" Sub="#x1f">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 31" Index="#x6001" Sub="#x20">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 32" Index="#x6001" Sub="#x21">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 33" Index="#x6001" Sub="#x22">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 34" Index="#x6001" Sub="#x23">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 35" Index="#x6001" Sub="#x24">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 36" Index="#x6001" Sub="#x25">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 37" Index="#x6001" Sub="#x26">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 38" Index="#x6001" Sub="#x27">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 39" Index="#x6001" Sub="#x28">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 40" Index="#x6001" Sub="#x29">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 41" Index="#x6001" Sub="#x2a">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 42" Index="#x6001" Sub="#x2b">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 43" Index="#x6001" Sub="#x2c">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 44" Index="#x6001" Sub="#x2d">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 45" Index="#x6001" Sub="#x2e">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 46" Index="#x6001" Sub="#x2f">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Input 47" Index="#x6001" Sub="#x30">
+					<Type>USINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Diag History - TxPDO" Index="#x1a40" Flags="#x0010">
+				<Entry Name="New Messages Available" Index="#x10f3" Sub="#x04">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry>
+					<Type GUID="{18071995-0000-0000-0000-002000000007}">ARRAY [0..6] OF BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Diag History - TxPDO" Index="#x1a41" Flags="#x0010">
+				<Entry Name="New Messages Available" Index="#x10f3" Sub="#x04">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry>
+					<Type GUID="{18071995-0000-0000-0000-00200000000F}">ARRAY [0..14] OF BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Timestamp - TxPDO" Index="#x1a42" Flags="#x0010">
+				<Entry Name="Timestamp Object" Index="#x10f8">
+					<Type>ULINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Padding - TxPDO" Index="#x1b01" Flags="#x0010">
+				<Entry Name="Padding" Index="#x6101">
+					<Type>USINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="VTEM - RxPDO" Index="#x1601" InOut="1" Flags="#x0010" SyncMan="2">
+				<Entry Name="Output 0" Index="#x7001" Sub="#x01">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 1" Index="#x7001" Sub="#x02">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 2" Index="#x7001" Sub="#x03">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 3" Index="#x7001" Sub="#x04">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 4" Index="#x7001" Sub="#x05">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 5" Index="#x7001" Sub="#x06">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 6" Index="#x7001" Sub="#x07">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 7" Index="#x7001" Sub="#x08">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 8" Index="#x7001" Sub="#x09">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 9" Index="#x7001" Sub="#x0a">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 10" Index="#x7001" Sub="#x0b">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 11" Index="#x7001" Sub="#x0c">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 12" Index="#x7001" Sub="#x0d">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 13" Index="#x7001" Sub="#x0e">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 14" Index="#x7001" Sub="#x0f">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 15" Index="#x7001" Sub="#x10">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 16" Index="#x7001" Sub="#x11">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 17" Index="#x7001" Sub="#x12">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 18" Index="#x7001" Sub="#x13">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 19" Index="#x7001" Sub="#x14">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 20" Index="#x7001" Sub="#x15">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 21" Index="#x7001" Sub="#x16">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 22" Index="#x7001" Sub="#x17">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 23" Index="#x7001" Sub="#x18">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 24" Index="#x7001" Sub="#x19">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 25" Index="#x7001" Sub="#x1a">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 26" Index="#x7001" Sub="#x1b">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 27" Index="#x7001" Sub="#x1c">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 28" Index="#x7001" Sub="#x1d">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 29" Index="#x7001" Sub="#x1e">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 30" Index="#x7001" Sub="#x1f">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 31" Index="#x7001" Sub="#x20">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 32" Index="#x7001" Sub="#x21">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 33" Index="#x7001" Sub="#x22">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 34" Index="#x7001" Sub="#x23">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 35" Index="#x7001" Sub="#x24">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 36" Index="#x7001" Sub="#x25">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 37" Index="#x7001" Sub="#x26">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 38" Index="#x7001" Sub="#x27">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 39" Index="#x7001" Sub="#x28">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 40" Index="#x7001" Sub="#x29">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 41" Index="#x7001" Sub="#x2a">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 42" Index="#x7001" Sub="#x2b">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 43" Index="#x7001" Sub="#x2c">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 44" Index="#x7001" Sub="#x2d">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 45" Index="#x7001" Sub="#x2e">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 46" Index="#x7001" Sub="#x2f">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Output 47" Index="#x7001" Sub="#x30">
+					<Type>USINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Padding - RxPDO" Index="#x1701" InOut="1" Flags="#x0010">
+				<Entry Name="Padding" Index="#x7101">
+					<Type>USINT</Type>
+				</Entry>
+			</Pdo>
+		</EtherCAT>
+	</Box>
+</TcSmItem>

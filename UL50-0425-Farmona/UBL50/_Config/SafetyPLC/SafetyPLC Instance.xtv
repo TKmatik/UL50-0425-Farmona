@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.19" ClassName="CTComPlcObjDef" FileIdentifier="385e89d63ed484a3c82b625e276295c27f7ed1a5">
+	<Instance TmcHash="{61E1D6E3-C4A7-42E4-9706-B4E264A6C447}">
+		<Vars VarGrpType="1">
+			<Name>PlcTask Inputs</Name>
+			<Var>
+				<Name>GVL_IO_SAFETY.bSafetyResetIn</Name>
+				<Comment><![CDATA[Przycisk resetu z panelu]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.bSafetyResetInRC40</Name>
+				<Comment><![CDATA[Przycisk resetu z panelu]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.bTurnTableSafetyResetIn</Name>
+				<Comment><![CDATA[Przycisk resetu z panelu {warning 'dodać reset z turntable'}]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.bPucksInserterSafetyResetIn</Name>
+				<Comment><![CDATA[Przycisk resetu z panelu {warning 'dodać reset z turntable'}	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.bEmergencyStopButton</Name>
+				<Comment><![CDATA[Jeśli FALSE - Estop wysyołany przez przyciski]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.bEmergencyStop</Name>
+				<Comment><![CDATA[Jeśli TRUE - maszyna w stanie bezpiecznym, FALSE - EStop]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.bBottleFeederSafety</Name>
+				<Comment><![CDATA[ Status safety podajnika butelek]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.bRobotEmergencyStop</Name>
+				<Comment><![CDATA[Bezpieczeństwo robota ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.IbSafetyResetDelay</Name>
+				<Comment><![CDATA[Opóżnienie pierwszego zresetowania safety]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.IbSafetyResetCapSorterIn</Name>
+				<Comment><![CDATA[ Przycisk Reset]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.IbSafetyResetBottleSorterIn</Name>
+				<Comment><![CDATA[ Przycisk Reset]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.IbSafetyRelayJiecang</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.IbSafetyRelayPneumatics</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.IbSafetyRelayMotorsRobotA</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.IbSafetyRelayMotorsRobotB</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.IbSafetyRelayRC40</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.IbComErr_Gr2</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.IbFBErr_Gr2</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.IbOtherErr_Gr2</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.IbOutErr_Gr2</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.IbComErr_Gr3</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.IbFBErr_Gr3</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.IbOtherErr_Gr3</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.IbOutErr_Gr3</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.IbUP50BDeactivated</Name>
+				<Comment><![CDATA[Status kluczyka deaktywacji safety]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.IbUF50Deactivated</Name>
+				<Comment><![CDATA[Status kluczyka deaktywacji safety]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+		</Vars>
+		<Vars VarGrpType="2" AreaNo="1">
+			<Name>PlcTask Outputs</Name>
+			<Var>
+				<Name>GVL_IO_SAFETY.bErrorAck</Name>
+				<Comment><![CDATA[ Potwierdzenie błędu ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.bErrorAckGr2</Name>
+				<Comment><![CDATA[ Potwierdzenie błędu UPB]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.bErrorAckGr3</Name>
+				<Comment><![CDATA[ Potwierdzenie błędu UF]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.bSafetyResetOut</Name>
+				<Comment><![CDATA[Info dla programu głównego	]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.bSafetyReset</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.bSafetyReset2</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.bSafetyReset3</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.QbEmergencyStopButton</Name>
+				<Comment><![CDATA[Jeśli FALSE - Estop wysyołany przez przyciski]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.QbEmergencyStop</Name>
+				<Comment><![CDATA[Jeśli TRUE - maszyna w stanie bezpiecznym, FALSE - EStop]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.QbBottleFeederSafety</Name>
+				<Comment><![CDATA[ Jeśli TRUE - podajnik butelek w stanie bezpieczenym, FALSE- otwarte drzwi]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.QbCommunicationErrorUF50</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.QbCommunicationErrorUP50B</Name>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.QbRUN_STOP</Name>
+				<Comment><![CDATA[Jeśli FALSE - Estop wysyołany przez przyciski]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.QbRUN_STOP_GR2</Name>
+				<Comment><![CDATA[Jeśli FALSE - Estop wysyołany przez przyciski]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO_SAFETY.QbRUN_STOP_GR3</Name>
+				<Comment><![CDATA[Jeśli FALSE - Estop wysyołany przez przyciski]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+		</Vars>
+	</Instance>
+</TcSmItem>

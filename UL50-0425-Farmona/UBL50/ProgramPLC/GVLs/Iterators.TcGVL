@@ -1,4 +1,8 @@
-TcEncryptedFile~£Š%L£t­_OÛ’¦±<Ü¦Æ{ièü¹¨W‰wýN®•¼AõIYWZ"Â¨Oì0$—“ó†¿ÂuNø/;z‹sév[Ê‘ÀtïàÃƒâÌBM_êfá¶^ã&É|Â(Ö3ˆaf™Šéh¸_ímbÐËçÜÙáF\ñF,mb‘6Š6ƒ$ÜdëFŒÜ¤üŠ®,ïô~4=®Ò´*îVÕìéòœN®Ç·*åÜÚÿ8cB“sÆŽ4àô‚ùä‡§]TO´µ› Úì7zRÖ%´,ªdJj¬Ù9q¾îù×E(DÛÛO‘.üIü°S*fn·Ñ‚4š3ïµNEÀÓ
-zØ±+ZŸUjµùž«>fŸ`ÌÀýwñŒ”X´,ÿVU?³…öa¥O&1B¬NÉ	ÒÙ+CÒ#ž:eªõve!:4ˆ¶¡ÔyÓ|o²‹$äs›¢:kvR<XC3!£3XÂíŠ0Ñx½3¬›Ë¯TÎD8?!+8aQÄØŠCwL3åX¦§\—K°oÖ{¤{¨ôaÅúEÝ§l*žWI‘![‚­J3uêW|Ð8\7j¹+¾³±©ÎÓc áƒ¯éœìÿfS”v!¾&žÔï-‘t.áÉZKwç©À]¡\ÁÖ‰(‘žqñ
-“æœR½þW¿…Êv‹U7l¿/O!U­Tžð«R|ÀªCõ…’(B§Ñ´Ò_[Ë~MßñÙA‚n©ÄÁøLspõ0à'f—zI‰Í$E%ÓbÌN0dÈ‰_…ºe)¿-+­(\ä˜(mþ”À(IÐ˜jüPW6Š©«–0ºóä"Ý­H0x4Õ.™TÚ>¶¤€¯”«]-;‘J&“n¨‡T13Ô!GY ãò‚$›` ArØþù>•MØ	ÆŽ
-¼_ÖÒŠÚÒÖ!\åuþ¨’¹qiµŠÆccª9‘¢A°â)ëW*ÿ?ÀË5¼Õƒcbš>AãmN>×aÿÜ1—üFÈ‘gÎñ„ÿ(ä©!WÄvË×ÚvéÿZ==6¶B>Nó‘ƒ+èVÖÓÓÀÿÚ>£þ€äõ#l_ÉZ?Øô>â¥ùPCl‚,ËCýKãrf­•¸š—Èøì¨å~”÷îAÆväÔÄ&›"&ÉÜ$ÕýìpmH^Í-I†¨Irs-‚“—’a§…:Ì³d03þ©mÍF
+ï»¿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.13" FileIdentifier="6768963bc21e87917936d905097a01425d7ac3fe" FileSignature="9d4aea00097d2aa2af15209f768055c1bc28b42aaf8aeb0ace5b9773036b6702b95ee88abd34c4dc0e98948659764428b21ee6a3fa4e1f3877c4908191c9b848e77078a36bcd88ab720f95ee7c2c2af50dec5cd439543162b1ed8c02d0eba67f5805d1c705e620d3ec72fbfecf7d321c9b0998707a3db9dbe6fba7d5f6b170e01767249d779ee03064183ae979b785234fcb7fb90b5261e6a42aae6d3538b29af69e8c8ae26e11fb1adbec0485db4bef4e2a94550d00bfd5ac29963449673e1484ace0c39f9a94035918ac3dba8162f9ccace34be000f65a53ce6922d0e3a88d83355d4192d0803434d094577fe02282da4847f48def15eec8fac2675e0534e9">
+  <GVL Name="Iterators" Id="{f8223b66-e5f3-4262-b131-88872b7e1932}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	i								: INT;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

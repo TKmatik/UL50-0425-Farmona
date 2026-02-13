@@ -1,11 +1,17 @@
-TcEncryptedFile~U¢@õ…{b“Q"vGÆ<õP¿ÃævéG{È"Ÿ”µô[UÕGÓÍ1‘yîômèCºé<±Ì!KÃ8øâ:,;µÄg=U'Í¬k¦xkíe´íG¬ßêxrm?²“AÔøÂ/´lpªÞ:ÊîÉr@v¤šo±¯ÂäŒ’#¤ÑÞ|O3¡r–×HûÔQ†vŠûvÍ‹ææŒÁž
-)DÞFéíP¸yEÀ”’<³2†rÉ¡™®à¸EfFùþìÍÁÓ%ßü?Ù-6Ü¤o|Ì¨Ï™d>‘Ç+z°)ßâN¸´H¾þ-'X
-›!ávÀ„þÁ–¾ç¶¤Ã­’3­qRXg-î¿fØRÖ>f¢êeÍùŒ8]CnÖ³§ö>3ÔÃN6¸Î þ3å½ØxÜ\ÄO¹‹_¥H#N˜';ÿ¾»›!º‹b/‹{¦zÕ|Ä¬{ú÷–“HRÉtY‹ô$T0¢?Ñ²ìcO‚„×¥U®ZµmtB%Øz$§ªÓ¥
-š!¾àÌ/Ù:ã<p´ÓÎo÷á>RÿPaF
-^c.¸ÕÍ¾· ÷c÷d½špºæì=PâB4%n¸$zÃÿBÀÊ[¾Á­kÍöÿCé"ÅßR ¶å=à·@à>š*5ë([4%ë+<ê#h¨šbPÆ¯x¬3PJšó%É@@i?¦Ó¡2b_ªM5¤\2¼mõKvl#aÎpãa¦&šrÎý½†2Hô±ÓêV›
-–Œ¥J¸$d{‹¸bÈ½"ýª]0øè¬YMç`¸T%·°!´!×‚i¯ïS~Ÿo?tì3²'¬\Þ™¡h«âOÄ#Ó}ÛÇ”ãyBczvÇëíëµ&s¾ªü\™í9(¥hž)ÑÄ;H%vßy,‘¡›"³‡èÑ¥&ÂxÛ5ÏT#t>bŸ¿[‚>cmÝ“÷‘‹ãÏÓ}ëwTý\ÉúüŒCnÒíå‘M@4ZëAÔÝ;$
-é©ˆ¬¯Ñ¿<*mŸÿ’MŠ~âÁkkäæ‹8”—£Ó§&¥<ˆ.$,ò‰Cðp5qÍÖ²Æó4ó‘ç»‘Oß€”¾úìlE¦”6dPïH¿S ï
-]©óßgÆ† fò§—Jáù=¹1L1<o”2s@‚¤‹üêv·î óå®1Ì w_]YÓŠJ‰1’Ó¯Á
-¬`»Á£‰ÙóËO0å¡1j |/–¸šŠjòYdx³ÛâˆdèKÛß2õ†R3frå$øD;à¹Iâ–«ÆñTm-Ý¿Hi¡åi4sß¦2÷	øÝ†æ)¶uÝÑ„à5F\w¹eù6Òðí]TàÍ6U{HÃSÚ×¸U¡¸Ä
-î„¿)ƒ¾)¦ÏY9uD]ûìoŒèÃ_±ÁLßOmZOè1¯‰gab¼m!½|,v-ŠßD0öo
-Ú­Jã*SRÈ‚:œŸÙ›I:âÿ—»O]÷c«g¾ºòw±±mÔQš5Ð³¼ŸQªä`UìínÕæy\6Æ™Evfh ¢XšóÒ³\u—äõÔäU8
+ï»¿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.13" FileIdentifier="08fe9ee6dda004b23f743da02db3beba5b8fc7a2" FileSignature="1914dea61e2a3d61e9a2bff1e60bbb538bb7854b7d033084a37bbd34c5111233cb1b1a119e4c969c54e3c1ed1766db17581146a834561edb22ddc8b5cc779119f7c804050de08224f5e47436a641f06f5fc4815094bb98620c96f4b639cdc505f774ccbbf2057261253107ee5ba4bd64593463ef062015edc4c52450b6eed539e718f971a37d873969eead91794368a1f8e3f5d37c188234a5efddcaa6daac26cf4d5b5fd5b4365db22e0b1315772449c1508d69e42e7d33fef1e51c2738c9438e7054e0dbc90a68ef8f8cc4110447d043624beba8d37dbb7d6f773947161a9c5afb8317caf5cdfba87514af8dc49257091d7bed0a027fc363be028e5f562ef3">
+  <DUT Name="ST_BoolParametr" Id="{5d53302d-46fd-47f0-b8f8-2635bde89d49}">
+    <Declaration><![CDATA[TYPE ST_BoolParametr :
+STRUCT
+	bValue												:	BOOL;
+	bOldValue											:	BOOL;
+	bDefault											:	BOOL;
+	wsInfoCaption										:	WSTRING(100);
+	wsCaption1											:	WSTRING(50);
+	wsCaption2											:	WSTRING(50);
+	bUse2caption										:	BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

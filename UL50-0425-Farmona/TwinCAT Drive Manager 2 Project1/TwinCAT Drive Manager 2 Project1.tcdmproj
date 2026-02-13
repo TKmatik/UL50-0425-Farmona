@@ -12,47 +12,60 @@
   <ItemGroup>
     <Content Include="600U1 %28AX8620-0000-0105%29.tcdmdrv">
       <SubType>Content</SubType>
+      <IoItemPathName>TIID^Device 1 (EtherCAT)^600U1 (AX8620-0000-0105)</IoItemPathName>
     </Content>
     <Content Include="600U1 %28AX8620-0000-0105%29\601U1_Doz1Doz2 %28AX8206-0100-0106%29.tcdmdrv">
       <SubType>Content</SubType>
       <DependentUpon>600U1 (AX8620-0000-0105).tcdmdrv</DependentUpon>
+      <IoItemPathName>TIID^Device 1 (EtherCAT)^600U1 (AX8620-0000-0105)^601U1_Doz1Doz2 (AX8206-0100-0106)</IoItemPathName>
     </Content>
     <Content Include="600U1 %28AX8620-0000-0105%29\602U1_Doz3Doz4%28AX8206-0100-0106%29.tcdmdrv">
       <SubType>Content</SubType>
       <DependentUpon>600U1 (AX8620-0000-0105).tcdmdrv</DependentUpon>
+      <IoItemPathName>TIID^Device 1 (EtherCAT)^600U1 (AX8620-0000-0105)^602U1_Doz3Doz4(AX8206-0100-0106)</IoItemPathName>
     </Content>
     <Content Include="600U1 %28AX8620-0000-0105%29\603U1_PodDoz12PodDoz34 %28AX8206-0100-0106%29.tcdmdrv">
       <SubType>Content</SubType>
       <DependentUpon>600U1 (AX8620-0000-0105).tcdmdrv</DependentUpon>
+      <IoItemPathName>TIID^Device 1 (EtherCAT)^600U1 (AX8620-0000-0105)^603U1_PodDoz12PodDoz34 (AX8206-0100-0106)</IoItemPathName>
     </Content>
     <Content Include="600U1 %28AX8620-0000-0105%29\604U1_Zak1Pod1 %28AX8206-0100-0106%29.tcdmdrv">
       <SubType>Content</SubType>
       <DependentUpon>600U1 (AX8620-0000-0105).tcdmdrv</DependentUpon>
+      <IoItemPathName>TIID^Device 1 (EtherCAT)^600U1 (AX8620-0000-0105)^604U1_Zak1Pod1 (AX8206-0100-0106)</IoItemPathName>
     </Content>
     <Content Include="600U1 %28AX8620-0000-0105%29\605U1_Zak2Pod2 %28AX8206-0100-0106%29.tcdmdrv">
       <SubType>Content</SubType>
       <DependentUpon>600U1 (AX8620-0000-0105).tcdmdrv</DependentUpon>
+      <IoItemPathName>TIID^Device 1 (EtherCAT)^600U1 (AX8620-0000-0105)^605U1_Zak2Pod2 (AX8206-0100-0106)</IoItemPathName>
     </Content>
     <Content Include="PM1PrzecDoz %28EL7047%29.tcdmdrv">
       <SubType>Content</SubType>
+      <IoItemPathName>TIID^Device 1 (EtherCAT)^R2_BC1 (EK1100)^PM1PrzecDoz (EL7047)</IoItemPathName>
     </Content>
     <Content Include="PM2PrzecDoz2 %28EL7047%29.tcdmdrv">
       <SubType>Content</SubType>
+      <IoItemPathName>TIID^Device 1 (EtherCAT)^R2_BC1 (EK1100)^PM2PrzecDoz2 (EL7047)</IoItemPathName>
     </Content>
     <Content Include="PM3PrzecZak %28EL7047%29.tcdmdrv">
       <SubType>Content</SubType>
+      <IoItemPathName>TIID^Device 1 (EtherCAT)^R2_BC1 (EK1100)^PM3PrzecZak (EL7047)</IoItemPathName>
     </Content>
     <Content Include="PM4PrzecPlat %28EL7047%29.tcdmdrv">
       <SubType>Content</SubType>
+      <IoItemPathName>TIID^Device 1 (EtherCAT)^R2_BC1 (EK1100)^PM4PrzecPlat (EL7047)</IoItemPathName>
     </Content>
     <Content Include="PM5PrzecGrz %28EL7047%29.tcdmdrv">
       <SubType>Content</SubType>
+      <IoItemPathName>TIID^Device 1 (EtherCAT)^R2_BC1 (EK1100)^PM5PrzecGrz (EL7047)</IoItemPathName>
     </Content>
     <Content Include="PM6PrzecSorNak %28EL7047%29.tcdmdrv">
       <SubType>Content</SubType>
+      <IoItemPathName>TIID^Device 1 (EtherCAT)^R2_BC1 (EK1100)^PM6PrzecSorNak (EL7047)</IoItemPathName>
     </Content>
     <Content Include="RC40_ZAK_1_2 %28AX5203-0000-0213%29.tcdmdrv">
       <SubType>Content</SubType>
+      <IoItemPathName>TIID^Device 1 (EtherCAT)^R2_242A1 (CU1128)^R2_242A1 (CU1128-B)^RC40_ZAK_1_2 (AX5203-0000-0213)</IoItemPathName>
     </Content>
   </ItemGroup>
 </Project>
